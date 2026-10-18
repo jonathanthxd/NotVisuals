@@ -16,7 +16,7 @@
         0.18,
         0.18,
         0.18,
-        1.0
+        1
       ]
     },
     "nv_scene": {},
@@ -38,7 +38,9 @@
     "nv_bloomed": {},
     "nv_pixel": {},
     "nv_fantasy": {},
-    "nv_final": {}
+    "nv_final": {},
+    "nv_inked": {},
+    "nv_toon": {}
   },
   "passes": [
     {
@@ -87,10 +89,10 @@
             "name": "ColorModulate",
             "type": "vec4",
             "value": [
-              1.0,
-              1.0,
-              1.0,
-              1.0
+              1,
+              1,
+              1,
+              1
             ]
           }
         ]
@@ -127,11 +129,23 @@
     },
     {
       "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "notvisuals:post/highlight_extract",
+      "fragment_shader": "notvisuals:post/inkline",
       "inputs": [
         {
           "sampler_name": "In",
           "target": "nv_atmosphere",
+          "bilinear": true
+        }
+      ],
+      "output": "nv_inked"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/highlight_extract",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "nv_inked",
           "bilinear": true
         }
       ],
@@ -143,7 +157,7 @@
       "inputs": [
         {
           "sampler_name": "In",
-          "target": "nv_atmosphere",
+          "target": "nv_inked",
           "bilinear": true
         }
       ],
@@ -166,8 +180,8 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              1.0,
-              0.0
+              1,
+              0
             ]
           },
           {
@@ -195,8 +209,8 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              0.0,
-              1.0
+              0,
+              1
             ]
           },
           {
@@ -224,14 +238,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              1.0,
-              0.0
+              1,
+              0
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 4.0
+            "value": 4
           }
         ]
       }
@@ -253,14 +267,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              0.0,
-              1.0
+              0,
+              1
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 4.0
+            "value": 4
           }
         ]
       }
@@ -282,14 +296,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              1.0,
-              0.0
+              1,
+              0
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 10.0
+            "value": 10
           }
         ]
       }
@@ -311,14 +325,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              0.0,
-              1.0
+              0,
+              1
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 10.0
+            "value": 10
           }
         ]
       }
@@ -340,14 +354,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              1.0,
-              0.0
+              1,
+              0
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 24.0
+            "value": 24
           }
         ]
       }
@@ -369,14 +383,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              0.0,
-              1.0
+              0,
+              1
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 24.0
+            "value": 24
           }
         ]
       }
@@ -398,14 +412,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              1.0,
-              0.0
+              1,
+              0
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 6.0
+            "value": 6
           }
         ]
       }
@@ -427,14 +441,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              0.0,
-              1.0
+              0,
+              1
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 6.0
+            "value": 6
           }
         ]
       }
@@ -456,14 +470,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              1.0,
-              0.0
+              1,
+              0
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 30.0
+            "value": 30
           }
         ]
       }
@@ -485,14 +499,14 @@
             "name": "BlurDir",
             "type": "vec2",
             "value": [
-              0.0,
-              1.0
+              0,
+              1
             ]
           },
           {
             "name": "Radius",
             "type": "float",
-            "value": 30.0
+            "value": 30
           }
         ]
       }
@@ -503,7 +517,7 @@
       "inputs": [
         {
           "sampler_name": "Scene",
-          "target": "nv_atmosphere",
+          "target": "nv_inked",
           "bilinear": true
         },
         {
@@ -565,11 +579,23 @@
     },
     {
       "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "notvisuals:post/vivid_finish",
+      "fragment_shader": "notvisuals:post/toon_grade",
       "inputs": [
         {
           "sampler_name": "In",
           "target": "nv_fantasy",
+          "bilinear": true
+        }
+      ],
+      "output": "nv_toon"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/vivid_finish",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "nv_toon",
           "bilinear": true
         }
       ],
@@ -592,10 +618,10 @@
             "name": "ColorModulate",
             "type": "vec4",
             "value": [
-              1.0,
-              1.0,
-              1.0,
-              1.0
+              1,
+              1,
+              1,
+              1
             ]
           }
         ]
