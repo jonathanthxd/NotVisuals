@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCE_FORMAT = [97, 1]
 BUILTIN_SHADERS = {"minecraft:post/blit", "minecraft:post/box_blur"}
+CORE_OVERRIDES = {"sky.fsh", "clouds.fsh"}
 
 
 def require(ok: bool, message: str) -> None:
@@ -68,6 +69,8 @@ def verify(root: Path = ROOT, *, quiet: bool = False) -> tuple[int, int]:
                 require(fp.is_file(), f"missing fragment shader {frag}: {tag}")
                 referenced.add(fp)
                 source = fp.read_text(encoding="utf-8")
+                # Custom includes may declare shared helpers, but samplers belong
+                # to each entry point so the JSON interface is unambiguous.
             else:
                 source = ""
             ins = item.get("inputs", [])
@@ -88,9 +91,14 @@ def verify(root: Path = ROOT, *, quiet: bool = False) -> tuple[int, int]:
                         f"read before write: {target}: {tag}")
                 if sample.get("use_depth_buffer"):
                     require(target == "minecraft:main", f"unproven depth source: {tag}")
+                    require(sample.get("bilinear") is False, f"filtered depth source: {tag}")
                 if source:
                     pattern = r"\buniform\s+sampler\w*\s+" + re.escape(name + "Sampler") + r"\s*;"
                     require(bool(re.search(pattern, source)), f"missing sampler {name}Sampler in {frag}: {tag}")
+            if source:
+                declared = set(re.findall(r"\buniform\s+sampler\w*\s+(\w+)\s*;", source))
+                require(declared == {name + "Sampler" for name in names},
+                        f"unbound sampler in {frag}: {tag}")
             if out != "minecraft:main":
                 written.add(out)
             total += 1
@@ -102,6 +110,26 @@ def verify(root: Path = ROOT, *, quiet: bool = False) -> tuple[int, int]:
         require(stripped.count("{") == stripped.count("}"), f"unbalanced braces: {shader}")
         require(bool(re.search(r"\bvoid\s+main\s*\(", stripped)), f"missing main: {shader}")
         require("#moj_import" not in source, f"old shader import syntax: {shader}")
+        if shader.parent.name == "post" and shader.parent.parent.parent.name != "minecraft":
+            require(shader in referenced, f"orphan fragment shader: {shader}")
+        if shader.parent.name == "core":
+            require(shader.parent.parent.parent.name == "minecraft" and shader.name in CORE_OVERRIDES,
+                    f"unreviewed core override: {shader}")
+    core = assets / "minecraft/shaders/core"
+    require({p.name for p in core.glob('*.fsh')} == CORE_OVERRIDES,
+            "missing sky/cloud renderer entry point")
+
+    # Resolve all pack includes, and require a recorded contract for Vanilla ones.
+    contract = json.loads((ROOT / "docs/V8_RENDERER_CONTRACT.json").read_text())
+    for shader in assets.glob("*/shaders/**/*"):
+        if not shader.is_file() or shader.suffix not in {".fsh", ".vsh", ".glsl"}:
+            continue
+        for namespace, name in re.findall(r"#include\s+<([a-z0-9_.-]+):([^>]+)>", shader.read_text()):
+            require(".." not in name.split("/") and not name.startswith("/"), f"unsafe include: {shader}")
+            local = assets / namespace / "shaders/include" / name
+            vanilla = contract["files"].get("shaders/include/" + name, {})
+            require(local.is_file() or (namespace == "minecraft" and "sha256" in vanilla),
+                    f"missing include {namespace}:{name}: {shader}")
 
     if not quiet:
         print(f"PASS: {len(effects)} post-effects, {total} passes, {len(referenced)} referenced custom fragment shaders")

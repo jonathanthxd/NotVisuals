@@ -22,7 +22,6 @@
     "nv_scene": {},
     "nv_atmosphere": {},
     "nv_highlights": {},
-    "nv_clouds": {},
     "nv_tiny_h": {},
     "nv_tiny": {},
     "nv_small_h": {},
@@ -31,10 +30,6 @@
     "nv_medium": {},
     "nv_large_h": {},
     "nv_large": {},
-    "nv_cloud_soft_h": {},
-    "nv_cloud_soft": {},
-    "nv_cloud_wide_h": {},
-    "nv_cloud_wide": {},
     "nv_bloomed": {},
     "nv_pixel": {},
     "nv_fantasy": {},
@@ -150,18 +145,6 @@
         }
       ],
       "output": "nv_highlights"
-    },
-    {
-      "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "notvisuals:post/cloud_extract",
-      "inputs": [
-        {
-          "sampler_name": "In",
-          "target": "nv_inked",
-          "bilinear": true
-        }
-      ],
-      "output": "nv_clouds"
     },
     {
       "vertex_shader": "minecraft:core/screenquad",
@@ -397,122 +380,6 @@
     },
     {
       "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "minecraft:post/box_blur",
-      "inputs": [
-        {
-          "sampler_name": "In",
-          "target": "nv_clouds",
-          "bilinear": true
-        }
-      ],
-      "output": "nv_cloud_soft_h",
-      "uniforms": {
-        "BlurConfig": [
-          {
-            "name": "BlurDir",
-            "type": "vec2",
-            "value": [
-              1,
-              0
-            ]
-          },
-          {
-            "name": "Radius",
-            "type": "float",
-            "value": 6
-          }
-        ]
-      }
-    },
-    {
-      "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "minecraft:post/box_blur",
-      "inputs": [
-        {
-          "sampler_name": "In",
-          "target": "nv_cloud_soft_h",
-          "bilinear": true
-        }
-      ],
-      "output": "nv_cloud_soft",
-      "uniforms": {
-        "BlurConfig": [
-          {
-            "name": "BlurDir",
-            "type": "vec2",
-            "value": [
-              0,
-              1
-            ]
-          },
-          {
-            "name": "Radius",
-            "type": "float",
-            "value": 6
-          }
-        ]
-      }
-    },
-    {
-      "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "minecraft:post/box_blur",
-      "inputs": [
-        {
-          "sampler_name": "In",
-          "target": "nv_clouds",
-          "bilinear": true
-        }
-      ],
-      "output": "nv_cloud_wide_h",
-      "uniforms": {
-        "BlurConfig": [
-          {
-            "name": "BlurDir",
-            "type": "vec2",
-            "value": [
-              1,
-              0
-            ]
-          },
-          {
-            "name": "Radius",
-            "type": "float",
-            "value": 30
-          }
-        ]
-      }
-    },
-    {
-      "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "minecraft:post/box_blur",
-      "inputs": [
-        {
-          "sampler_name": "In",
-          "target": "nv_cloud_wide_h",
-          "bilinear": true
-        }
-      ],
-      "output": "nv_cloud_wide",
-      "uniforms": {
-        "BlurConfig": [
-          {
-            "name": "BlurDir",
-            "type": "vec2",
-            "value": [
-              0,
-              1
-            ]
-          },
-          {
-            "name": "Radius",
-            "type": "float",
-            "value": 30
-          }
-        ]
-      }
-    },
-    {
-      "vertex_shader": "minecraft:core/screenquad",
       "fragment_shader": "notvisuals:post/bloom_composite",
       "inputs": [
         {
@@ -538,16 +405,6 @@
         {
           "sampler_name": "BloomLarge",
           "target": "nv_large",
-          "bilinear": true
-        },
-        {
-          "sampler_name": "CloudSoft",
-          "target": "nv_cloud_soft",
-          "bilinear": true
-        },
-        {
-          "sampler_name": "CloudWide",
-          "target": "nv_cloud_wide",
           "bilinear": true
         }
       ],

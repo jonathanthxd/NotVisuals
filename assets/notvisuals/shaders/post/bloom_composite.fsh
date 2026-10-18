@@ -6,8 +6,6 @@ uniform sampler2D BloomTinySampler;
 uniform sampler2D BloomSmallSampler;
 uniform sampler2D BloomMediumSampler;
 uniform sampler2D BloomLargeSampler;
-uniform sampler2D CloudSoftSampler;
-uniform sampler2D CloudWideSampler;
 
 layout(location = 0) in vec2 texCoord;
 layout(location = 0) out vec4 fragColor;
@@ -22,8 +20,6 @@ void main() {
     vec3 smallGlow = texture(BloomSmallSampler, texCoord).rgb;
     vec3 mediumGlow = texture(BloomMediumSampler, texCoord).rgb;
     vec3 largeGlow = texture(BloomLargeSampler, texCoord).rgb;
-    vec3 cloudSoft = texture(CloudSoftSampler, texCoord).rgb;
-    vec3 cloudWide = texture(CloudWideSampler, texCoord).rgb;
 
     float sceneLum = luma709(scene.rgb);
     float darkScene = 1.0 - smoothstep(0.10, 0.58, sceneLum);
@@ -37,14 +33,8 @@ void main() {
     float strength = 0.95 + darkScene * 0.30 - brightScene * 0.06;
     vec3 c = scene.rgb + glow * strength * (vec3(1.0) - scene.rgb * 0.22);
 
-    vec3 cloudGlow = cloudSoft * 0.30 + cloudWide * 0.20;
-    float cloudLum = luma709(cloudGlow);
-    float cloudMask = smoothstep(0.035, 0.46, cloudLum);
-    c += cloudGlow * (0.46 + cloudMask * 0.24) * (vec3(1.0) - c * 0.16);
-
     float halo = smoothstep(0.08, 0.62, glowLum);
     c += largeGlow * halo * 0.040;
-    c += cloudWide * smoothstep(0.025, 0.32, cloudLum) * 0.055;
     c = c / (vec3(1.0) + max(c - vec3(0.94), vec3(0.0)) * 0.17);
 
     fragColor = vec4(max(c, vec3(0.0)), scene.a);

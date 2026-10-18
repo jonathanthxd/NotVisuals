@@ -12,6 +12,11 @@ const float NEUTRAL_GLOW = 0.25;
 
 float lum(vec3 c) { return dot(c, vec3(0.2126, 0.7152, 0.0722)); }
 
+vec3 sampleScene(vec2 uv) {
+    vec2 halfPixel = 0.5 / vec2(textureSize(InSampler, 0));
+    return texture(InSampler, clamp(uv, halfPixel, vec2(1.0) - halfPixel)).rgb;
+}
+
 void main() {
     vec2 px = 1.0 / vec2(textureSize(InSampler, 0));
     vec3 c = max(texture(InSampler, texCoord).rgb, vec3(0.0));
@@ -39,5 +44,20 @@ void main() {
     float weight = coloredSource * 0.88 + neutralPeak * NEUTRAL_GLOW;
     float areaGuard = 1.0 - smoothstep(0.79, 0.99, neighborhood) * 0.80;
     weight *= areaGuard;
+    // Larger luminous surfaces need context beyond the original two-pixel ring.
+    // This is an RGB fallback, never a block/material identifier.
+    vec3 wide = vec3(0.0);
+    const vec2 directions[8] = vec2[](vec2(1, 0), vec2(-1, 0), vec2(0, 1), vec2(0, -1),
+                                    vec2(0.7071, 0.7071), vec2(-0.7071, 0.7071),
+                                    vec2(0.7071, -0.7071), vec2(-0.7071, -0.7071));
+    for (int i = 0; i < 8; ++i) wide += sampleScene(texCoord + directions[i] * px * 12.0);
+    float context = lum(wide * 0.125);
+    float broadContrast = smoothstep(0.09, 0.32, center - context);
+    float darkContext = 1.0 - smoothstep(0.20, 0.44, context);
+    float coherentSurface = 1.0 - smoothstep(0.04, 0.16, abs(center - neighborhood));
+    float broad = bright * broadContrast * darkContext * coherentSurface;
+    float broadWeight = broad * mix(0.08, 0.25, colorful);
+    // Extend response where the old kernel fails; keep its compact peaks intact.
+    weight = max(weight, broadWeight * (1.0 - isolated));
     fragColor = vec4(clamp(tint * weight, 0.0, 2.0), 1.0);
 }

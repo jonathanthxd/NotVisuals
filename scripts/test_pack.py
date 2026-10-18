@@ -19,6 +19,45 @@ class PackTests(unittest.TestCase):
         self.assertGreaterEqual(effects, 4)
         self.assertGreaterEqual(passes, 25)
 
+    def test_clouds_are_not_classified_by_white_world_pixels(self):
+        graph = json.loads((ROOT / 'assets/minecraft/post_effect/end_of_frame.json').read_text())
+        self.assertFalse(any('cloud' in name for name in graph['targets']))
+        self.assertFalse(any(s['fragment_shader'].endswith('/cloud_extract') for s in graph['passes']))
+        self.assertTrue((ROOT / 'assets/minecraft/shaders/core/clouds.fsh').is_file())
+
+    def test_depth_remains_optional_and_point_sampled(self):
+        auto = json.loads((ROOT / 'assets/minecraft/post_effect/end_of_frame.json').read_text())
+        self.assertFalse(any(i.get('use_depth_buffer') for s in auto['passes'] for i in s['inputs']))
+        for name in ['depth_lab', 'depth_ink']:
+            effect = json.loads((ROOT / f'assets/notvisuals/post_effect/{name}.json').read_text())
+            depth = [i for s in effect['passes'] for i in s['inputs'] if i.get('use_depth_buffer')]
+            self.assertEqual(len(depth), 1)
+            self.assertEqual(depth[0]['target'], 'minecraft:main')
+            self.assertIs(depth[0]['bilinear'], False)
+
+    def test_reject_filtered_depth_unbound_sampler_and_missing_include(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source = Path(temp)
+            shutil.copytree(ROOT / 'assets', source / 'assets')
+            for name in ['pack.mcmeta', 'pack.png']:
+                shutil.copy2(ROOT / name, source / name)
+            path = source / 'assets/notvisuals/post_effect/depth_lab.json'
+            original = path.read_text()
+            graph = json.loads(original)
+            graph['passes'][0]['inputs'][1]['bilinear'] = True
+            path.write_text(json.dumps(graph))
+            with self.assertRaisesRegex(ValueError, 'filtered depth'):
+                verify(source, quiet=True)
+            path.write_text(original)
+            frag = source / 'assets/notvisuals/shaders/post/depth_lab.fsh'
+            original_frag = frag.read_text()
+            frag.write_text(original_frag + '\nuniform sampler2D MissingSampler;\n')
+            with self.assertRaisesRegex(ValueError, 'unbound sampler'):
+                verify(source, quiet=True)
+            frag.write_text(original_frag.replace('notvisuals:depth_edges.glsl', 'notvisuals:missing.glsl'))
+            with self.assertRaisesRegex(ValueError, 'missing include'):
+                verify(source, quiet=True)
+
     def test_reject_unknown_input_and_missing_shader(self):
         with tempfile.TemporaryDirectory() as temp:
             source = Path(temp)

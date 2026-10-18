@@ -15,22 +15,36 @@ jobs:
       - name: Validate pack graphs and shader references
         run: python3 scripts/validate_pack.py
       - name: Run validator and ZIP regression tests
-        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+        run: python3 -m unittest discover -s scripts -p 'test_pack.py' -v
       - name: Install GLSL static compiler
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq glslang-tools
-      - name: Compile standalone fragment shaders (generic GLSL check)
+      - name: Fetch pinned renderer contracts and compile GLSL variants
         run: |
-          find assets/notvisuals/shaders/post -name '*.fsh' -print0 | sort -z | xargs -0 -n 1 glslangValidator -S frag
+          python3 scripts/shader_sources.py --fetch /tmp/notvisuals-26.3
+          python3 scripts/check_glsl.py
+      - name: Install headless GLSL test dependencies
+        run: |
+          sudo apt-get install -y -qq libegl1-mesa-dev libgl1-mesa-dri
+          python3 -m venv /tmp/notvisuals-tools
+          /tmp/notvisuals-tools/bin/pip install -r scripts/requirements-gpu.txt
+      - name: Fetch pinned renderer contracts and execute synthetic shader tests
+        env:
+          NV_REQUIRE_GPU: '1'
+          NV_VANILLA_ROOT: /tmp/notvisuals-26.3
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          MESA_SHADER_CACHE_DIR: /tmp/notvisuals-mesa
+        run: |
+          /tmp/notvisuals-tools/bin/python -m unittest discover -s scripts -p 'test_gpu.py' -v
       - name: Build distribution ZIP
         run: python3 scripts/build_pack.py
       - name: Verify archive contents
-        run: python3 -m zipfile -t dist/NotVisuals_26.3_v8_candidate.zip
+        run: python3 -m zipfile -t dist/NotVisuals_26.3_v8_candidate_2.zip
       - name: Upload experimental pack
         uses: actions/upload-artifact@v4
         with:
-          name: NotVisuals-26.3-v8-candidate
-          path: dist/NotVisuals_26.3_v8_candidate.zip
+          name: NotVisuals-26.3-v8-candidate-2
+          path: dist/NotVisuals_26.3_v8_candidate_2.zip
           if-no-files-found: error
           retention-days: 14
