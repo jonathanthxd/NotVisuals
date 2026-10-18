@@ -1,0 +1,18 @@
+name: Validate NotVisuals
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Validate pack
+        run: python3 scripts/validate_pack.py
+      - name: Build distribution ZIP
+        run: python3 scripts/build_pack.py
+      - name: Verify archive contents
+        run: python3 -m zipfile -t dist/NotVisuals_26.3_v7.zip

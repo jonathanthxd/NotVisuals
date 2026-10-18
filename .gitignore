@@ -1,0 +1,12 @@
+# Built packs and temporary files
+dist/
+*.zip
+
+# Local tooling
+__pycache__/
+*.py[cod]
+.venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
