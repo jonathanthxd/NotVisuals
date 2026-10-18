@@ -1,36 +1,60 @@
-# Renderer architecture — v7 baseline
+# Arquitectura — v8 candidata 2
 
-## Pack entry points
+La raíz del repositorio es la raíz del resource pack, formato `[97,1]`, destino
+Minecraft Java 26.3. `main` conserva la referencia v7.
 
-- `pack.mcmeta` — Minecraft pack metadata (format range `[97, 1]` to `[97, 1]`, targeting 26.3 in this baseline).
-- `assets/minecraft/post_effect/end_of_frame.json` — automatic chain executed by the renderer while the pack is active.
-- `assets/notvisuals/post_effect/pixel_vivid.json` — optional command-applied pixel effect.
-- `assets/notvisuals/post_effect/soft_glow.json` — optional command-applied glow effect.
-- `assets/notvisuals/shaders/post/*.fsh` — original fragment shader source.
+## Render paths e integración
 
-## Pipeline overview
+- `assets/minecraft/shaders/core/sky.fsh`: override del fragment de cielo;
+  consume las distancias emitidas por el vertex Vanilla y las UBO Fog y
+  DynamicTransforms. Curva de horizonte y tinte acotado según color ambiental.
+- `assets/minecraft/shaders/core/clouds.fsh`: override del fragment de nubes;
+  consume distancia, vertexColor y la UBO CloudInfo ya utilizada por el vertex.
+  Conserva alpha, fog, depth bounds, transmittance y acumulación OIT.
+- No se reemplazan vertices core, terreno, modelos, texturas, estrellas, UI
+  ni el pipeline de transparencia. No hay normales de terreno o IDs de material.
+- `assets/minecraft/post_effect/end_of_frame.json`: efecto automático de **21
+  pasadas**. Medición de exposición → adaptación persistente → grade → atmósfera
+  de agua heredada → Inkline RGB → extracción de highlights → ocho pasadas de
+  blur de bloom → composición → pixel adaptativo → fantasy → Toon Grade → acabado
+  → blit. El historial de exposición es el único historial persistente.
+- Las cinco pasadas de nubes por RGB de la primera candidata se retiran. Su
+  máscara de blancos podía afectar nieve/cuarzo; Cloudcraft actúa en geometría
+  de nubes y no aporta un halo blanco al bloom.
 
-The automatic chain uses persistent 1×1 exposure history, multiple full-screen intermediate targets, a set of blur passes and compositing stages. It samples `minecraft:main` and writes the final result back to it.
+## Sistemas optativos
 
-Core components in the v7 source:
+`pixel_vivid` y `soft_glow` son los modos heredados. `depth_lab` y `depth_ink`
+leen depth de `minecraft:main` mediante `use_depth_buffer:true` y `bilinear:false`,
+escriben un target intermedio propio y hacen blit al destino principal. Ninguno
+está insertado automáticamente. No activarlos juntos en las comparaciones.
 
-1. Measure scene brightness and adapt exposure across frames.
-2. Derive atmosphere and selected cloud/highlight components from the rendered image.
-3. Produce and combine multi-scale bloom.
-4. Apply adaptive pixel styling and colour/finishing passes.
-5. Write the final image back to the main render target.
+El include `notvisuals:depth_edges.glsl` compara texels exactos, rechaza depth
+no válido y exige continuidad tangencial. Su escala de device depth es simétrica
+bajo inversión Z; no reconstruye profundidad lineal, normales ni SSAO. El
+filtrado suprime impulsos pero puede perder detalles pequeños y bordes contra clear.
 
-Read the JSON pass sequence for the **authoritative** order. The reference build contains 11 custom fragment shaders and 24 passes in the automatic chain.
+## Contratos y validación
 
-## Constraints
+`docs/V8_RENDERER_CONTRACT.json` fija rutas, hashes y SHA del espejo de assets
+26.3. `scripts/shader_sources.py --fetch /tmp/notvisuals-26.3` descarga y verifica
+los contratos **fuera del pack**, sin desactivar TLS o checksums. Los includes
+Vanilla no se copian a los assets del proyecto. Los core fragments se escriben
+para sus interfaces; no proceden de los ZIP adjuntos.
 
-- Fragment post-processing cannot assume access to true scene normals, material properties or shadow maps.
-- Colour-derived masks can misidentify bright blocks, snow, sky and water.
-- Multiple full-screen passes can be bandwidth intensive even with a tiny packaged ZIP.
-- Shader compilation, driver support, blend behaviour and actual FPS require runtime testing.
+`validate_pack.py` comprueba grafo, orden, read-before-write, conflictos de
+lectura/escritura, samplers en ambas direcciones, depth no filtrado, includes,
+entry points core y fragments huérfanos. `check_glsl.py` expande includes y
+compila entradas/variantes con glslang. `test_gpu.py` ejecuta shaders y los cinco
+grafos sobre buffers sintéticos EGL/Mesa, sin iniciar Minecraft.
 
-## Change discipline
+## Límites
 
-- Treat v7 as an immutable visual baseline; make changes in reviewable branches.
-- For every visual iteration: define expected appearance, validate JSON/shader references, test in game, capture matched screenshots and inspect `latest.log`.
-- Defer compatibility ports until the visual and optimisation phases are finished.
+Chromaglow reconoce apariencia RGB y contraste, no bloques. Un blanco iluminado
+puede parecer una lámpara. El postprocess no identifica mano, HUD ni capas de
+transparencia de forma fiable. No hay sombras geométricas, volumetría, GI ni
+propagación de luz coloreada. Los overrides core requieren validación con el
+ShaderC del cliente y pueden entrar en conflicto con otros packs/renderers.
+
+Consultar el [informe](V8_IMPLEMENTATION_REPORT.md), la
+[investigación](V8_REFERENCE_RESEARCH.md) y la [guía de QA](V8_TESTING_GUIDE.md).
