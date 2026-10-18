@@ -158,7 +158,7 @@ global. `terrain.vsh` de 26.3 no contiene el atributo Normal de las referencias.
 | Paquete ZIP | 24 archivos, raíz instalable, CRC e igualdad binaria de builds comprobadas |
 | Minecraft 26.3 / ShaderC | **No ejecutado**; no hay cliente ni latest.log disponible |
 | Capturas / vídeo real / OpenGL-Vulkan en juego | **No ejecutado**; llvmpipe EGL no demuestra ninguno de estos resultados |
-| CI remoto | Ver estado real de GitHub Actions; las comprobaciones locales no establecen su resultado |
+| CI remoto | **Success** en [push #10](https://github.com/jonathanthxd/NotVisuals/actions/runs/39177244492) y [PR #11](https://github.com/jonathanthxd/NotVisuals/actions/runs/39177248160), código `9c893c0`; ambos generaron un artefacto |
 
 Los tests GPU son opcionales para la herramienta básica (solo stdlib). En CI
 `NV_REQUIRE_GPU=1` hace fallar la ejecución si faltan dependencias/contratos;
@@ -174,8 +174,20 @@ no se convierte una ausencia de renderer en un éxito silencioso.
 - Primera candidata local preservada: SHA-256
   `a5fe37984fe51bcc5339345b2511ca269da1fac0f873570b2e126a1329bf0586`.
 
-El workflow prepara el artefacto `NotVisuals-26.3-v8-candidate-2` tras pasar CI.
-Su disponibilidad debe verificarse después del push. La API de GitHub devolvió
+Las ejecuciones correctas de [push](https://github.com/jonathanthxd/NotVisuals/actions/runs/39177244492)
+y [PR](https://github.com/jonathanthxd/NotVisuals/actions/runs/39177248160)
+generaron el artefacto `NotVisuals-26.3-v8-candidate-2`. Su digest de contenedor
+Actions no es el SHA-256 del ZIP instalable indicado arriba.
+
+Commits publicados en la rama existente: [investigación 42c0f90](https://github.com/jonathanthxd/NotVisuals/commit/42c0f9098fbc7ee8b92730449350699c2aacbd33),
+[implementación y pruebas 38c2de6](https://github.com/jonathanthxd/NotVisuals/commit/38c2de658e9689db8a2fb4fa28b3f2a94d0cc0b4)
+y [documentación 9c893c0](https://github.com/jonathanthxd/NotVisuals/commit/9c893c0d0ce7d971b29acd6a292da32ee9cd27d6).
+La página pública del PR confirma los commits nuevos. Se comprobó por Git que
+`main` permanece en `8c55138e2d2c8dfbcfa8564d78b5376c884a50c2`.
+
+No se pudo editar la descripción del PR con `gh pr edit`: la API respondió 403.
+El texto preparado queda en `dist/V8_PR_DESCRIPTION.md` en esta máquina; el PR
+sí recibe el código nuevo por el push a su rama. La API de GitHub devolvió
 403 tanto por REST como por GraphQL durante la inspección; no se atribuye esto a
 credenciales ausentes ni se solicitan tokens sin evidencia.
 

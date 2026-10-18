@@ -12,7 +12,7 @@ Prioridad: **calidad visual → optimización → compatibilidad**. Rama experim
 | Inkline | RGB automático conservado; depth oscuro optativo | Mano/HUD, foliaje, agua, entidades y estabilidad en movimiento |
 | Shape & Shade | Sombreado aparente de imagen | Datos geométricos fiables; no se han implementado sombras proyectadas/SSAO |
 | Toon Grade | Primera candidata conservada | Capturas comparables y aprobación artística |
-| QA automatizada | 21 pruebas locales, 40 compilaciones GLSL, ZIP determinista | Verificar ejecución remota CI; runtime Minecraft y revisión del propietario |
+| QA automatizada | 21 pruebas locales, 40 compilaciones GLSL, ZIP determinista | CI remoto correcto; faltan runtime Minecraft y revisión del propietario |
 
 NV-SKY-001, NV-DEPTH-001/002, NV-GLOW-001/002, NV-CLOUD-001 y NV-SKY-002
 permanecen abiertos hasta evidencia visual adecuada. Los tests sintéticos prueban
