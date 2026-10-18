@@ -7,12 +7,30 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-      - name: Validate pack
+      - name: Validate pack graphs and shader references
         run: python3 scripts/validate_pack.py
+      - name: Run validator and ZIP regression tests
+        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Install GLSL static compiler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq glslang-tools
+      - name: Compile standalone fragment shaders (generic GLSL check)
+        run: |
+          find assets/notvisuals/shaders/post -name '*.fsh' -print0 | sort -z | xargs -0 -n 1 glslangValidator -S frag
       - name: Build distribution ZIP
         run: python3 scripts/build_pack.py
       - name: Verify archive contents
-        run: python3 -m zipfile -t dist/NotVisuals_26.3_v7.zip
+        run: python3 -m zipfile -t dist/NotVisuals_26.3_v8_candidate.zip
+      - name: Upload experimental pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: NotVisuals-26.3-v8-candidate
+          path: dist/NotVisuals_26.3_v8_candidate.zip
+          if-no-files-found: error
+          retention-days: 14

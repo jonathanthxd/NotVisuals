@@ -7,7 +7,7 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT = ROOT / "dist" / "NotVisuals_26.3_v7.zip"
+DEFAULT_OUTPUT = ROOT / "dist" / "NotVisuals_26.3_v8_candidate.zip"
 
 
 def pack_files() -> list[Path]:
