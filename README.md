@@ -2,78 +2,60 @@
 
 **Vanilla graphics, reimagined.**
 
-NotVisuals is an experimental **Minecraft: Java Edition 26.3** resource pack that enhances the game's image through vanilla post-processing shaders. No Iris, OptiFine, or shader loader is required.
+Resource pack gráfico para **Minecraft Java Edition 26.3** que utiliza `minecraft:end_of_frame` y shaders GLSL de postprocesamiento. No requiere Iris, OptiFine ni un shader loader.
 
-> **Development baseline:** v7, identical in visual content to the previously published build. Experimental v8 variants are intentionally **not** included in `main`.
+**Estado de esta rama:** **v8 — Ink & Light, candidata experimental de desarrollo.** El código y la validación estática no equivalen a una compilación completa dentro de Minecraft ni a una aprobación visual. `main` continúa siendo la referencia estable v7.
 
-[**Download on Modrinth**](https://modrinth.com/resourcepack/notvisuals) · [**Report a bug**](https://github.com/jonathanthxd/NotVisuals/issues) · [**Roadmap**](docs/ROADMAP.md)
+[Modrinth (v7 publicada)](https://modrinth.com/resourcepack/notvisuals) · [Errores](https://github.com/jonathanthxd/NotVisuals/issues) · [Guía de pruebas v8](docs/V8_TESTING_GUIDE.md) · [Informe de implementación](docs/V8_IMPLEMENTATION_REPORT.md)
 
-## Features
+## Funciones implementadas en esta candidata
 
-- Automatic post-processing through `assets/minecraft/post_effect/end_of_frame.json`.
-- Adaptive exposure, atmosphere and colour grading.
-- Multi-pass bloom, adaptive pixel styling, vignette and finishing passes.
-- Optional `pixel_vivid` and `soft_glow` effects, applied with commands.
-- All shaders and post-effect definitions are editable source files.
+- Exposición adaptativa y corrección cromática heredadas de v7.
+- Bloom multinivel con **Chromaglow v8**, una extracción de píxeles luminosos más selectiva y con tintes cálidos/fríos aproximados. No identifica bloques ni simula luz coloreada real.
+- **Inkline v8**: sombreado de contacto aparente y líneas finas basadas en contraste local de imagen. No son sombras proyectadas geométricas ni contornos por ID de objeto.
+- **Toon Grade v8**: ligera cuantización tonal de medios tonos con protección de altas luces y zonas oscuras.
+- Pixelación adaptativa, atmósfera y acabado original heredados de v7.
+- **Depth Lab**, efecto **optativo** para visualizar discontinuidades del `minecraft:main` depth buffer. Su comportamiento real con OIT, Vulkan y OpenGL sigue pendiente de validación.
+- Validación ampliada de grafos de postprocesamiento y samplers, pruebas de regresión y un ZIP de candidato reproducible.
 
-NotVisuals applies **screen-space post-processing**. It is not a full shader loader and does not promise physically accurate global illumination, ray tracing or real geometric shadows.
+**Todavía no implementado como efecto verificado:** sombreado geométrico de caras, SSAO, identificación fiable de emisores, Cloudcraft de nubes por geometría ni Skyflow de cielo por geometría. Las heurísticas de nubes heredadas de v7 aún pueden confundir nieve, arena y otras superficies claras. No se ha introducido ningún core shader override en esta candidata.
 
-## Install
+## Instalación y pruebas
 
-1. Download the current release from [Modrinth](https://modrinth.com/resourcepack/notvisuals), or build the pack from this repository.
-2. Put the generated `.zip` into `.minecraft/resourcepacks/` **without extracting it**.
-3. Enable NotVisuals from Minecraft's resource-pack menu.
-4. The automatic effect runs while the pack is active. The following optional effects can be added using in-game commands (with appropriate permissions):
-
-```mcfunction
-/posteffect add @s notvisuals:pixel_vivid
-/posteffect add @s notvisuals:soft_glow
-/posteffect clear @s
-```
-
-`/posteffect clear` removes command-added effects; it **does not disable** the automatic `end_of_frame` pipeline. Combining both optional effects with the automatic pipeline may amplify glow or soften details.
-
-## Development
-
-**The repository root is the resource-pack root.** There is no nested `NotVisuals/` folder or committed release ZIP.
-
-```text
-NotVisuals/
-├── pack.mcmeta
-├── pack.png
-├── assets/
-│   ├── minecraft/post_effect/end_of_frame.json
-│   └── notvisuals/
-│       ├── post_effect/{pixel_vivid,soft_glow}.json
-│       └── shaders/post/*.fsh
-├── scripts/
-│   ├── validate_pack.py
-│   └── build_pack.py
-├── docs/
-│   ├── ARCHITECTURE.md
-│   └── ROADMAP.md
-└── LICENSE
-```
-
-Requirements: Python **3.10+**, standard library only.
+Desde esta rama:
 
 ```bash
-python scripts/validate_pack.py
-python scripts/build_pack.py
+python3 scripts/validate_pack.py
+python3 -m unittest discover -s scripts -p 'test_*.py' -v
+python3 scripts/build_pack.py
 ```
 
-The build script creates `dist/NotVisuals_26.3_v7.zip` with only the playable pack content. You can also use the editable repository directory directly in `.minecraft/resourcepacks/` for local testing, if supported by your Minecraft installation.
+El resultado se genera en `dist/NotVisuals_26.3_v8_candidate.zip`. También se sube como artefacto temporal en GitHub Actions tras superar el workflow. Colócalo **sin extraer** en `.minecraft/resourcepacks/`, selecciónalo y prueba en **Minecraft 26.3**, idealmente comparándolo con v7 y Vanilla.
 
-> Static validation checks resource layout, JSON parsing and shader references. It **cannot** prove that GLSL compiles or that the effects look correct inside Minecraft. Test actual builds in Minecraft 26.3 before publishing.
+El efecto base es automático. El laboratorio de profundidad es optativo:
 
-## Development priorities
+```mcfunction
+/posteffect add @s notvisuals:depth_lab
+/posteffect list @s
+/posteffect remove @s notvisuals:depth_lab
+```
 
-1. **Visual fidelity first** — improve every viable artistic system until the main build reaches its target visual quality.
-2. **Optimization second** — profile and reduce GPU/VRAM cost while preserving the approved look.
-3. **Compatibility last** — investigate and implement ports only after the main build is visually complete and optimized.
+Otros efectos opcionales heredados: `notvisuals:pixel_vivid` y `notvisuals:soft_glow`. Evita encenderlos simultáneamente durante comparaciones controladas.
 
-See [the development roadmap](docs/ROADMAP.md) and [technical architecture](docs/ARCHITECTURE.md).
+**Atención:** el postprocesamiento puede afectar parcialmente a HUD/partículas; la máscara perfecta de interfaz aún no existe. Si aparecen pantallas negras, errores ShaderC o problemas de transparencia, desactiva la candidata y conserva `latest.log`.
 
-## License
+## Desarrollo y estado técnico
 
-This project is licensed under **GPL-3.0**. See [LICENSE](LICENSE) for the complete terms. Minecraft is a trademark of Mojang Studios / Microsoft; NotVisuals is an independent resource pack.
+- [Arquitectura y dependencias](docs/ARCHITECTURE.md)
+- [Dirección visual v8](docs/VISUAL_DIRECTION_V8.md)
+- [Informe de implementación](docs/V8_IMPLEMENTATION_REPORT.md)
+- [Matriz y guía de testing](docs/V8_TESTING_GUIDE.md)
+- [Roadmap](docs/ROADMAP.md)
+
+La raíz del repositorio es directamente la raíz del resource pack. `pack.mcmeta` y `pack.png` deben quedar en la raíz del ZIP. No se incluyen tests, documentación ni Git en la distribución.
+
+**Orden de prioridades:** máxima calidad visual → optimización sin pérdida visual → compatibilidad entre versiones.
+
+## Licencia
+
+GPL-3.0; consulta [LICENSE](LICENSE). Proyecto independiente, no afiliado a Mojang Studios/Microsoft.
