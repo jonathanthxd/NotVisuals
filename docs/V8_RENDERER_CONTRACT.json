@@ -1,0 +1,179 @@
+{
+  "repository": "InventivetalentDev/minecraft-assets",
+  "commit": "f44cf36a295b1ecb0d34516765a44a8b5be10761",
+  "base_url": "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/f44cf36a295b1ecb0d34516765a44a8b5be10761/assets/minecraft/",
+  "files": {
+    "shaders/include/fog.glsl": {
+      "sha256": "c96edf62b3dca66b2dc314516b0cd74f2e12fbe7514342e28a5440ad8dfc49be",
+      "bytes": 1610
+    },
+    "shaders/include/dynamictransforms.glsl": {
+      "sha256": "13db01aebd7ceeabf7769b1d60d0d5691f88072f302350ca2499f5d962237c7a",
+      "bytes": 230
+    },
+    "shaders/include/oit.glsl": {
+      "sha256": "d90c5f454fffff35e81673b9806531d468d9597557a2bf7d9e37ed5cd7c18989",
+      "bytes": 947
+    },
+    "shaders/include/oit_common.glsl": {
+      "sha256": "bd5f404aea0c8b75f32471e763332fdfa81a30106dfd1318a3fec0a82e1c7720",
+      "bytes": 1261
+    },
+    "shaders/include/oit_depth_sample.glsl": {
+      "sha256": "fcf65ad828e0a079652096ceea20da9367ef38c53d77e88da74a7f00718e8b90",
+      "bytes": 1546
+    },
+    "shaders/include/oit_depth_bounds.glsl": {
+      "sha256": "892f076e405e784f44da5f1a59c4aedeffe45b6a1b56ef733ff515c3218c4a04",
+      "bytes": 486
+    },
+    "shaders/include/oit_add_transmittance.glsl": {
+      "sha256": "79f5b662a4550428757bac08b9e725dae775d9efc73416b96940009c8ae2a8f4",
+      "bytes": 1997
+    },
+    "shaders/include/oit_sample.glsl": {
+      "sha256": "92c2735235ac4c7122230baeac027b24784d0d2d4cc0b3740c2ca97855832b90",
+      "bytes": 4094
+    },
+    "shaders/include/projection.glsl": {
+      "sha256": "54ad58fcd6b3811992a9432628dba49900b2d9d33e075424224b0e7f0603818e",
+      "bytes": 362
+    },
+    "shaders/include/globals.glsl": {
+      "sha256": "85784f154ace14501ff33310a69b48e6d01f3af30b52444ce6192b9049be1060",
+      "bytes": 260
+    },
+    "shaders/core/sky.vsh": {
+      "sha256": "3c822e788e0040b19963a04e9d0b21ccdef5fb21de4bbae93d8701a3222c578f",
+      "bytes": 546
+    },
+    "shaders/core/sky.fsh": {
+      "sha256": "e677b2df88e9e697a6aa33800d865e456cf8ea05e16f513628d8e702092d8501",
+      "bytes": 455
+    },
+    "shaders/core/clouds.vsh": {
+      "sha256": "8bdfe295d20d11c9c8136ecc4b0269ddf28e8ce2423b019b4f121feb9704f234",
+      "bytes": 2876
+    },
+    "shaders/core/clouds.fsh": {
+      "sha256": "98ed038991d16691b4fda45a82436025fa54d90f11840dd6ce42b8359bf76588",
+      "bytes": 735
+    },
+    "shaders/core/terrain.vsh": {
+      "sha256": "001120e03dd7b9d690d3c98a1563334497c465f79ce14dc557d3d4caa02299a0",
+      "bytes": 1529
+    },
+    "shaders/core/terrain.fsh": {
+      "sha256": "e440d13f0c3c3aa0ae584a7e006410e4318922c5bc3c94a7a1be28b89b221bf9",
+      "bytes": 1597
+    },
+    "models/block/torch.json": {
+      "sha256": "834b8a24a98d2a2c3505de5a33a734fb327cd036086abd2f9f8141c2d309ba89",
+      "bytes": 106
+    },
+    "models/block/soul_torch.json": {
+      "sha256": "a97432ec47984a3cfe2442da039f75965270291503a037b24f85259e7bd23a82",
+      "bytes": 111
+    },
+    "models/block/copper_torch.json": {
+      "sha256": "f21aedf042efb81e9c1224a7ee4bb4514a9b78ca234de9909508434c8fbaf6f7",
+      "bytes": 113
+    },
+    "models/block/lantern.json": {
+      "sha256": "880a9f063f1c0c3131ec05fcc8e1bde827f004f6bb58caea4ec76ea722b368dc",
+      "bytes": 112
+    },
+    "models/block/soul_lantern.json": {
+      "sha256": "5c4a454f5cd51dc7d29069f235fc8a861586d0c4302bcc93fe452292f94ee770",
+      "bytes": 117
+    },
+    "models/block/copper_lantern.json": {
+      "sha256": "587b7ee040cd0b34e873da8edbd748e6090de732d95cc47e8f2a5b9b42dac6ba",
+      "bytes": 119
+    },
+    "models/block/glowstone.json": {
+      "sha256": "47558464825a8e6d05bfc33a8332c4856d7b3dd71e1b13b6c8b51e411a3835e3",
+      "bytes": 102
+    },
+    "models/block/sea_lantern.json": {
+      "sha256": "147925c1ef7c7fea3bc88806068e53395f742f519cdb9680f4eefe2eee98252f",
+      "bytes": 104
+    },
+    "models/block/shroomlight.json": {
+      "sha256": "7fe254439efdcb0a3aa2f46e9f5c3557e94622496945569cf5e2a59b36acb6ce",
+      "bytes": 104
+    },
+    "models/block/ochre_froglight.json": {
+      "sha256": "c3cbd3eaad864a8bc427a8039901691abfe464398a5bb1f7c0a247a5bf4d12e3",
+      "bytes": 167
+    },
+    "models/block/verdant_froglight.json": {
+      "sha256": "baba84490c4f7506aa74303a2ef8cb20cb8e1c739f6aa7b138afef0a83da2b6e",
+      "bytes": 171
+    },
+    "models/block/pearlescent_froglight.json": {
+      "sha256": "7fd322a559ac4724395c72357c0373b6fbd9d84647ba661e78e808fae335d7e5",
+      "bytes": 179
+    },
+    "models/block/end_rod.json": {
+      "sha256": "bb7a9718790b9a3b6878d6800cf9f97450d5333715e9f05ae3fa6e26abbe3ef9",
+      "bytes": 1581
+    },
+    "models/block/redstone_lamp_on.json": {
+      "sha256": "ff740eeea819d0e46449c5b6c71245b44372f05b5194021a2f2a945edbd10972",
+      "bytes": 109
+    },
+    "models/block/respawn_anchor_1.json": {
+      "sha256": "5790b0feebbde774afb6770d8924e7d767376512b8fc1e38d1d87cc8eed83045",
+      "bytes": 225
+    },
+    "models/block/blast_furnace_on.json": {
+      "sha256": "ac8f3a35104a8fcee5794959dc30826d780e3ffd9b80835506e9b758f1107395",
+      "bytes": 217
+    },
+    "models/block/furnace_on.json": {
+      "sha256": "c6cc3c51295082082a41c17fef84742207d2d8a5913b72260bb1dcda27063f72",
+      "bytes": 199
+    },
+    "models/block/smoker_on.json": {
+      "sha256": "b1cbd540895ce35ea3867b06c3606957d9d8d0fdc3c4e3969f924a68f8e71734",
+      "bytes": 255
+    },
+    "models/block/candle_one_candle_lit.json": {
+      "sha256": "6029f40b33427c81634903617bef47f20ce2fdc4e6fad42b8b3f976a8a2b5a2d",
+      "bytes": 156
+    },
+    "models/block/cave_vines_lit.json": {
+      "sha256": "3d801f7847ebe709f5bd857c8aa6957df4cc39084530069bf88a6789a4f76ea2",
+      "bytes": 106
+    },
+    "models/block/glow_lichen.json": {
+      "sha256": "44e72c955a0da00bb7ff32b7c3b32ec325cf8b1f23928f5ad149ec3e7e6068f7",
+      "bytes": 444
+    },
+    "models/block/lava.json": {
+      "sha256": "f6e030efaf83245e21636706fec78e9cc5ef83e12b753a7432dff2427e5710dc",
+      "bytes": 68
+    },
+    "models/block/fire_floor0.json": {
+      "sha256": "76afb2def96c3f22bcb6ce025ca5c204cb76c1d42630def8abffb02ad04798d7",
+      "bytes": 111
+    },
+    "models/block/soul_fire_floor0.json": {
+      "sha256": "8a007978d6213d6879a4d3bf1942381dd9bf0fc75ac71535d43331e0e591900d",
+      "bytes": 116
+    },
+    "models/block/campfire.json": {
+      "sha256": "c426e97ea0884dc323b1ee529e67b5c8dcf153c4420b7ec1f5c9117caf7ba2d3",
+      "bytes": 167
+    },
+    "models/block/soul_campfire.json": {
+      "sha256": "88614975527a2cd9ac28f13ea77b31ed51bdc4c36f30f8ca474ad2824146e4fb",
+      "bytes": 177
+    },
+    "models/block/beacon.json": {
+      "sha256": "04abc04bab23a8e42eac76e0b30402d69090334beb69fcad0917247f3e80ce71",
+      "bytes": 2053
+    }
+  }
+}
