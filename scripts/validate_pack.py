@@ -89,7 +89,7 @@ def verify(root: Path = ROOT, *, quiet: bool = False) -> tuple[int, int]:
                 if sample.get("use_depth_buffer"):
                     require(target == "minecraft:main", f"unproven depth source: {tag}")
                 if source:
-                    pattern = r"\\buniform\\s+sampler\\w*\\s+" + re.escape(name + "Sampler") + r"\\s*;"
+                    pattern = r"\buniform\s+sampler\w*\s+" + re.escape(name + "Sampler") + r"\s*;"
                     require(bool(re.search(pattern, source)), f"missing sampler {name}Sampler in {frag}: {tag}")
             if out != "minecraft:main":
                 written.add(out)
