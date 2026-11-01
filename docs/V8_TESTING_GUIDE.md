@@ -1,3 +1,5 @@
+> **Nueva Candidate 3 — Aurora Sky:** el texto histórico inferior corresponde a Candidate 2. Para las nuevas pruebas de cielo, sol, auroras y nubes ocultas, consultar [V8_AURORA_SKY.md](V8_AURORA_SKY.md). Usar el ZIP `NotVisuals_26.3_v8_candidate_3_AuroraSky.zip` generado por CI y probarlo solo, sin superponer `Cielo_test` u otras versiones. El resto de pruebas de iluminación, Depth Lab y Depth Ink sigue siendo válido.
+
 # Guía de pruebas — NotVisuals v8 candidata 2
 
 Esta build es **experimental**. Las verificaciones automatizadas descritas en el

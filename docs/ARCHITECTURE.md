@@ -58,3 +58,9 @@ ShaderC del cliente y pueden entrar en conflicto con otros packs/renderers.
 
 Consultar el [informe](V8_IMPLEMENTATION_REPORT.md), la
 [investigación](V8_REFERENCE_RESEARCH.md) y la [guía de QA](V8_TESTING_GUIDE.md).
+
+## Candidate 3: Aurora Sky (reemplazo visual del cielo)
+
+El núcleo de Candidate 2 se conserva. Core shaders adicionales `sky.vsh`, `position_tex.{vsh,fsh}`, `position_color.vsh`, `stars.vsh` interponen un atlas día/noche desde la textura `minecraft:textures/environment/celestial/sun.png`. Se conserva `sky.fsh` adaptado y se desactiva la geometría Vanilla de nubes en `clouds.vsh`, para evitar duplicaciones. `clouds.fsh` conserva el contrato con el renderer. Este enfoque depende de rutas internas y de la detección del quad solar.
+
+El atlas original de 3080×4064 se reconstruye con `scripts/sky_atlas.py` desde fragmentos Base64 en `source/aurora_sky/sun_atlas/`, SHA-256 fijado; `build_pack.py` lo incluye en la distribución. No debe transparentarse ni confundirse con un sprite convencional. Ver [integración y guía Aurora Sky](V8_AURORA_SKY.md). Este override unificado no ha sido aceptado todavía en un cliente Minecraft real.

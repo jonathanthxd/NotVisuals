@@ -1,3 +1,5 @@
+> **Candidate 3:** se añadió Aurora Sky sin modificar el pipeline principal de Candidate 2. Ver [V8_AURORA_SKY.md](V8_AURORA_SKY.md) para arquitectura, integridad del atlas original, instrucciones de prueba y riesgos. El informe que sigue describe la Candidate 2 histórica.
+
 # NotVisuals v8 — candidata 2: informe de implementación
 
 ## 1. Estado general

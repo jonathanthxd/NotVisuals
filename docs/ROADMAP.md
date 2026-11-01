@@ -35,3 +35,11 @@ como paso previo a generar el ZIP; no se degrada ni recompone artísticamente.
 No afirmar que ShaderC/Sodium/ModernFix/FerriteCore esté validado en el nuevo ZIP
 hasta pruebas reales. La autorización de redistribución de los materiales
 aportados por un tercero queda por aclarar antes de release pública.
+
+## Candidate 3 — Aurora Sky (integración experimental)
+
+- Implementado un atlas de cielo personalizado con nubes artísticas y auroras nocturnas, directamente sobre la Candidate 2.
+- Integrados los core shaders de cielo, sol, estrellas y nubes; nubes Vanilla ocultadas en shader.
+- 15 partes de atlas original almacenadas en source, reconstrucción sin pérdidas y ZIP reproducible, CI aprobado.
+- **Pendiente:** comprobar unificación real en Minecraft 26.3 (Sodium, ModernFix, FerriteCore, y Vanilla), visuales día/noche/tormenta/Nether/End, ausencia de doble sol/nubes y errores ShaderC; confirmar permiso de redistribución de contenido recibido de un tercero.
+- No merge, release ni Modrinth hasta pruebas y aprobación. [Documento técnico](V8_AURORA_SKY.md).

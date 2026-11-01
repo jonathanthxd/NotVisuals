@@ -4,7 +4,7 @@
 
 Resource pack gráfico para **Minecraft Java Edition 26.3** que utiliza `minecraft:end_of_frame` y shaders GLSL de postprocesamiento. No requiere Iris, OptiFine ni un shader loader.
 
-**Estado de esta rama:** **v8 — Ink & Light, candidata 2 experimental.** El código y la validación estática no equivalen a una compilación completa dentro de Minecraft ni a una aprobación visual. `main` continúa siendo la referencia estable v7.
+**Estado de esta rama:** **v8 — Ink & Light, candidata 3: Aurora Sky (experimental).** El código y la validación estática no equivalen a una compilación completa dentro de Minecraft ni a una aprobación visual. `main` continúa siendo la referencia estable v7.
 
 [Modrinth (v7 publicada)](https://modrinth.com/resourcepack/notvisuals) · [Errores](https://github.com/jonathanthxd/NotVisuals/issues) · [Guía de pruebas v8](docs/V8_TESTING_GUIDE.md) · [Informe de implementación](docs/V8_IMPLEMENTATION_REPORT.md)
 
@@ -15,11 +15,11 @@ Resource pack gráfico para **Minecraft Java Edition 26.3** que utiliza `minecra
 - **Inkline v8**: sombreado de contacto aparente y líneas finas basadas en contraste local de imagen. No son sombras proyectadas geométricas ni contornos por ID de objeto.
 - **Toon Grade v8**: ligera cuantización tonal de medios tonos con protección de altas luces y zonas oscuras.
 - Pixelación adaptativa, atmósfera y acabado original heredados de v7.
-- **Skyflow y Cloudcraft**: fragments específicos de cielo/nubes de 26.3, con tintes contenidos y cobertura OIT conservada. Sin nubes volumétricas ni formas redondeadas nuevas.
+- **Aurora Sky (Candidate 3):** atlas de cielo día/noche con auroras y nubes artísticas, integrado mediante core shaders sobre los efectos de Candidate 2. Los shaders ocultan nubes Vanilla duplicadas. El atlas original se reconstruye sin pérdida antes de empaquetar. Consulta [integración Aurora Sky](docs/V8_AURORA_SKY.md).
 - **Depth Ink**, contorno oscuro **optativo**, y **Depth Lab**, efecto **optativo** para visualizar discontinuidades del `minecraft:main` depth buffer. Su comportamiento real con OIT, Vulkan y OpenGL sigue pendiente de validación.
 - Validación de grafos, samplers e includes; tests de buffers GLSL sintéticos opcionales y ZIP reproducible. Consulta la guía para instalar dependencias GPU y ejecutar las 21 pruebas completas; la construcción básica sigue usando solo stdlib.
 
-**Sin verificar en Minecraft:** los nuevos core overrides, la estética de cielo/nubes, la respuesta por bloque emisor y el flicker de mano. Se eliminó la selección de blancos como nubes del postprocess automático. No hay sombreado geométrico de terreno, SSAO ni identificación fiable de materiales; Chromaglow sigue siendo una aproximación RGB. Consulta el [informe de candidata 2](docs/V8_IMPLEMENTATION_REPORT.md) y la [investigación de referencias](docs/V8_REFERENCE_RESEARCH.md).
+**Sin verificar en Minecraft como pack unificado:** los nuevos core overrides, la estética de cielo/nubes, la respuesta por bloque emisor y el flicker de mano. Se eliminó la selección de blancos como nubes del postprocess automático. No hay sombreado geométrico de terreno, SSAO ni identificación fiable de materiales; Chromaglow sigue siendo una aproximación RGB. Consulta el [informe de candidata 2](docs/V8_IMPLEMENTATION_REPORT.md) y la [investigación de referencias](docs/V8_REFERENCE_RESEARCH.md).
 
 ## Instalación y pruebas
 
@@ -31,7 +31,7 @@ python3 -m unittest discover -s scripts -p 'test_*.py' -v
 python3 scripts/build_pack.py
 ```
 
-El resultado se genera en `dist/NotVisuals_26.3_v8_candidate_2.zip`. El workflow prepara el artefacto temporal `NotVisuals-26.3-v8-candidate-2` tras pasar CI; comprueba su ejecución antes de descargarlo. Colócalo **sin extraer** en `.minecraft/resourcepacks/`, selecciónalo y prueba en **Minecraft 26.3**, idealmente comparándolo con v7 y Vanilla.
+El resultado se genera en `dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip`. El workflow prepara el artefacto temporal `NotVisuals-26.3-v8-candidate-3-AuroraSky` tras pasar CI; comprueba su ejecución antes de descargarlo. Colócalo **sin extraer** en `.minecraft/resourcepacks/`, selecciónalo y prueba en **Minecraft 26.3**, idealmente comparándolo con v7 y Vanilla.
 
 El efecto base es automático. El laboratorio de profundidad es optativo:
 
@@ -54,6 +54,7 @@ Otros efectos opcionales heredados: `notvisuals:pixel_vivid` y `notvisuals:soft_
 - [Informe de implementación](docs/V8_IMPLEMENTATION_REPORT.md)
 - [Matriz y guía de testing](docs/V8_TESTING_GUIDE.md)
 - [Roadmap](docs/ROADMAP.md)
+- [Aurora Sky — Candidate 3](docs/V8_AURORA_SKY.md)
 
 La raíz del repositorio es directamente la raíz del resource pack. `pack.mcmeta` y `pack.png` deben quedar en la raíz del ZIP. No se incluyen tests, documentación ni Git en la distribución.
 
