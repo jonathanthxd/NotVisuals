@@ -40,11 +40,11 @@ jobs:
       - name: Build distribution ZIP
         run: python3 scripts/build_pack.py
       - name: Verify archive contents
-        run: python3 -m zipfile -t dist/NotVisuals_26.3_v8_candidate_2.zip
+        run: python3 -m zipfile -t dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip
       - name: Upload experimental pack
         uses: actions/upload-artifact@v4
         with:
-          name: NotVisuals-26.3-v8-candidate-2
-          path: dist/NotVisuals_26.3_v8_candidate_2.zip
+          name: NotVisuals-26.3-v8-candidate-3-AuroraSky
+          path: dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip
           if-no-files-found: error
           retention-days: 14

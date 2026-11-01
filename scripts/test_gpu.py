@@ -29,6 +29,14 @@ SKY_VERTEX = VERTEX.replace('layout(location=0) out vec2 texCoord;',
     'layout(location=0) out float sphericalVertexDistance;\n'
     'layout(location=1) out float cylindricalVertexDistance;').replace(
     'texCoord = uv;', 'sphericalVertexDistance = uv.x * 1000.0; cylindricalVertexDistance = uv.x * 1000.0;')
+# Candidate 3 adds custom sky varyings; synthetic fallback uses skyFlag=0.
+SKY_VERTEX = SKY_VERTEX.replace(
+    'layout(location=1) out float cylindricalVertexDistance;',
+    'layout(location=1) out float cylindricalVertexDistance;\\nlayout(location=2) out vec3 skyRay;\\nlayout(location=3) out float skyFlag;'
+).replace(
+    'cylindricalVertexDistance = uv.x * 1000.0;',
+    'cylindricalVertexDistance = uv.x * 1000.0; skyRay = vec3(0.0); skyFlag = 0.0;'
+)
 CLOUD_VERTEX = VERTEX.replace('layout(location=0) out vec2 texCoord;',
     'layout(location=0) out float vertexDistance;\n'
     'layout(location=1) out vec4 vertexColor;\nuniform vec4 TestColor;\nuniform float TestDistance;').replace(

@@ -1,14 +1,25 @@
 #version 330
 #extension GL_ARB_separate_shader_objects : require
+
 #include <minecraft:fog.glsl>
 #include <minecraft:dynamictransforms.glsl>
 
-// Skyflow: sky geometry only. Vanilla supplies environmental colour, not time.
 layout(location = 0) in float sphericalVertexDistance;
 layout(location = 1) in float cylindricalVertexDistance;
+layout(location = 2) in vec3 skyRay;
+layout(location = 3) in float skyFlag;
+
 layout(location = 0) out vec4 fragColor;
 
 void main() {
+
+    if (skyFlag > 0.5) {
+        if (!gl_FrontFacing) discard;
+        fragColor = vec4(0.0, 0.0, 0.0, 1.0);
+        return;
+    }
+
+    // Candidate 2 Skyflow preserved for non-special sky draws.
     float horizon = total_fog_value(sphericalVertexDistance, cylindricalVertexDistance,
                                   0.0, FogSkyEnd, FogSkyEnd, FogSkyEnd);
     float curve = mix(horizon, smoothstep(0.0, 1.0, horizon), 0.35);

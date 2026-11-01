@@ -10,6 +10,7 @@ from pathlib import Path
 from zipfile import ZipFile
 
 from build_pack import build
+from sky_atlas import SHA256
 from validate_pack import ROOT, verify
 
 
@@ -87,6 +88,9 @@ class PackTests(unittest.TestCase):
                 names = set(arc.namelist())
                 self.assertIn("pack.mcmeta", names)
                 self.assertIn("pack.png", names)
+                self.assertIn("assets/minecraft/textures/environment/celestial/sun.png", names)
+                import hashlib
+                self.assertEqual(hashlib.sha256(arc.read("assets/minecraft/textures/environment/celestial/sun.png")).hexdigest(), SHA256)
                 self.assertIn("assets/minecraft/post_effect/end_of_frame.json", names)
                 self.assertNotIn("README.md", names)
                 self.assertFalse(any(name.startswith("scripts/") for name in names))

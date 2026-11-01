@@ -23,3 +23,15 @@ vídeos/capturas Vanilla/v7/v8.1/v8.2. No fusionar, publicar release o actualiza
 Modrinth sin aceptación expresa.
 
 La optimización de GPU/VRAM y los ports se mantienen aplazados.
+
+## Candidata 3 — Aurora Sky (experimental, pendiente de juego)
+
+El atlas diurno/nocturno original, las auroras y el cielo de nubes ilustradas
+se integran desde el resource pack de prueba aportado por el propietario.
+Se conserva el postproceso de Candidate 2 y se oculta la geometría de
+nubes Vanilla con un vertex override para evitar duplicados.
+El atlas se reconstruye de 15 fragmentos Git-texto, verificando su SHA256,
+como paso previo a generar el ZIP; no se degrada ni recompone artísticamente.
+No afirmar que ShaderC/Sodium/ModernFix/FerriteCore esté validado en el nuevo ZIP
+hasta pruebas reales. La autorización de redistribución de los materiales
+aportados por un tercero queda por aclarar antes de release pública.

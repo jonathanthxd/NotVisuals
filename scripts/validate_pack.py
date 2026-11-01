@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCE_FORMAT = [97, 1]
 BUILTIN_SHADERS = {"minecraft:post/blit", "minecraft:post/box_blur"}
-CORE_OVERRIDES = {"sky.fsh", "clouds.fsh"}
+CORE_OVERRIDES = {"sky.fsh", "clouds.fsh", "position_tex.fsh"}
 
 
 def require(ok: bool, message: str) -> None:
