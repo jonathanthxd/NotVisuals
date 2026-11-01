@@ -1,0 +1,4 @@
+# Developer-only synthetic GLSL tests, never bundled in the resource pack.
+moderngl==5.12.0
+glcontext==3.1.0
+numpy==2.3.5

@@ -1,46 +1,63 @@
 #version 330
 #extension GL_ARB_separate_shader_objects : require
 
+// Chromaglow v8: appearance-only color response. RGB cannot identify block IDs.
 uniform sampler2D InSampler;
-
 layout(location = 0) in vec2 texCoord;
 layout(location = 0) out vec4 fragColor;
 
-float luma709(vec3 c) {
-    return dot(c, vec3(0.2126, 0.7152, 0.0722));
+const float EMISSION_THRESHOLD = 0.055;
+const float EMISSION_SOFTNESS = 0.21;
+const float NEUTRAL_GLOW = 0.25;
+
+float lum(vec3 c) { return dot(c, vec3(0.2126, 0.7152, 0.0722)); }
+
+vec3 sampleScene(vec2 uv) {
+    vec2 halfPixel = 0.5 / vec2(textureSize(InSampler, 0));
+    return texture(InSampler, clamp(uv, halfPixel, vec2(1.0) - halfPixel)).rgb;
 }
 
 void main() {
-    vec2 texel = 1.0 / vec2(textureSize(InSampler, 0));
-    vec3 c = texture(InSampler, texCoord).rgb;
-    float lum = luma709(c);
+    vec2 px = 1.0 / vec2(textureSize(InSampler, 0));
+    vec3 c = max(texture(InSampler, texCoord).rgb, vec3(0.0));
+    vec3 x1 = texture(InSampler, clamp(texCoord + vec2(px.x * 2.0, 0.0), vec2(0.0), vec2(1.0))).rgb;
+    vec3 x2 = texture(InSampler, clamp(texCoord - vec2(px.x * 2.0, 0.0), vec2(0.0), vec2(1.0))).rgb;
+    vec3 x3 = texture(InSampler, clamp(texCoord + vec2(0.0, px.y * 2.0), vec2(0.0), vec2(1.0))).rgb;
+    vec3 x4 = texture(InSampler, clamp(texCoord - vec2(0.0, px.y * 2.0), vec2(0.0), vec2(1.0))).rgb;
+    float center = lum(c);
+    float neighborhood = lum((x1 + x2 + x3 + x4) * 0.25);
+    float isolated = smoothstep(EMISSION_THRESHOLD, EMISSION_SOFTNESS, center - neighborhood);
+    float bright = smoothstep(0.49, 0.91, center);
+    float saturation = max(c.r, max(c.g, c.b)) - min(c.r, min(c.g, c.b));
+    float colorful = smoothstep(0.10, 0.33, saturation);
 
-    vec3 n0 = texture(InSampler, texCoord + vec2(texel.x, 0.0)).rgb;
-    vec3 n1 = texture(InSampler, texCoord - vec2(texel.x, 0.0)).rgb;
-    vec3 n2 = texture(InSampler, texCoord + vec2(0.0, texel.y)).rgb;
-    vec3 n3 = texture(InSampler, texCoord - vec2(0.0, texel.y)).rgb;
-    vec3 n4 = texture(InSampler, texCoord + texel).rgb;
-    vec3 n5 = texture(InSampler, texCoord - texel).rgb;
-    vec3 n6 = texture(InSampler, texCoord + vec2(texel.x, -texel.y)).rgb;
-    vec3 n7 = texture(InSampler, texCoord + vec2(-texel.x, texel.y)).rgb;
+    // Require bright *locally concentrated* pixels before colorful emission.
+    float warm = smoothstep(0.045, 0.26, c.r - c.b) * smoothstep(0.02, 0.19, c.g - c.b);
+    float cold = smoothstep(0.045, 0.25, c.b - c.r) * smoothstep(0.02, 0.19, c.g - c.r);
+    float coloredSource = isolated * bright * colorful;
+    vec3 tint = c;
+    tint = mix(tint, vec3(center * 1.13, center * 0.75, center * 0.34), warm * coloredSource * 0.35);
+    tint = mix(tint, vec3(center * 0.35, center * 0.96, center * 1.14), cold * coloredSource * 0.33);
 
-    float around = (luma709(n0) + luma709(n1) + luma709(n2) + luma709(n3) + luma709(n4) + luma709(n5) + luma709(n6) + luma709(n7)) * 0.125;
-    float localPeak = max(lum - around, 0.0);
-
-    float maxC = max(c.r, max(c.g, c.b));
-    float minC = min(c.r, min(c.g, c.b));
-    float saturation = maxC - minC;
-
-    float broad = smoothstep(0.48, 0.91, lum) * smoothstep(0.26, 0.73, around);
-    float colorful = smoothstep(0.09, 0.43, saturation) * smoothstep(0.43, 0.90, lum);
-    float specular = smoothstep(0.025, 0.20, localPeak) * smoothstep(0.54, 0.94, lum);
-    float softWhite = smoothstep(0.66, 0.97, lum) * smoothstep(0.48, 0.86, around) * (1.0 - smoothstep(0.12, 0.32, saturation));
-
-    float weight = max(broad, max(colorful * 0.82, specular * (0.34 + saturation * 0.85)));
-    weight = max(weight, softWhite * 0.92);
-    weight *= smoothstep(0.34, 0.56, lum);
-
-    vec3 hueGlow = mix(vec3(lum), c, 1.12);
-    float energy = 0.72 + 0.28 * smoothstep(0.60, 1.00, lum);
-    fragColor = vec4(max(hueGlow, vec3(0.0)) * weight * energy, 1.0);
+    // White regions without local peaks only contribute a faint neutral halo.
+    float neutralPeak = isolated * smoothstep(0.71, 0.98, center) * (1.0 - colorful);
+    float weight = coloredSource * 0.88 + neutralPeak * NEUTRAL_GLOW;
+    float areaGuard = 1.0 - smoothstep(0.79, 0.99, neighborhood) * 0.80;
+    weight *= areaGuard;
+    // Larger luminous surfaces need context beyond the original two-pixel ring.
+    // This is an RGB fallback, never a block/material identifier.
+    vec3 wide = vec3(0.0);
+    const vec2 directions[8] = vec2[](vec2(1, 0), vec2(-1, 0), vec2(0, 1), vec2(0, -1),
+                                    vec2(0.7071, 0.7071), vec2(-0.7071, 0.7071),
+                                    vec2(0.7071, -0.7071), vec2(-0.7071, -0.7071));
+    for (int i = 0; i < 8; ++i) wide += sampleScene(texCoord + directions[i] * px * 12.0);
+    float context = lum(wide * 0.125);
+    float broadContrast = smoothstep(0.09, 0.32, center - context);
+    float darkContext = 1.0 - smoothstep(0.20, 0.44, context);
+    float coherentSurface = 1.0 - smoothstep(0.04, 0.16, abs(center - neighborhood));
+    float broad = bright * broadContrast * darkContext * coherentSurface;
+    float broadWeight = broad * mix(0.08, 0.25, colorful);
+    // Extend response where the old kernel fails; keep its compact peaks intact.
+    weight = max(weight, broadWeight * (1.0 - isolated));
+    fragColor = vec4(clamp(tint * weight, 0.0, 2.0), 1.0);
 }

@@ -5,9 +5,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
+from sky_atlas import ensure_atlas
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT = ROOT / "dist" / "NotVisuals_26.3_v7.zip"
+DEFAULT_OUTPUT = ROOT / "dist" / "NotVisuals_26.3_v8_candidate_3_AuroraSky.zip"
 
 
 def pack_files() -> list[Path]:
@@ -22,6 +23,7 @@ def pack_files() -> list[Path]:
 
 
 def build(output: Path) -> None:
+    ensure_atlas()
     files = pack_files()
     output.parent.mkdir(parents=True, exist_ok=True)
     with ZipFile(output, "w") as archive:

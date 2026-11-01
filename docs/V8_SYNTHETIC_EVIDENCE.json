@@ -1,0 +1,76 @@
+{
+  "baseline": "33fafc579658d20ece13066e4f546b533e5f5a08",
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "scope": "Synthetic GLSL buffers only; not Minecraft screenshots or ShaderC validation",
+  "comparisons": {
+    "compact_warm": {
+      "previous_center_rgb": [
+        0.7350114583969116,
+        0.5597903728485107,
+        0.24708425998687744
+      ],
+      "candidate2_center_rgb": [
+        0.7350114583969116,
+        0.5597903728485107,
+        0.24708425998687744
+      ],
+      "max_absolute_delta": 0.0
+    },
+    "compact_cold": {
+      "previous_center_rgb": [
+        0.23346881568431854,
+        0.609218418598175,
+        0.687750518321991
+      ],
+      "candidate2_center_rgb": [
+        0.23346881568431854,
+        0.609218418598175,
+        0.687750518321991
+      ],
+      "max_absolute_delta": 0.0
+    },
+    "large_warm": {
+      "previous_center_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidate2_center_rgb": [
+        0.21425114572048187,
+        0.17140091955661774,
+        0.07498790323734283
+      ],
+      "max_absolute_delta": 0.21425114572048187
+    },
+    "large_cold": {
+      "previous_center_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidate2_center_rgb": [
+        0.07022698223590851,
+        0.180583655834198,
+        0.20064851641654968
+      ],
+      "max_absolute_delta": 0.20064851641654968
+    },
+    "large_neutral": {
+      "previous_center_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidate2_center_rgb": [
+        0.07519999891519547,
+        0.07519999891519547,
+        0.07519999891519547
+      ],
+      "max_absolute_delta": 0.07519999891519547
+    },
+    "isolated_depth_impulse": {
+      "previous_affected_pixels": 5,
+      "candidate2_affected_pixels": 0
+    }
+  }
+}
