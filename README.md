@@ -63,7 +63,8 @@ Requirements: Python **3.10+**, standard library only.
 
 ```bash
 python scripts/validate_pack.py
-python scripts/build_pack.py
+python scripts/build_pack.py             # development pack
+python scripts/build_pack.py --release   # official release with rights preflight
 ```
 
 The build script creates `dist/NotVisuals_26.3_v7.zip` with playable content and license/attribution notices. You can also use the editable repository directory directly in `.minecraft/resourcepacks/` for local testing, if supported by your Minecraft installation.
@@ -81,6 +82,8 @@ See [the development roadmap](docs/ROADMAP.md) and [technical architecture](docs
 ## License and provenance
 
 NotVisuals uses **file-scoped GPL-3.0-only code + CC BY-NC-SA 4.0 cleared original artistic assets**. The full resource pack is not OSI-open-source; unverified third-party items are **not** automatically relicensed. Earlier GPLv3 grants remain valid.
+
+Before publishing a new release, run `python scripts/build_pack.py --release`; experimental builds are not proof of cleared distribution rights. See the [rights status](docs/RIGHTS_STATUS.json).
 
 Read [LICENSING.md](LICENSING.md), [LICENSE-CODE](LICENSE-CODE), [LICENSE-ASSETS.md](LICENSE-ASSETS.md), [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [Modrinth licensing](docs/MODRINTH_LICENSING.md).
 

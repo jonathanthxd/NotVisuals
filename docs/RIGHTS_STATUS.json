@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "policy": "docs/RIGHTS_STATUS.json records potential third-party redistribution restrictions. Clearance must be reviewed by a rightsholder or trusted maintainer; automation verifies only presence of evidence fields, not authenticity.",
+  "items": [
+    {
+      "id": "aurora_sky_atlas",
+      "description": "Third-party supplied aurora/day-night sky atlas, source Base64 chunks and generated PNG",
+      "paths": [
+        "source/aurora_sky/sun_atlas/part_*.b64",
+        "assets/minecraft/textures/environment/celestial/sun.png"
+      ],
+      "status": "pending",
+      "author": null,
+      "origin_url": null,
+      "license_or_permission": null,
+      "evidence_url": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "aurora_sky_core",
+      "description": "Aurora Sky core shader overrides and potential borrowed renderer fragments",
+      "paths": [
+        "assets/minecraft/shaders/core/*.fsh",
+        "assets/minecraft/shaders/core/*.vsh"
+      ],
+      "status": "pending",
+      "author": null,
+      "origin_url": null,
+      "license_or_permission": null,
+      "evidence_url": null,
+      "reviewed_by": null
+    }
+  ]
+}

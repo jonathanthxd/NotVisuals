@@ -12,7 +12,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Validate pack
         run: python3 scripts/validate_pack.py
-      - name: Build distribution ZIP
-        run: python3 scripts/build_pack.py
+      - name: Enforce licensing checks for stable build
+        run: python3 scripts/license_audit.py --release
+      - name: Build distribution ZIP (release preflight)
+        run: python3 scripts/build_pack.py --release
       - name: Verify archive contents
         run: python3 -m zipfile -t dist/NotVisuals_26.3_v7.zip
