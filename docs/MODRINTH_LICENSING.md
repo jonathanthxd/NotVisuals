@@ -16,8 +16,11 @@ If the current interface does not support this, explain the license split promin
 
 - [ ] Confirm or replace the third-party Aurora Sky atlas and shader resources.
 - [ ] Verify each redistributed file's attribution and applicable license.
+- [ ] Use `python scripts/build_pack.py --release`, not the experimental developer build; pending third-party rights must block this command.
 - [ ] Include license and notices in ZIP.
 - [ ] Check Modrinth metadata does not label the whole pack GPL or CC.
 - [ ] Run CI, test the pack in Minecraft and inspect the finished ZIP.
 
 See [THIRD_PARTY_LICENSES.md](../THIRD_PARTY_LICENSES.md).
+
+The existing v7 `pack.png` was previously offered with GPLv3; the new NC license does **not** withdraw those historical rights. CC BY-NC-SA applies only to newly identified art whose authors can grant it.

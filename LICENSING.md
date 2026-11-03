@@ -9,7 +9,8 @@ This is the canonical **file-scoped license map** for NotVisuals. It is not a ne
 | `scripts/**/*.py`, original source tooling and `.github/workflows/**` | `GPL-3.0-only` | Programming and automation |
 | Original `assets/**/*.fsh`, `assets/**/*.vsh`, `assets/**/*.glsl` | `GPL-3.0-only` | Shader source code; **exclude unverified third-party content** |
 | Original shader/post-effect technical JSON, `pack.mcmeta`, configuration files, technical documentation | `GPL-3.0-only` | Unless another file-level notice applies |
-| Original `pack.png`, images, textures, icons, graphics, audio, and other authored artistic media | `CC-BY-NC-SA-4.0` | Applies only to work the relevant copyright owners can license |
+| `pack.png` already present in the GPLv3-era v7 tree | `GPL-3.0-only` historical grant | Existing GPL rights cannot be withdrawn; the current policy does **not** make this icon CC-only |
+| **New, independently original** images, textures, icons, graphics, audio, and other artistic media | `CC-BY-NC-SA-4.0` | Only if the respective rightsholder authorizes it; identify authors and scope before publishing |
 | `source/**` containing encoded original artistic media | `CC-BY-NC-SA-4.0` | Encoded Base64 image remains artwork; **unverified imports excluded** |
 | Third-party imports, Minecraft files or files with uncertain provenance | **No automatic project license** | Follow actual source terms / obtain permission |
 
@@ -34,7 +35,9 @@ The work on `feat/v8-ink-and-light` integrates externally supplied resources who
 
 ## Historical GPL license remains valid
 
-The initial repository provided the unmodified GNU GPLv3 text as its sole `LICENSE` and described the project as GPL-3.0. **Already granted GPL rights are not retroactively withdrawn** from eligible copies of previously published versions, including content previously licensed as part of them. A change in the project's future distribution policy cannot cancel such rights. The exact scope depends on the earlier material and relevant copyright owners.
+The initial repository provided the unmodified GNU GPLv3 text as its sole `LICENSE` and described the project as GPL-3.0. **Already granted GPL rights are not retroactively withdrawn** from eligible copies of previously published versions, including content previously licensed as part of them. A change in the project's future distribution policy cannot cancel such rights. **The unchanged original v7 `pack.png` remains available under its earlier GPL grant to legitimate recipients; it must not be advertised as exclusively noncommercial.** New, separately identifiable artwork may use CC BY-NC-SA only with authorization from all its relevant authors.
+
+Where older GPL content is incorporated into a later version, the earlier GPL terms remain applicable to that content. Copyright ownership and original authorship need separate verification; a historical license declaration is not proof the project had rights to third-party content.
 
 ## Contributions and commercial exceptions
 
@@ -43,6 +46,8 @@ Contributors retain their copyrights. Contributions must be licensed as document
 ## Official brand and distribution
 
 See [TRADEMARKS.md](TRADEMARKS.md) for official-name and endorsement policy. Mandatory credit and lawful descriptive uses remain permitted.
+
+The maintained [rights manifest](docs/RIGHTS_STATUS.json) and `scripts/license_audit.py` provide a **mechanical pre-release gate**. Development builds may still include experimental material, but official release builds must run `python scripts/build_pack.py --release`. That command refuses to proceed while known third-party rights are pending; a passing check is not a legal opinion or proof of permission. The current v8 Aurora Sky candidate is **not cleared**.
 
 For Modrinth, use a custom/mixed/other license option (if offered) with **license URL**:
 
