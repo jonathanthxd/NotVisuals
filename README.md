@@ -52,7 +52,11 @@ NotVisuals/
 ├── docs/
 │   ├── ARCHITECTURE.md
 │   └── ROADMAP.md
-└── LICENSE
+├── LICENSE
+├── LICENSE-CODE
+├── LICENSE-ASSETS.md
+├── LICENSING.md
+└── THIRD_PARTY_LICENSES.md
 ```
 
 Requirements: Python **3.10+**, standard library only.
@@ -62,7 +66,7 @@ python scripts/validate_pack.py
 python scripts/build_pack.py
 ```
 
-The build script creates `dist/NotVisuals_26.3_v7.zip` with only the playable pack content. You can also use the editable repository directory directly in `.minecraft/resourcepacks/` for local testing, if supported by your Minecraft installation.
+The build script creates `dist/NotVisuals_26.3_v7.zip` with playable content and license/attribution notices. You can also use the editable repository directory directly in `.minecraft/resourcepacks/` for local testing, if supported by your Minecraft installation.
 
 > Static validation checks resource layout, JSON parsing and shader references. It **cannot** prove that GLSL compiles or that the effects look correct inside Minecraft. Test actual builds in Minecraft 26.3 before publishing.
 
@@ -74,6 +78,10 @@ The build script creates `dist/NotVisuals_26.3_v7.zip` with only the playable pa
 
 See [the development roadmap](docs/ROADMAP.md) and [technical architecture](docs/ARCHITECTURE.md).
 
-## License
+## License and provenance
 
-This project is licensed under **GPL-3.0**. See [LICENSE](LICENSE) for the complete terms. Minecraft is a trademark of Mojang Studios / Microsoft; NotVisuals is an independent resource pack.
+NotVisuals uses **file-scoped GPL-3.0-only code + CC BY-NC-SA 4.0 cleared original artistic assets**. The full resource pack is not OSI-open-source; unverified third-party items are **not** automatically relicensed. Earlier GPLv3 grants remain valid.
+
+Read [LICENSING.md](LICENSING.md), [LICENSE-CODE](LICENSE-CODE), [LICENSE-ASSETS.md](LICENSE-ASSETS.md), [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [Modrinth licensing](docs/MODRINTH_LICENSING.md).
+
+Not affiliated with Mojang Studios / Microsoft.
