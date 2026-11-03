@@ -88,6 +88,8 @@ class PackTests(unittest.TestCase):
                 names = set(arc.namelist())
                 self.assertIn("pack.mcmeta", names)
                 self.assertIn("pack.png", names)
+                for notice in ("LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md", "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md"):
+                    self.assertIn(notice, names)
                 self.assertIn("assets/minecraft/textures/environment/celestial/sun.png", names)
                 import hashlib
                 self.assertEqual(hashlib.sha256(arc.read("assets/minecraft/textures/environment/celestial/sun.png")).hexdigest(), SHA256)

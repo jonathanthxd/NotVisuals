@@ -16,7 +16,14 @@ def pack_files() -> list[Path]:
     missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
     if missing:
         raise SystemExit(f"Missing required pack file(s): {', '.join(missing)}")
-    files = required + [p for p in (ROOT / "assets").rglob("*") if p.is_file()]
+    notices = [ROOT / name for name in (
+        "LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md",
+        "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md",
+    )]
+    missing_notices = [p.name for p in notices if not p.is_file()]
+    if missing_notices:
+        raise SystemExit("Missing license notices: " + ", ".join(missing_notices))
+    files = required + notices + [p for p in (ROOT / "assets").rglob("*") if p.is_file()]
     if not (ROOT / "assets").is_dir() or len(files) == len(required):
         raise SystemExit("Missing assets/ content")
     return sorted(files, key=lambda p: p.relative_to(ROOT).as_posix())

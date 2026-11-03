@@ -56,10 +56,16 @@ Otros efectos opcionales heredados: `notvisuals:pixel_vivid` y `notvisuals:soft_
 - [Roadmap](docs/ROADMAP.md)
 - [Aurora Sky — Candidate 3](docs/V8_AURORA_SKY.md)
 
-La raíz del repositorio es directamente la raíz del resource pack. `pack.mcmeta` y `pack.png` deben quedar en la raíz del ZIP. No se incluyen tests, documentación ni Git en la distribución.
+La raíz del repositorio es directamente la raíz del resource pack. `pack.mcmeta` y `pack.png` deben quedar en la raíz del ZIP. No se incluyen tests, documentación de desarrollo ni Git en la distribución; sí los avisos de licencia y atribución.
 
 **Orden de prioridades:** máxima calidad visual → optimización sin pérdida visual → compatibilidad entre versiones.
 
-## Licencia
+## Licencia y procedencia
 
-GPL-3.0; consulta [LICENSE](LICENSE). Proyecto independiente, no afiliado a Mojang Studios/Microsoft.
+NotVisuals distingue **código original GPL-3.0-only** y **recursos artísticos originales CC BY-NC-SA 4.0**, sujetos a la verificación de los derechos correspondientes. El conjunto no es totalmente Open Source según la definición OSI.
+
+La procedencia de parte del atlas y los shaders de **Aurora Sky todavía está sin verificar**. Ninguna licencia nueva del proyecto se atribuye automáticamente a esos componentes; deben autorizarse o sustituirse antes de publicar R20. Los permisos GPL de versiones históricas siguen vigentes.
+
+Consulta [LICENSING.md](LICENSING.md), [LICENSE-CODE](LICENSE-CODE), [LICENSE-ASSETS.md](LICENSE-ASSETS.md), [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md), [CONTRIBUTING.md](CONTRIBUTING.md) y [Modrinth](docs/MODRINTH_LICENSING.md).
+
+Proyecto independiente, sin afiliación con Mojang Studios/Microsoft.
