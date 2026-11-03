@@ -28,10 +28,11 @@ Desde esta rama:
 ```bash
 python3 scripts/validate_pack.py
 python3 -m unittest discover -s scripts -p 'test_*.py' -v
-python3 scripts/build_pack.py
+python3 scripts/build_pack.py  # build experimental para pruebas locales
+# python3 scripts/build_pack.py --release  # BLOQUEADO hasta obtener autorizaciones
 ```
 
-El resultado se genera en `dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip`. El workflow prepara el artefacto temporal `NotVisuals-26.3-v8-candidate-3-AuroraSky` tras pasar CI; comprueba su ejecución antes de descargarlo. Colócalo **sin extraer** en `.minecraft/resourcepacks/`, selecciónalo y prueba en **Minecraft 26.3**, idealmente comparándolo con v7 y Vanilla.
+El resultado se genera en `dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip`. CI construye y comprueba la candidata, pero **no publica el ZIP como artefacto descargable** mientras haya recursos externos con derechos no verificados. Para pruebas locales, utiliza el archivo generado por `scripts/build_pack.py` en tu entorno autorizado; no lo redistribuyas. Colócalo **sin extraer** en `.minecraft/resourcepacks/` y pruébalo en **Minecraft 26.3**. La publicación oficial requiere `python3 scripts/build_pack.py --release` y cerrar las comprobaciones de licencias.
 
 El efecto base es automático. El laboratorio de profundidad es optativo:
 
@@ -65,6 +66,8 @@ La raíz del repositorio es directamente la raíz del resource pack. `pack.mcmet
 NotVisuals distingue **código original GPL-3.0-only** y **recursos artísticos originales CC BY-NC-SA 4.0**, sujetos a la verificación de los derechos correspondientes. El conjunto no es totalmente Open Source según la definición OSI.
 
 La procedencia de parte del atlas y los shaders de **Aurora Sky todavía está sin verificar**. Ninguna licencia nueva del proyecto se atribuye automáticamente a esos componentes; deben autorizarse o sustituirse antes de publicar R20. Los permisos GPL de versiones históricas siguen vigentes.
+
+La comprobación automática utiliza [el registro de derechos](docs/RIGHTS_STATUS.json); el comando `--release` impide publicar mientras los permisos conocidos sigan pendientes.
 
 Consulta [LICENSING.md](LICENSING.md), [LICENSE-CODE](LICENSE-CODE), [LICENSE-ASSETS.md](LICENSE-ASSETS.md), [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md), [CONTRIBUTING.md](CONTRIBUTING.md) y [Modrinth](docs/MODRINTH_LICENSING.md).
 

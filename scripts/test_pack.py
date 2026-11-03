@@ -10,11 +10,16 @@ from pathlib import Path
 from zipfile import ZipFile
 
 from build_pack import build
+from license_audit import check as check_licenses
 from sky_atlas import SHA256
 from validate_pack import ROOT, verify
 
 
 class PackTests(unittest.TestCase):
+    def test_release_is_blocked_for_unverified_aurora_sky(self):
+        with self.assertRaisesRegex(SystemExit, 'aurora_sky'):
+            check_licenses(release=True)
+
     def test_current_graph(self):
         effects, passes = verify(quiet=True)
         self.assertGreaterEqual(effects, 4)
@@ -88,7 +93,7 @@ class PackTests(unittest.TestCase):
                 names = set(arc.namelist())
                 self.assertIn("pack.mcmeta", names)
                 self.assertIn("pack.png", names)
-                for notice in ("LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md", "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md"):
+                for notice in ("LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md", "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md", "docs/RIGHTS_STATUS.json"):
                     self.assertIn(notice, names)
                 self.assertIn("assets/minecraft/textures/environment/celestial/sun.png", names)
                 import hashlib

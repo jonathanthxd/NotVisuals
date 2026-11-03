@@ -1,4 +1,4 @@
-> **Nueva Candidate 3 — Aurora Sky:** el texto histórico inferior corresponde a Candidate 2. Para las nuevas pruebas de cielo, sol, auroras y nubes ocultas, consultar [V8_AURORA_SKY.md](V8_AURORA_SKY.md). Usar el ZIP `NotVisuals_26.3_v8_candidate_3_AuroraSky.zip` generado por CI y probarlo solo, sin superponer `Cielo_test` u otras versiones. El resto de pruebas de iluminación, Depth Lab y Depth Ink sigue siendo válido.
+> **Nueva Candidate 3 — Aurora Sky:** el texto histórico inferior corresponde a Candidate 2. Para pruebas autorizadas del cielo, sol, auroras y nubes ocultas, consultar [V8_AURORA_SKY.md](V8_AURORA_SKY.md). El ZIP `NotVisuals_26.3_v8_candidate_3_AuroraSky.zip` se genera **localmente** mediante `scripts/build_pack.py`; CI ya no sube artefactos mientras los derechos estén pendientes. No redistribuir la candidata ni superponer `Cielo_test` u otras versiones. El resto de pruebas de iluminación, Depth Lab y Depth Ink sigue siendo válido.
 
 # Guía de pruebas — NotVisuals v8 candidata 2
 
@@ -61,7 +61,7 @@ visibilidad real de la mano, aceptación artística ni FPS.
 6. Si falla la carga o aparece pantalla negra, retira la candidata, guarda el log
    y conserva el primer ZIP. No des por correcto un pack que no cargó sus shaders.
 
-El artefacto CI previsto se llama `NotVisuals-26.3-v8-candidate-2` en
+El artefacto CI histórico de Candidate 2 se llamaba `NotVisuals-26.3-v8-candidate-2` en
 [GitHub Actions](https://github.com/jonathanthxd/NotVisuals/actions). Comprobar que
 la ejecución correspondiente terminó antes de asumir que está disponible.
 

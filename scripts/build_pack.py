@@ -6,6 +6,7 @@ import argparse
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from sky_atlas import ensure_atlas
+from license_audit import check as check_licenses
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "dist" / "NotVisuals_26.3_v8_candidate_3_AuroraSky.zip"
@@ -19,6 +20,7 @@ def pack_files() -> list[Path]:
     notices = [ROOT / name for name in (
         "LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md",
         "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md",
+        "docs/RIGHTS_STATUS.json",
     )]
     missing_notices = [p.name for p in notices if not p.is_file()]
     if missing_notices:
@@ -29,7 +31,8 @@ def pack_files() -> list[Path]:
     return sorted(files, key=lambda p: p.relative_to(ROOT).as_posix())
 
 
-def build(output: Path) -> None:
+def build(output: Path, *, release: bool = False) -> None:
+    check_licenses(release=release)
     ensure_atlas()
     files = pack_files()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -46,5 +49,7 @@ def build(output: Path) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--release", action="store_true",
+                        help="Reject release while third-party rights remain unresolved")
     args = parser.parse_args()
-    build(args.output.resolve())
+    build(args.output.resolve(), release=args.release)
