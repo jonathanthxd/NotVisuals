@@ -21,7 +21,16 @@ class R20Tests(unittest.TestCase):
     def test_five_explicit_overrides_and_no_new_shaders(self):
         self.assertEqual(len(self.change["modified_files"]), 6)
         self.assertEqual(len([k for k in self.change["modified_files"] if k.endswith(".fsh")]), 5)
-        self.assertIn("R20 Visual Polish", json.loads((PACK / "pack.mcmeta").read_text())["pack"]["description"])
+        meta = json.loads((PACK / "pack.mcmeta").read_text(encoding="utf-8"))
+        self.assertEqual(meta["pack"]["min_format"], [97, 1])
+        self.assertEqual(meta["pack"]["max_format"], [97, 1])
+        description = meta["pack"]["description"]
+        self.assertIsInstance(description, dict)
+        segments = description["extra"]
+        self.assertEqual("".join(segment["text"] for segment in segments), "✦ NotVisuals v8\\ndiscord.gg/tflives")
+        self.assertEqual(segments[1]["color"], "#F3FAFF")
+        self.assertEqual(segments[2]["color"], "#B79DFF")
+        self.assertEqual(segments[-1]["color"], "#55D8F2")
         self.assertEqual(verify(), (41, 41))
         for name, entry in self.change["modified_files"].items():
             data = (PACK / name).read_bytes()

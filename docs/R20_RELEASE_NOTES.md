@@ -12,7 +12,7 @@
 
 ## Preservation and distribution
 
-- The pack's Minecraft-visible description is updated to display **v8 R20 Visual Polish**.
+- The Minecraft resource pack description now uses a compact two-line branded text component: **✦ NotVisuals v8** in icy white/cyan/lavender, followed by **discord.gg/tflives** in muted slate/cyan. The metadata format for Minecraft 26.3 is preserved.
 - No new effects, render passes, shaders, marker classes, model overrides, textures or optimizations. Full RGB profiles 1–53, auroras, animated ores, Water Lilies, atmospheric textures, Depth Ink and other accepted systems remain available.
 - Preserves **MIT** author notices for Animated Ore and Water Lilies, [Aurora Sky creator credit](../CREDITS.md), project GPLv3 / CC BY-NC-SA policies and the original R18 credit.
 - GitHub hosts **source** under `src/pack/`; the official installable ZIP is intended for **[Modrinth](https://modrinth.com/resourcepack/notvisuals)**, not GitHub Releases. Others retain the redistribution rights conferred by the licenses.

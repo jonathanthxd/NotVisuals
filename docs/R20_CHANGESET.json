@@ -31,9 +31,9 @@
       "reason": "Refine only wide sun/moon halo tails while preserving disc and core"
     },
     "pack.mcmeta": {
-      "sha256": "23ae105bc45d9a723586e40384023c54845da3ae96df5ceca9ddf74ecfab451e",
-      "size": 206,
-      "reason": "Update visible Minecraft pack description from R19 to R20 Visual Polish"
+      "sha256": "7a3a690d1ccf93595cbc2a169c566fb51c4e9324a4382d0efb6c0a845568c28e",
+      "size": 741,
+      "reason": "Two-line NotVisuals v8 brand identity and discord.gg/tflives with RGB text components; 26.3 format unchanged"
     }
   },
   "manual_validation": {

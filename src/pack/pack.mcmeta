@@ -1,6 +1,38 @@
 {
   "pack": {
-    "description": "NotVisuals v8 | R20 Visual Polish: Radiance, Atmosphere & Celestial | 26.3",
+    "description": {
+      "text": "",
+      "extra": [
+        {
+          "text": "✦ ",
+          "color": "#55D8F2",
+          "bold": true
+        },
+        {
+          "text": "NotVisuals",
+          "color": "#F3FAFF",
+          "bold": true
+        },
+        {
+          "text": " v8",
+          "color": "#B79DFF",
+          "bold": true
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "discord.gg/",
+          "color": "#8A9AAD",
+          "italic": false
+        },
+        {
+          "text": "tflives",
+          "color": "#55D8F2",
+          "bold": true
+        }
+      ]
+    },
     "min_format": [
       97,
       1
