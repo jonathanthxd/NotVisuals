@@ -13,7 +13,7 @@ from shader_sources import ROOT, expand
 
 def compile_edited(vanilla: Path, compiler: str = "glslangValidator"):
     changes = json.loads((ROOT / "docs/R20_CHANGESET.json").read_text(encoding="utf-8"))
-    items = changes["modified_files"]
+    items = [name for name in changes["modified_files"] if name.endswith((".fsh", ".vsh", ".glsl"))]
     if len(items) != 5:
         raise ValueError("Unexpected R20 edited shader count")
     with tempfile.TemporaryDirectory() as t:

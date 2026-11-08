@@ -3,7 +3,7 @@
   "version": "NotVisuals v8 R20 — Visual Polish",
   "baseline_archive_sha256": "5ff3880673ea5d2facdf2d577b7b80129a1b3e01562a40776ffe5e8808b1fd8f",
   "policy": "Source changes are explicitly listed; every other R19 asset must match original SHA256 or LF/CRLF-only canonicalization.",
-  "scope": "Visual stability and finishing only; 41 passes and 53 Radiance classes remain unchanged; no new features or optimization.",
+  "scope": "Visual polish only: five shader edits plus pack metadata; unchanged 41 passes, 53 Radiance marker classes, no feature or optimization.",
   "modified_files": {
     "assets/notvisuals/shaders/post/radiance_marker_clean.fsh": {
       "sha256": "01ee19640c73f8c9c681effe71bb5a20e861198f59840b8196344bc7e8779df9",
@@ -29,6 +29,11 @@
       "sha256": "d787bac7acfc541b05cbba8aa8f15da0e6b1bd3308165cac8ee93435483f9d79",
       "size": 11173,
       "reason": "Refine only wide sun/moon halo tails while preserving disc and core"
+    },
+    "pack.mcmeta": {
+      "sha256": "23ae105bc45d9a723586e40384023c54845da3ae96df5ceca9ddf74ecfab451e",
+      "size": 206,
+      "reason": "Update visible Minecraft pack description from R19 to R20 Visual Polish"
     }
   },
   "manual_validation": {

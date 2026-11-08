@@ -19,7 +19,9 @@ class R20Tests(unittest.TestCase):
         cls.shader_dir = PACK / "assets/notvisuals/shaders/post"
 
     def test_five_explicit_overrides_and_no_new_shaders(self):
-        self.assertEqual(len(self.change["modified_files"]), 5)
+        self.assertEqual(len(self.change["modified_files"]), 6)
+        self.assertEqual(len([k for k in self.change["modified_files"] if k.endswith(".fsh")]), 5)
+        self.assertIn("R20 Visual Polish", json.loads((PACK / "pack.mcmeta").read_text())["pack"]["description"])
         self.assertEqual(verify(), (41, 41))
         for name, entry in self.change["modified_files"].items():
             data = (PACK / name).read_bytes()

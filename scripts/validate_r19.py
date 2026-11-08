@@ -39,8 +39,8 @@ def r20_changes(manifest: dict) -> dict:
     if not isinstance(overrides, dict) or not overrides:
         raise ValueError("R20 changeset missing explicit modified-file hashes")
     for name, item in overrides.items():
-        if name not in manifest["files"] or not name.endswith((".fsh", ".vsh", ".glsl")):
-            raise ValueError("R20 may override only declared existing shader sources: " + name)
+        if name not in manifest["files"] or not (name.endswith((".fsh", ".vsh", ".glsl")) or name == "pack.mcmeta"):
+            raise ValueError("R20 may override only original shader sources or pack.mcmeta: " + name)
         if not isinstance(item, dict) or not isinstance(item.get("sha256"), str) or not isinstance(item.get("size"), int):
             raise ValueError("Invalid R20 override record: " + name)
     return overrides

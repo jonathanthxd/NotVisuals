@@ -1,6 +1,6 @@
 # NotVisuals v8 — R20 Visual Polish
 
-**Base:** Full user-provided experimental R19 archive (724 assets, 41 GLSL sources, 41 postprocessing passes). Original baseline remains locked in `docs/R19_SOURCE_MANIFEST.json`; precisely five purposeful R20 shader edits are recorded with SHA-256 in [R20_CHANGESET.json](R20_CHANGESET.json).
+**Base:** Full user-provided experimental R19 archive (724 assets, 41 GLSL sources, 41 postprocessing passes). Original baseline remains locked in `docs/R19_SOURCE_MANIFEST.json`; five purposeful R20 shader edits and the pack-description update are recorded with SHA-256 in [R20_CHANGESET.json](R20_CHANGESET.json).
 
 ## Visual-only changes
 
@@ -12,6 +12,7 @@
 
 ## Preservation and distribution
 
+- The pack's Minecraft-visible description is updated to display **v8 R20 Visual Polish**.
 - No new effects, render passes, shaders, marker classes, model overrides, textures or optimizations. Full RGB profiles 1–53, auroras, animated ores, Water Lilies, atmospheric textures, Depth Ink and other accepted systems remain available.
 - Preserves **MIT** author notices for Animated Ore and Water Lilies, [Aurora Sky creator credit](../CREDITS.md), project GPLv3 / CC BY-NC-SA policies and the original R18 credit.
 - GitHub hosts **source** under `src/pack/`; the official installable ZIP is intended for **[Modrinth](https://modrinth.com/resourcepack/notvisuals)**, not GitHub Releases. Others retain the redistribution rights conferred by the licenses.
