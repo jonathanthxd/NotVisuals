@@ -88,7 +88,7 @@ def verify():
         raise ValueError("Expected 41 R19 postprocessing passes")
     for file in (PACK / "assets").rglob("*"):
         if file.is_file() and (file.suffix == ".json" or file.name.endswith(".mcmeta")):
-            json.loads(file.read_text(encoding="utf-8"))
+            json.loads(file.read_text(encoding="utf-8-sig"))
     print("PASS: 724 original R19 source files verified" +
           (f" with {len(overrides)} declared R20 shader edits" if overrides else "") +
           " — 41 shaders, 41 passes, original MIT notices retained")
