@@ -83,7 +83,16 @@ jobs:
               assert "CREDITS.md" in z.namelist()
           print("ZIP integrity and license notices verified:", outputs[0])
           PY
-      # Artifact upload paused pending real R19 source synchronization and in-game QA.
-      # masteirdixy's original art/code consent is documented. See docs/R19_STATUS.md.
-      - name: Explain why no ZIP is published
-        run: echo "::warning::NotVisuals Aurora Sky candidate is for local testing only; ZIP artifact publishing is suspended pending R19 source synchronization and manual in-game QA."
+      # Exception for the owner's temporary QA download; NOT a published release.
+      # Subsequent commits do not upload unless deliberately tagged [qa-download].
+      - name: Upload one-time R20 test ZIP for owner
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/feat/v8-ink-and-light' && contains(github.event.head_commit.message, '[qa-download]') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: NotVisuals-v8-R20-QA-only
+          path: dist/NotVisuals_26.3_v8_R20_Visual_Polish.zip
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+      - name: Distribution note
+        run: echo "::notice::Only commits explicitly marked [qa-download] publish a three-day test artifact; official installs remain Modrinth-first."
