@@ -9,6 +9,8 @@
 | **Minecraft renderer assets / Mojang material:** runtime `minecraft:*` includes and any copied game fragments | Game renderer API / external development references | **Not licensed by NotVisuals.** Preserve Mojang/Microsoft rights; avoid unpermitted redistribution of copied assets |
 | **Experimental So Tuff, Fog and experimental shader reference ZIPs** | [Research notes](docs/V8_REFERENCE_RESEARCH.md): no licenses found and no literal copying reported | **Reference only.** Do not import content without license verification |
 | **VanillaDI / vanilla-shaders** | Investigated as prospective references, not confirmed in this branch | **Not presumed imported or cleared.** If code is copied later, record upstream URL, commit, author, license and notices |
+| **Animated Ore / Vanilla Emissive** (R19 supplied ZIP) | gitq © 2024; [upstream](https://modrinth.com/resourcepack/animated-ore) | MIT; retain original `LICENSES/ANIMATED_ORE_MIT.txt` and `LICENSES/R18_ATTRIBUTION.md`. Not automatically CC BY-NC-SA. |
+| **Water Lilies!** (R19 supplied ZIP) | JustVoden / Just_Voden; [upstream](https://modrinth.com/resourcepack/water-lilies) | MIT; retain `LICENSES/WATER_LILIES_MIT.txt` and source attribution. Not automatically CC BY-NC-SA. |
 | **Historical `pack.png`** | Reused icon from v7, published during the repository's GPLv3-only period | **GPLv3 historical rights persist** for legitimate copies. Confirm original authorship before claiming any exclusive rights; do not represent it as CC-only |
 
 For any new third-party material, document: **repository URL and immutable revision, file paths, authors, copyright, license name/text, attribution, modification/redistribution rights, and verification status**.

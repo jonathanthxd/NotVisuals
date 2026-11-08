@@ -10,7 +10,10 @@ from license_audit import check as check_licenses
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK_ROOT = ROOT / "src" / "pack"
-DEFAULT_OUTPUT = ROOT / "dist" / "NotVisuals_26.3_v8_candidate_3_AuroraSky.zip"
+DEFAULT_OUTPUT = ROOT / "dist" / (
+    "NotVisuals_26.3_v8_C3_R19.zip" if (ROOT / "docs/R19_SOURCE_MANIFEST.json").exists()
+    else "NotVisuals_26.3_v8_candidate_3_AuroraSky.zip"
+)
 
 
 def pack_files() -> list[Path]:
@@ -26,6 +29,12 @@ def pack_files() -> list[Path]:
     missing_notices = [p.name for p in notices if not p.is_file()]
     if missing_notices:
         raise SystemExit("Missing license notices: " + ", ".join(missing_notices))
+    if (ROOT / "docs/R19_SOURCE_MANIFEST.json").is_file():
+        for notice_name in ("LICENSES/ANIMATED_ORE_MIT.txt", "LICENSES/WATER_LILIES_MIT.txt", "LICENSES/R18_ATTRIBUTION.md"):
+            notice = ROOT / notice_name
+            if not notice.is_file():
+                raise SystemExit(f"R19 requires original MIT notice: {notice_name}")
+            notices.append(notice)
     files = required + notices + [p for p in (PACK_ROOT / "assets").rglob("*") if p.is_file()]
     if not (PACK_ROOT / "assets").is_dir() or len(files) == len(required):
         raise SystemExit("Missing assets/ content")

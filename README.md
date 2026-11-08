@@ -66,6 +66,18 @@ El usuario ha informado que el pack se ve bien en las pruebas habituales, con **
 
 **No se trabaja en optimización todavía**; el rendimiento/VRAM y los ports quedan pospuestos (posiblemente V9/V10). No distribuir Aurora Sky hasta confirmar derechos.
 
+### Importar la R19 completa
+
+La fuente actual de esta rama es una candidata anterior. La R19 entregada por el propietario tiene **724 archivos y 41 pasadas**. Para importar exactamente el ZIP original, desde un clon de esta rama:
+
+```bash
+python3 scripts/import_r19_zip.py "ruta/al/NotVisuals_26.3_v8_C3_R19_Final_Visual_Update_EXPERIMENTAL(3).zip"
+python3 scripts/import_r19_zip.py "ruta/al/NotVisuals_26.3_v8_C3_R19_Final_Visual_Update_EXPERIMENTAL(3).zip" --apply
+python3 scripts/validate_r19.py
+```
+
+La primera ejecución solo verifica; la segunda importa los recursos a `src/pack/` y conserva las licencias MIT originales. El script **no publica ni envía commits**. Tras revisar `git status`, el responsable puede subir exclusivamente el código fuente. CI comprobará el manifiesto byte a byte; el archivo instalable seguirá destinado a Modrinth.
+
 ## Desarrollo y estado técnico
 
 - [Arquitectura y dependencias](docs/ARCHITECTURE.md)

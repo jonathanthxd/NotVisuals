@@ -17,24 +17,33 @@ jobs:
           test ! -e pack.mcmeta
           test ! -e assets
           test -f src/pack/pack.mcmeta
-      - name: Validate pack graphs and shader references
+      - name: Validate v8 candidate graphics (legacy source only)
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') == '' }}
         run: python3 scripts/validate_pack.py
-      - name: Run validator and ZIP regression tests
+      - name: Validate full R19 source provenance, images and pipeline
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') != '' }}
+        run: python3 scripts/validate_r19.py
+      - name: Run candidate-only regression tests
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') == '' }}
         run: python3 -m unittest discover -s scripts -p 'test_pack.py' -v
       - name: Install GLSL static compiler
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') == '' }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq glslang-tools
       - name: Fetch pinned renderer contracts and compile GLSL variants
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') == '' }}
         run: |
           python3 scripts/shader_sources.py --fetch /tmp/notvisuals-26.3
           python3 scripts/check_glsl.py
       - name: Install headless GLSL test dependencies
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') == '' }}
         run: |
           sudo apt-get install -y -qq libegl1-mesa-dev libgl1-mesa-dri
           python3 -m venv /tmp/notvisuals-tools
           /tmp/notvisuals-tools/bin/pip install -r scripts/requirements-gpu.txt
       - name: Fetch pinned renderer contracts and execute synthetic shader tests
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') == '' }}
         env:
           NV_REQUIRE_GPU: '1'
           NV_VANILLA_ROOT: /tmp/notvisuals-26.3
@@ -44,10 +53,24 @@ jobs:
           /tmp/notvisuals-tools/bin/python -m unittest discover -s scripts -p 'test_gpu.py' -v
       - name: Check licensing manifest (developer candidate only)
         run: python3 scripts/license_audit.py
+      - name: R19 source equivalence and ZIP/license regression tests
+        if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') != '' }}
+        run: python3 -m unittest discover -s scripts -p 'test_r19.py' -v
       - name: Build local experimental ZIP for CI tests
         run: python3 scripts/build_pack.py
       - name: Verify archive contents
-        run: python3 -m zipfile -t dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip
+        run: |
+          python3 - <<'PY'
+          from zipfile import ZipFile
+          from pathlib import Path
+          outputs = list(Path("dist").glob("*.zip"))
+          assert len(outputs) == 1, outputs
+          with ZipFile(outputs[0]) as z:
+              assert z.testzip() is None
+              assert "pack.mcmeta" in z.namelist()
+              assert "CREDITS.md" in z.namelist()
+          print("ZIP integrity and license notices verified:", outputs[0])
+          PY
       # Artifact upload paused pending real R19 source synchronization and in-game QA.
       # masteirdixy's original art/code consent is documented. See docs/R19_STATUS.md.
       - name: Explain why no ZIP is published

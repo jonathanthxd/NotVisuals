@@ -25,3 +25,11 @@ Minecraft expects a root `pack.mcmeta` when it scans ZIP resource packs. The Git
 **Distribution limitation:** this is *not DRM*. Under GPLv3, compatible MIT terms and CC BY-NC-SA 4.0, third parties can exercise the licensed redistribution rights. You cannot prevent legitimate rebuilding of the source pack, nor impose a blanket ban on redistributing covered material. Modrinth-first is a recommendation and official release channel, not an exclusive legal right.
 
 **Important R19 status:** the 724-file R19 artifact (41 shader files, 41 pipeline passes, upstream MIT assets from Animated Ore and Water Lilies) is newer than the source snapshot currently on this GitHub branch. Do not identify this old candidate source as complete R19 until those exact files and notices have been imported and validated.
+
+## Exact R19 source synchronization
+
+The user-provided final experimental R19 ZIP contains **724 entries**, including 41 shader files, 41 end-of-frame passes, Animated Ore and Water Lilies MIT notice files, and an identical Aurora Sky atlas (SHA-256 `06cd49d8d53e5855e90d657cb6aa65d1a9d08954374dce0158ef5f846e990c00`).
+
+Use `python3 scripts/import_r19_zip.py path/to/R19.zip` to validate the exact received ZIP; then add `--apply` to import it into `src/pack/`. A backup of the earlier tree stays under ignored `dist/r19-previous-source/`. The installer copies upstream MIT notices verbatim to `LICENSES/` and produces `docs/R19_SOURCE_MANIFEST.json` with all file hashes. The sky atlas is regenerated from its preexisting 15 source chunks, not duplicated as a binary Git asset.
+
+CI switches from legacy candidate synthetic tests to exact R19 source and ZIP parity tests when that manifest appears. **No Modrinth upload or GitHub binary release happens automatically.** See [R19 third-party register](R19_THIRD_PARTY.md).
