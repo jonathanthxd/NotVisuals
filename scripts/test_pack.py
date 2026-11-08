@@ -50,7 +50,7 @@ class PackTests(unittest.TestCase):
             source = Path(temp)
             shutil.copytree(PACK_ROOT / 'assets', source / 'assets')
             for name in ['pack.mcmeta', 'pack.png']:
-                shutil.copy2(ROOT / name, source / name)
+                shutil.copy2(PACK_ROOT / name, source / name)
             path = source / 'assets/notvisuals/post_effect/depth_lab.json'
             original = path.read_text()
             graph = json.loads(original)

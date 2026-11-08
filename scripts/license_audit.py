@@ -15,7 +15,8 @@ REQUIRED = (
     "LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md", "LICENSING.md",
     "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md", "docs/RIGHTS_STATUS.json",
 )
-EVIDENCE_FIELDS = ("author", "origin_url", "license_or_permission", "evidence_url", "reviewed_by")
+EVIDENCE_FIELDS = ("author", "license_or_permission", "reviewed_by")
+PROVENANCE_ALTERNATIVES = (("origin_url", "origin_reference"), ("evidence_url", "evidence_reference"))
 
 
 def check(root: Path = ROOT, *, release: bool = False) -> list[str]:
@@ -57,6 +58,9 @@ def check(root: Path = ROOT, *, release: bool = False) -> list[str]:
         else:
             absent = [field for field in EVIDENCE_FIELDS
                       if not isinstance(item.get(field), str) or not item[field].strip()]
+            for url_field, private_field in PROVENANCE_ALTERNATIVES:
+                if not any(isinstance(item.get(f), str) and item[f].strip() for f in (url_field, private_field)):
+                    absent.append(f"{url_field} or {private_field}")
             if absent:
                 blockers.append(f"{name}: clearance record missing {', '.join(absent)}")
 
