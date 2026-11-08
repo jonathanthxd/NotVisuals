@@ -79,6 +79,14 @@ The build script creates `dist/NotVisuals_26.3_v7.zip` with playable content and
 
 See [the development roadmap](docs/ROADMAP.md) and [technical architecture](docs/ARCHITECTURE.md).
 
+## Modrinth-first downloads
+
+**Official installable resource packs:** [NotVisuals on Modrinth](https://modrinth.com/resourcepack/notvisuals). GitHub stays public for reading source code, collaboration and reproducible builds.
+
+The source files live in `src/pack/`. GitHub's auto-generated source ZIP contains no root `pack.mcmeta`, so Minecraft cannot use it directly. To create an installable ZIP, run `python3 scripts/build_pack.py --release` and inspect `dist/`. Details: [source/release layout](docs/SOURCE_AND_RELEASE.md).
+
+This is a release-channel preference, **not a prohibition on lawful redistribution** under GPLv3, MIT or CC BY-NC-SA.
+
 ## License and provenance
 
 NotVisuals uses **file-scoped GPL-3.0-only code + CC BY-NC-SA 4.0 cleared original artistic assets**. The full resource pack is not OSI-open-source; unverified third-party items are **not** automatically relicensed. Earlier GPLv3 grants remain valid.

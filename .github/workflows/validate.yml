@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+      - name: Confirm repository ZIP is not directly installable
+        run: |
+          test ! -e pack.mcmeta
+          test ! -e assets
+          test -f src/pack/pack.mcmeta
       - name: Validate pack
         run: python3 scripts/validate_pack.py
       - name: Enforce licensing checks for stable build

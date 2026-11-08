@@ -7,10 +7,11 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+PACK_ROOT = ROOT / "src" / "pack"
 POST_EFFECTS = [
-    ROOT / "assets/minecraft/post_effect/end_of_frame.json",
-    ROOT / "assets/notvisuals/post_effect/pixel_vivid.json",
-    ROOT / "assets/notvisuals/post_effect/soft_glow.json",
+    PACK_ROOT / "assets/minecraft/post_effect/end_of_frame.json",
+    PACK_ROOT / "assets/notvisuals/post_effect/pixel_vivid.json",
+    PACK_ROOT / "assets/notvisuals/post_effect/soft_glow.json",
 ]
 
 
@@ -20,13 +21,13 @@ def require(condition: bool, message: str) -> None:
 
 
 def verify() -> None:
-    meta = json.loads((ROOT / "pack.mcmeta").read_text(encoding="utf-8"))
+    meta = json.loads((PACK_ROOT / "pack.mcmeta").read_text(encoding="utf-8"))
     pack = meta["pack"]
     require(pack.get("min_format") == [97, 1], "unexpected min_format")
     require(pack.get("max_format") == [97, 1], "unexpected max_format")
-    require((ROOT / "pack.png").read_bytes().startswith(b"\x89PNG\r\n\x1a\n"), "invalid pack.png")
+    require((PACK_ROOT / "pack.png").read_bytes().startswith(b"\x89PNG\r\n\x1a\n"), "invalid pack.png")
 
-    custom_shaders = {p.stem for p in (ROOT / "assets/notvisuals/shaders/post").glob("*.fsh")}
+    custom_shaders = {p.stem for p in (PACK_ROOT / "assets/notvisuals/shaders/post").glob("*.fsh")}
     require(len(custom_shaders) > 0, "no custom shaders")
     total = 0
     for effect in POST_EFFECTS:
@@ -46,7 +47,7 @@ def verify() -> None:
                 require(name == "minecraft:main" or name in targets, f"unknown input target {name}: {effect}")
         total += len(passes)
 
-    for shader in (ROOT / "assets/notvisuals/shaders/post").glob("*.fsh"):
+    for shader in (PACK_ROOT / "assets/notvisuals/shaders/post").glob("*.fsh"):
         source = shader.read_text(encoding="utf-8")
         text = re.sub(r"/\*.*?\*/|//[^\n]*", "", source, flags=re.DOTALL)
         require(text.count("{") == text.count("}"), f"unbalanced braces: {shader}")
