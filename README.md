@@ -78,6 +78,10 @@ python3 scripts/validate_r19.py
 
 La primera ejecución solo verifica; la segunda importa los recursos a `src/pack/` y conserva las licencias MIT originales. El script **no publica ni envía commits**. Tras revisar `git status`, el responsable puede subir exclusivamente el código fuente. CI comprobará el manifiesto byte a byte; el archivo instalable seguirá destinado a Modrinth.
 
+## R20 — Review and restrained polish
+
+R20 will be a **visual QA and stabilization pass**, not a new feature release. Priorities are Nether light flicker, leaking pink Radiance markers, double outlines, and sun/moon bloom. No optimization or ports. Import the exact full R19 source first (issue #5); **do not edit the old Candidate 3 as if it were R19**. See [R20 review and acceptance criteria](docs/R20_VISUAL_REVIEW.md).
+
 ## Desarrollo y estado técnico
 
 - [Arquitectura y dependencias](docs/ARCHITECTURE.md)
