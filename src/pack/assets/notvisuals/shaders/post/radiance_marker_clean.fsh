@@ -20,21 +20,27 @@ int nvClass(vec4 c) {
     return cls<=53 ? cls : 0;
 }
 bool nvTag(vec4 c) { return nvClass(c)>0; }
-// Inpaint only confirmed markers or their 1-pixel tinted fringe.
-// Non-marker scene pixels are passed through byte-for-byte at the shader level.
+// R20: inpaint exact markers and their short anti-aliased fringe only when
+// a confirmed marker is nearby. Never recolor unrelated magenta world pixels.
+// Non-marker pixels elsewhere remain byte-identical at shader level.
 bool nvFringeCandidate(vec3 col) {
  vec3 b=clamp(col,vec3(0.0),vec3(1.0))*255.0;
- return (abs(b.r-195.0)<44.0 || abs(b.r-211.0)<44.0 || abs(b.r-227.0)<44.0) &&
-        abs(b.g-76.0)<44.0 && b.b>17.0 && b.b<248.0;
+ // AA, light and fog blend the encoded color with the surface below it.
+ // Include partially dimmed marker pixels, but ONLY remove candidates whose
+ // 2-pixel neighbourhood has a class-ID anchor.
+ float rowDistance=min(abs(b.r-195.0),min(abs(b.r-211.0),abs(b.r-227.0)));
+ return rowDistance<76.0 && abs(b.g-76.0)<76.0 &&
+        b.r>b.g+39.0 && b.r>78.0 && b.b>14.0 && b.b<252.0;
 }
 void main(){
  vec2 px=1.0/vec2(textureSize(InSampler,0));
  vec4 c=texture(InSampler,texCoord);
  bool marker=nvTag(c);
  if(!marker && nvFringeCandidate(c.rgb)) {
-   // Anti-aliased edges of a magenta ID might not decode as an exact class.
-   // Only remove them when touching a *confirmed* marker pixel.
-   for(int y=-1;y<=1 && !marker;y++)for(int x=-1;x<=1;x++) {
+   // Resolve a 1-2px tinted ring only beside an exact source ID.
+   // A pure pink block with no encoded ID is intentionally untouched.
+   for(int y=-2;y<=2 && !marker;y++)for(int x=-2;x<=2;x++) {
+      if(abs(x)==2 && abs(y)==2) continue;
       if(x==0 && y==0)continue;
       vec2 uv=clamp(texCoord+vec2(x,y)*px,px*0.5,vec2(1.0)-px*0.5);
       if(nvTag(texture(InSampler,uv))){marker=true;break;}

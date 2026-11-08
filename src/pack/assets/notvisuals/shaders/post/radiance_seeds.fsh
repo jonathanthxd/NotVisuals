@@ -58,11 +58,14 @@ void main() {
                                 ivec2(0),textureSize(InSampler,0)-ivec2(1));
         int cls=nvClass(texelFetch(InSampler,texelXY,0));
         if(cls==0) continue;
-        float d=texture(MainDepthSampler,uv).r;
+        // R20: snap the selected seed to the actual texel center. Sub-cell
+        // probe coordinates shifted by fractional pixels on camera motion.
+        vec2 texelUV=(vec2(texelXY)+0.5)/vec2(textureSize(InSampler,0));
+        float d=texture(MainDepthSampler,texelUV).r;
         if(d<0.00002 || d>0.999999) continue;
         // Prefer a central seed to minimize pixel-jitter at camera movement.
-        float metric=dot(offset,offset);
-        if(metric<best){best=metric;chosen=uv;tag=cls;}
+        float metric=dot(texelUV-texCoord,texelUV-texCoord);
+        if(metric<best){best=metric;chosen=texelUV;tag=cls;}
     }
     fragColor=tag>0?nvPackSeed(chosen,tag):vec4(0.0);
 }

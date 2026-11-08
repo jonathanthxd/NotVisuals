@@ -146,8 +146,10 @@ vec3 nvCelestialHalo(vec3 dir, vec3 sunDirection, float daytime, float weather) 
     // texture is still drawn after this and remains the protagonist.
     float solarOuter=exp(-pow(sunAngle/0.41,1.55));
     float lunarOuter=exp(-pow(moonAngle/0.31,1.55));
-    vec3 sunlight=(vec3(1.00,0.82,0.60)*(solarCore*0.29+solarRim*0.21+solarOuter*0.047))*daytime;
-    vec3 moonlight=(vec3(0.67,0.79,1.00)*(lunarCore*0.22+lunarRim*0.16+lunarOuter*0.052))*(1.0-daytime);
+    // R20: soften only the wide atmospheric skirt before four-scale bloom.
+    // Keep celestial discs, color, core and near halo untouched.
+    vec3 sunlight=(vec3(1.00,0.82,0.60)*(solarCore*0.29+solarRim*0.21+solarOuter*0.039))*daytime;
+    vec3 moonlight=(vec3(0.67,0.79,1.00)*(lunarCore*0.22+lunarRim*0.16+lunarOuter*0.044))*(1.0-daytime);
     return (sunlight+moonlight)*weather;
 }
 

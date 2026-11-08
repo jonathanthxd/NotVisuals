@@ -60,8 +60,10 @@ void main() {
         // leaving sudden overbright spikes untouched; those are conspicuous
         // around crowded glowstone walls. Smooth BOTH directions when depth
         // and chroma agree; steady-state energy is unchanged.
-        float matchedOld=clamp(oldLen,curLen*0.68,curLen*1.48);
-        float response=0.52*confidence;
+        // R20: gently damp one-frame spikes and dips when depth and hue
+        // agree. Disocclusions still reject history; source hue is unchanged.
+        float matchedOld=clamp(oldLen,curLen*0.72,curLen*1.36);
+        float response=0.58*confidence;
         float stableEnergy=mix(curLen,matchedOld,response);
         stabilized=current*(stableEnergy/max(curLen,0.000001));
     } else if(curLen<=0.003 && oldLen>0.027 && depthDifference<0.014){

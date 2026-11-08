@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from zipfile import ZipFile
-from validate_r19 import MANIFEST, verify
+from validate_r19 import MANIFEST, verify, baseline_match, exact_hash, r20_changes
 from license_audit import check as check_licenses
 from build_pack import build
 
@@ -29,10 +29,16 @@ class R19Tests(unittest.TestCase):
                              "LICENSES/WATER_LILIES_MIT.txt", "LICENSES/R18_ATTRIBUTION.md"):
                     self.assertIn(name, names)
                 self.assertNotIn("src/pack/pack.mcmeta", names)
-                for path, spec in json.loads(MANIFEST.read_text(encoding="utf-8"))["files"].items():
+                original = json.loads(MANIFEST.read_text(encoding="utf-8"))
+                overrides = r20_changes(original)
+                for path, spec in original["files"].items():
                     if path.startswith("LICENSES/") or path == "LEEME_R19.md":
                         continue
-                    self.assertEqual(hashlib.sha256(archive.read(path)).hexdigest(), spec["sha256"], path)
+                    data = archive.read(path)
+                    if path in overrides:
+                        self.assertTrue(exact_hash(data, overrides[path]), path)
+                    else:
+                        self.assertTrue(baseline_match(data, path, spec), path)
 
 if __name__ == "__main__":
     unittest.main()

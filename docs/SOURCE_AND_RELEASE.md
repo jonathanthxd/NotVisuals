@@ -33,3 +33,9 @@ The user-provided final experimental R19 ZIP contains **724 entries**, including
 Use `python3 scripts/import_r19_zip.py path/to/R19.zip` to validate the exact received ZIP; then add `--apply` to import it into `src/pack/`. A backup of the earlier tree stays under ignored `dist/r19-previous-source/`. The installer copies upstream MIT notices verbatim to `LICENSES/` and produces `docs/R19_SOURCE_MANIFEST.json` with all file hashes. The sky atlas is regenerated from its preexisting 15 source chunks, not duplicated as a binary Git asset.
 
 CI switches from legacy candidate synthetic tests to exact R19 source and ZIP parity tests when that manifest appears. **No Modrinth upload or GitHub binary release happens automatically.** See [R19 third-party register](R19_THIRD_PARTY.md).
+
+## R20 source/ZIP parity
+
+The user's exact full R19 source was pushed in `39dd9b0`. `docs/R19_SOURCE_MANIFEST.json` remains the historical SHA-256 index. `docs/R20_CHANGESET.json` lists precisely five changed shaders. All other source files must remain R19-identical, with only reversible LF/CRLF canonicalization permitted. CI verifies the unchanged 41-pass chain, 53 encoded marker classes, original MIT notices and compiles five changed GLSL fragment shaders against pinned renderer references. The installable Modrinth-targeted ZIP is `dist/NotVisuals_26.3_v8_R20_Visual_Polish.zip`.
+
+**Release QA:** successful automation cannot establish correct Minecraft 26.3 rendering. The owner still needs to verify Nether flicker, visible pink dots, outlines, sun/moon bloom and shader logs before replacing Modrinth v7.

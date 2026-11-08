@@ -4,7 +4,7 @@
 
 Resource pack gráfico para **Minecraft Java Edition 26.3** que utiliza `minecraft:end_of_frame` y shaders GLSL de postprocesamiento. No requiere Iris, OptiFine ni un shader loader.
 
-**Estado de esta rama:** **v8 — Ink & Light, candidata 3: Aurora Sky (experimental).** El código y la validación estática no equivalen a una compilación completa dentro de Minecraft ni a una aprobación visual. `main` continúa siendo la referencia estable v7.
+**Estado de esta rama:** **v8 R20 — Visual Polish (candidata para pruebas reales)**, basada en R19 completa. El código y la validación estática no equivalen a una compilación completa dentro de Minecraft ni a una aprobación visual. `main` continúa siendo la referencia estable v7.
 
 [Modrinth (v7 publicada)](https://modrinth.com/resourcepack/notvisuals) · [Errores](https://github.com/jonathanthxd/NotVisuals/issues) · [Guía de pruebas v8](docs/V8_TESTING_GUIDE.md) · [Informe de implementación](docs/V8_IMPLEMENTATION_REPORT.md)
 
@@ -80,7 +80,7 @@ La primera ejecución solo verifica; la segunda importa los recursos a `src/pack
 
 ## R20 — Review and restrained polish
 
-R20 will be a **visual QA and stabilization pass**, not a new feature release. Priorities are Nether light flicker, leaking pink Radiance markers, double outlines, and sun/moon bloom. No optimization or ports. Import the exact full R19 source first (issue #5); **do not edit the old Candidate 3 as if it were R19**. See [R20 review and acceptance criteria](docs/R20_VISUAL_REVIEW.md).
+The owner's complete **R19 source is now imported** (`docs/R19_SOURCE_MANIFEST.json`). **R20 Visual Polish** introduces exactly five shader edits: marker anti-alias cleanup, texel-aligned seeds, conservative temporal light smoothing, dark-outline protection, and refined outer solar/lunar halos. No added features, passes, classes, optimizations or ports. The 724-file R19 source remains anchored by its historical manifest; see [R20 changeset](docs/R20_CHANGESET.json) and [release notes](docs/R20_RELEASE_NOTES.md). Minecraft 26.3 acceptance is still required before Modrinth publication.
 
 ## Desarrollo y estado técnico
 

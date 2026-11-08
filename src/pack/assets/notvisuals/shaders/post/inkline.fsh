@@ -29,10 +29,14 @@ void main() {
     float silhouette = smoothstep(0.10, 0.37, upper - y);
     silhouette *= smoothstep(0.13, 0.45, upper - lower);
     silhouette *= 1.0 - smoothstep(0.74, 0.99, y);
+    // R20: avoid repeatedly darkening almost-black silhouettes already
+    // handled by the preceding depth-based ink pass.
+    float deepShadowGuard = mix(0.43, 1.0, smoothstep(0.035, 0.19, y));
+    silhouette *= deepShadowGuard;
     // Suppress small texture microcontrast and white bright emitter edges.
     float neighbourMean = (u + d + r + l) * 0.25;
     float cavity = smoothstep(0.045, 0.22, neighbourMean - y) * (1.0 - smoothstep(0.45, 0.83, y));
-    float darkness = clamp(silhouette * INK_STRENGTH + cavity * CONTACT_TONE, 0.0, 0.5);
+    float darkness = clamp(silhouette * INK_STRENGTH + cavity * CONTACT_TONE * deepShadowGuard, 0.0, 0.5);
     vec3 shaded = original.rgb * mix(vec3(1.0), INK_TINT, darkness);
     fragColor = vec4(max(shaded, vec3(0.0)), original.a);
 }

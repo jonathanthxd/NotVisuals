@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "version": "NotVisuals v8 R20 — Visual Polish",
+  "baseline_archive_sha256": "5ff3880673ea5d2facdf2d577b7b80129a1b3e01562a40776ffe5e8808b1fd8f",
+  "policy": "Source changes are explicitly listed; every other R19 asset must match original SHA256 or LF/CRLF-only canonicalization.",
+  "scope": "Visual stability and finishing only; 41 passes and 53 Radiance classes remain unchanged; no new features or optimization.",
+  "modified_files": {
+    "assets/notvisuals/shaders/post/radiance_marker_clean.fsh": {
+      "sha256": "01ee19640c73f8c9c681effe71bb5a20e861198f59840b8196344bc7e8779df9",
+      "size": 3012,
+      "reason": "Conservative AA marker-fringe suppression within two pixels of exact class IDs"
+    },
+    "assets/notvisuals/shaders/post/radiance_seeds.fsh": {
+      "sha256": "2f07ad16408f840c3d8771b7e83e58e0db47ca9b9192b14f3805470326da3564",
+      "size": 3211,
+      "reason": "Stable texel-centered source UV and depth sampling across subcell jitter"
+    },
+    "assets/notvisuals/shaders/post/radiance_temporal.fsh": {
+      "sha256": "85cb4c3293169297d1be2b2db31bea1417f84729325d0e226f33b8e1c61c415c",
+      "size": 4730,
+      "reason": "Slightly stronger depth/color-gated intensity stabilization without hue changes"
+    },
+    "assets/notvisuals/shaders/post/inkline.fsh": {
+      "sha256": "e8025289b6fdc8a3e6bc4b9605aa8d8fdc0181d6c03cf87bcedc4c7717cccfc1",
+      "size": 2116,
+      "reason": "Protect dark surfaces from consecutive double-inking"
+    },
+    "assets/minecraft/shaders/core/position_tex.fsh": {
+      "sha256": "d787bac7acfc541b05cbba8aa8f15da0e6b1bd3308165cac8ee93435483f9d79",
+      "size": 11173,
+      "reason": "Refine only wide sun/moon halo tails while preserving disc and core"
+    }
+  },
+  "manual_validation": {
+    "status": "NOT_TESTED_IN_MINECRAFT",
+    "required": [
+      "Nether flicker fixed/still and moving",
+      "pink marker leak test against natural magenta blocks",
+      "outline on glass and foliage",
+      "moon/sun at dawn and dusk",
+      "F3+T, dimensions and opt-in effects"
+    ]
+  },
+  "github": "source-only; the playable pack is intended for Modrinth; rebuilding/redistribution under licenses remains allowed"
+}

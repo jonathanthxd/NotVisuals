@@ -11,7 +11,8 @@ from license_audit import check as check_licenses
 ROOT = Path(__file__).resolve().parents[1]
 PACK_ROOT = ROOT / "src" / "pack"
 DEFAULT_OUTPUT = ROOT / "dist" / (
-    "NotVisuals_26.3_v8_C3_R19.zip" if (ROOT / "docs/R19_SOURCE_MANIFEST.json").exists()
+    "NotVisuals_26.3_v8_R20_Visual_Polish.zip" if (ROOT / "docs/R20_CHANGESET.json").exists()
+    else "NotVisuals_26.3_v8_C3_R19.zip" if (ROOT / "docs/R19_SOURCE_MANIFEST.json").exists()
     else "NotVisuals_26.3_v8_candidate_3_AuroraSky.zip"
 )
 
@@ -34,6 +35,12 @@ def pack_files() -> list[Path]:
             notice = ROOT / notice_name
             if not notice.is_file():
                 raise SystemExit(f"R19 requires original MIT notice: {notice_name}")
+            notices.append(notice)
+    if (ROOT / "docs/R20_CHANGESET.json").is_file():
+        for name in ("docs/R20_CHANGESET.json", "docs/R20_RELEASE_NOTES.md"):
+            notice = ROOT / name
+            if not notice.is_file():
+                raise SystemExit("R20 release metadata missing: " + name)
             notices.append(notice)
     files = required + notices + [p for p in (PACK_ROOT / "assets").rglob("*") if p.is_file()]
     if not (PACK_ROOT / "assets").is_dir() or len(files) == len(required):

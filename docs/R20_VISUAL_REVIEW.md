@@ -6,7 +6,7 @@
 
 The exact owner-provided pack analyzed is `NotVisuals_26.3_v8_C3_R19_Final_Visual_Update_EXPERIMENTAL(3).zip` with SHA-256 **`5ff3880673ea5d2facdf2d577b7b80129a1b3e01562a40776ffe5e8808b1fd8f`**. Its archive has 724 entries, 41 GLSL source files, 41 automatic postprocessing passes, 53 Radiance marker textures, and three license/attribution files in `LICENSES/`. The ZIP passes archive integrity and JSON parsing checks. No runtime ShaderC or in-game approval is inferred.
 
-**Do not edit stale shader code:** the experimental GitHub branch was still at `0b009b2` when the user sent their PowerShell log, with no `docs/R19_SOURCE_MANIFEST.json` committed. The log shows local verification of 723 transferred files and Git object writing, but not the final `-> feat/v8-ink-and-light` push confirmation. First resolve [source sync #5](https://github.com/jonathanthxd/NotVisuals/issues/5), verify branch HEAD and run R19 CI. Do **not** merge legacy C3 over the newer R19 ZIP.
+**R19 source was pushed** in commit `39dd9b0`. Its first CI rejected CRLF→LF-normalized text; the R20 validation allows only this reversible normalization for unchanged historical files, and records five intentional shader edits in [R20_CHANGESET.json](R20_CHANGESET.json). The original R19 manifest and archive SHA-256 stay intact.
 
 ## Audit findings from the actual R19 package (not root-cause confirmations)
 
@@ -50,11 +50,11 @@ The exact owner-provided pack analyzed is `NotVisuals_26.3_v8_C3_R19_Final_Visua
 
 | ID | Test | Status |
 | --- | --- | --- |
-| `NV-R20-01` | Pink marker leakage, still and moving camera | NOT TESTED |
-| `NV-R20-02` | Nether emitter, localized light and exposure flicker | NOT TESTED |
-| `NV-R20-03` | Depth Ink + Inkline against geometry/translucency/HUD | NOT TESTED |
-| `NV-R20-04` | Sun halo and clipping at noon/sunrise/sunset/storm | NOT TESTED |
-| `NV-R20-05` | Moon halo, phases, stars and twilight | NOT TESTED |
+| `NV-R20-01` | Pink marker leakage, still and moving camera | CODE PREPARED — MANUAL TEST PENDING |
+| `NV-R20-02` | Nether emitter, localized light and exposure flicker | CODE PREPARED — MANUAL TEST PENDING |
+| `NV-R20-03` | Depth Ink + Inkline against geometry/translucency/HUD | CODE PREPARED — MANUAL TEST PENDING |
+| `NV-R20-04` | Sun halo and clipping at noon/sunrise/sunset/storm | CODE PREPARED — MANUAL TEST PENDING |
+| `NV-R20-05` | Moon halo, phases, stars and twilight | CODE PREPARED — MANUAL TEST PENDING |
 | `NV-R20-06` | F3+T, world/dimension transitions, window modes | NOT TESTED |
 | `NV-R20-07` | Overall visual comparison with previous accepted R19 | NOT TESTED |
 

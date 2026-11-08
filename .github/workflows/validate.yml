@@ -58,6 +58,16 @@ jobs:
       - name: R19 source equivalence and ZIP/license regression tests
         if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') != '' }}
         run: python3 -m unittest discover -s scripts -p 'test_r19.py' -v
+      - name: R20 image- and shader-invariant regression tests
+        if: ${{ hashFiles('docs/R20_CHANGESET.json') != '' }}
+        run: python3 -m unittest discover -s scripts -p 'test_r20.py' -v
+      - name: R20 GLSL compilation of edited stages
+        if: ${{ hashFiles('docs/R20_CHANGESET.json') != '' }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq glslang-tools
+          python3 scripts/shader_sources.py --fetch /tmp/notvisuals-26.3
+          python3 scripts/compile_r20_shaders.py --vanilla-root /tmp/notvisuals-26.3
       - name: Build local experimental ZIP for CI tests
         run: python3 scripts/build_pack.py
       - name: Verify archive contents
