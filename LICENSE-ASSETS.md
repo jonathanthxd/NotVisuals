@@ -8,7 +8,7 @@
 
 Copyright © 2026, the respective authors/rightsholders of original NotVisuals art.
 
-**Scope:** newly created or separately identifiable original artworks, textures, images, icons and other creative assets whose owners have authorized this license, as specified in [LICENSING.md](LICENSING.md). It **does not** automatically include unrelated imported files, Minecraft assets, shader code or the historical v7 pack icon as exclusively CC-licensed art. The original Aurora Sky art by **masteirdixy** is documented under the author's reported CC BY-NC-SA consent in [CREDITS.md](CREDITS.md).
+**Scope:** newly created or separately identifiable original artworks, textures, images, icons and other creative assets whose owners have authorized this license, as specified in [LICENSING.md](LICENSING.md). It **does not** automatically include imported files, Minecraft assets, third-party Aurora Sky shaders/atlases, code, or the historical v7 pack icon as exclusively CC-licensed material.
 
 In summary, the CC license permits noncommercial sharing and adaptations with appropriate attribution, link to the license, indication of changes and ShareAlike for adaptations. The linked full legal code governs; this summary is not a replacement.
 

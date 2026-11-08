@@ -19,7 +19,7 @@ def pack_files() -> list[Path]:
         raise SystemExit(f"Missing required pack file(s): {', '.join(missing)}")
     notices = [ROOT / name for name in (
         "LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md",
-        "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md", "CREDITS.md",
+        "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md",
         "docs/RIGHTS_STATUS.json",
     )]
     missing_notices = [p.name for p in notices if not p.is_file()]

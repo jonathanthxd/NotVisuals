@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "policy": "2026-11-08: owner-reported private Discord express consent from masteirdixy for authored art under CC BY-NC-SA 4.0 and authored shaders under GPLv3. The original messages and attachments were not independently accessed. Automated checks confirm recorded fields, not legal authenticity or R19 game QA.",
+  "policy": "docs/RIGHTS_STATUS.json records potential third-party redistribution restrictions. Clearance must be reviewed by a rightsholder or trusted maintainer; automation verifies only presence of evidence fields, not authenticity.",
   "items": [
     {
       "id": "aurora_sky_atlas",
@@ -9,14 +9,12 @@
         "source/aurora_sky/sun_atlas/part_*.b64",
         "assets/minecraft/textures/environment/celestial/sun.png"
       ],
-      "status": "cleared",
-      "author": "masteirdixy (self-attested; reply relayed by NotVisuals owner)",
+      "status": "pending",
+      "author": null,
       "origin_url": null,
-      "license_or_permission": "CC-BY-NC-SA-4.0 for original artwork authored by masteirdixy",
+      "license_or_permission": null,
       "evidence_url": null,
-      "reviewed_by": "NotVisuals project owner (consent reported to assistant, original DM/attachments not independently authenticated)",
-      "origin_reference": "Original files delivered privately via Discord by masteirdixy",
-      "evidence_reference": "Discord private reply 2026-11-08 approx. 14:11 local; summarized in docs/AURORA_SKY_PERMISSION.md; full DM held privately by project owner"
+      "reviewed_by": null
     },
     {
       "id": "aurora_sky_core",
@@ -25,14 +23,12 @@
         "assets/minecraft/shaders/core/*.fsh",
         "assets/minecraft/shaders/core/*.vsh"
       ],
-      "status": "cleared",
-      "author": "masteirdixy (self-attested; reply relayed by NotVisuals owner)",
+      "status": "pending",
+      "author": null,
       "origin_url": null,
-      "license_or_permission": "GPL-3.0-only for original Aurora Sky shader code authored by masteirdixy; other code separately scoped",
+      "license_or_permission": null,
       "evidence_url": null,
-      "reviewed_by": "NotVisuals project owner (consent reported to assistant, original DM/attachments not independently authenticated)",
-      "origin_reference": "Original files delivered privately via Discord by masteirdixy",
-      "evidence_reference": "Discord private reply 2026-11-08 approx. 14:11 local; summarized in docs/AURORA_SKY_PERMISSION.md; full DM held privately by project owner"
+      "reviewed_by": null
     }
   ]
 }

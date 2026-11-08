@@ -22,7 +22,7 @@ La transferencia binaria directa mediante el conector no soportó el PNG origina
 - SHA-256 del PNG exacto: `06cd49d8d53e5855e90d657cb6aa65d1a9d08954374dce0158ef5f846e990c00`.
 - Firma PNG, integridad Base64 y cantidad de partes.
 
-`python3 scripts/build_pack.py` crea `dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip`. La textura generada se excluye de Git para evitar duplicar el archivo de 6,7 MB y evitar que cambios locales casuales sustituyan el arte original. El ZIP de pruebas generado **localmente** contiene el PNG íntegro en la ruta esperada por Minecraft. CI comprueba la compilación pero **no publica un ZIP descargable** hasta verificar los permisos de los recursos aportados por terceros; consultar [RIGHTS_STATUS.json](RIGHTS_STATUS.json). No hay reducción de paleta ni recomposición artística del atlas.
+`python3 scripts/build_pack.py` crea `dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip`. La textura generada se excluye de Git para evitar duplicar el archivo de 6,7 MB y evitar que cambios locales casuales sustituyan el arte original. El ZIP de pruebas generado **localmente** contiene el PNG íntegro en la ruta esperada por Minecraft. CI comprueba la compilación pero **todavía no publica un ZIP descargable** porque la QA visual y la sincronización de la R19 real no están completas; consultar [RIGHTS_STATUS.json](RIGHTS_STATUS.json). No hay reducción de paleta ni recomposición artística del atlas.
 
 ## Limitaciones importantes
 
@@ -31,7 +31,7 @@ La transferencia binaria directa mediante el conector no soportó el PNG origina
 - La geometría de nubes Vanilla se oculta desde el vertex shader; verificar OIT, clima, Fancy/Fast/Off y distintas distancias de cámara dentro del cliente 26.3.
 - No se han añadido mejoras a sombras geométricas, SSAO ni a materiales de Chromaglow en esta candidata.
 - El funcionamiento observado por el propietario corresponde a **dos packs superpuestos**; que el pack unificado cargue, compile y reproduzca ese aspecto requiere pruebas reales.
-- La procedencia/licencia de los shaders y del atlas proporcionados por un tercero debe confirmarse antes de fusionar en `main` o distribuir oficialmente. Para solicitar consentimiento explícito al autor, ver [AURORA_SKY_PERMISSION.md](AURORA_SKY_PERMISSION.md). El hecho de recibirlos no demuestra permiso de redistribución. El bloqueo se aplica mediante `python3 scripts/build_pack.py --release`; no se levantará hasta verificar evidencias y actualizar el manifiesto.
+- **Licencias:** el 2026-11-08 el propietario comunicó el consentimiento explícito de `masteirdixy` para sus recursos artísticos originales bajo CC BY-NC-SA 4.0 y su código shader original bajo GPLv3. Los derechos están documentados como autorización privada comunicada por el propietario; el mensaje y adjuntos originales no se verificaron independientemente. Ver [registro de permisos](AURORA_SKY_PERMISSION.md) y [créditos](../CREDITS.md). Esto no sustituye las pruebas reales R19.
 
 ## Pruebas manuales esenciales
 

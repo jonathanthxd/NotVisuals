@@ -43,7 +43,7 @@ jobs:
         run: python3 scripts/build_pack.py
       - name: Verify archive contents
         run: python3 -m zipfile -t dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip
-      # Distribution disabled while third-party Aurora Sky rights are unverified.
-      # See docs/RIGHTS_STATUS.json and issue #2. CI still builds and tests locally.
+      # Artifact upload paused pending real R19 source synchronization and in-game QA.
+      # masteirdixy's original art/code consent is documented. See docs/R19_STATUS.md.
       - name: Explain why no ZIP is published
-        run: echo "::warning::NotVisuals Aurora Sky candidate is for local testing only; ZIP artifact publishing is suspended pending rights clearance."
+        run: echo "::warning::NotVisuals Aurora Sky candidate is for local testing only; ZIP artifact publishing is suspended pending R19 source synchronization and manual in-game QA."

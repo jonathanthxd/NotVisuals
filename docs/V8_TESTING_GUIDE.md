@@ -1,4 +1,4 @@
-> **Nueva Candidate 3 — Aurora Sky:** el texto histórico inferior corresponde a Candidate 2. Para pruebas autorizadas del cielo, sol, auroras y nubes ocultas, consultar [V8_AURORA_SKY.md](V8_AURORA_SKY.md). El ZIP `NotVisuals_26.3_v8_candidate_3_AuroraSky.zip` se genera **localmente** mediante `scripts/build_pack.py`; CI ya no sube artefactos mientras los derechos estén pendientes. No redistribuir la candidata ni superponer `Cielo_test` u otras versiones. El resto de pruebas de iluminación, Depth Lab y Depth Ink sigue siendo válido.
+> **Nueva Candidate 3 — Aurora Sky:** el texto histórico inferior corresponde a Candidate 2. `masteirdixy` autorizó expresamente sus recursos originales el 2026-11-08, y los créditos están registrados. El ZIP de la candidata se construye localmente con `scripts/build_pack.py`; CI no publica todavía artefactos descargables mientras falta QA R19 y sincronización de la fuente real. No confundir esta rama antigua con la R19 completa. Ver [V8_AURORA_SKY.md](V8_AURORA_SKY.md).
 
 # Guía de pruebas — NotVisuals v8 candidata 2
 

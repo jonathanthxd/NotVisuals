@@ -7,7 +7,7 @@
 - El usuario informa que en sus pruebas cotidianas el aspecto general le resulta correcto; **observó parpadeo en zonas iluminadas del Nether**.
 - Esto es feedback de juego, no un certificado de que cada escenario de esta matriz esté probado.
 - La última CI valida GLSL, grafos y escenas sintéticas. **No verifica automáticamente ShaderC, transparencias reales, dimensiones, cámara, HUD ni drivers de Minecraft**.
-- El atlas y los shaders externos de Aurora Sky requieren autorización antes de redistribución; pruebas locales no equivalen a permiso público.
+- El permiso de `masteirdixy` para el arte y el código originales se registró el 2026-11-08. Esto no prueba la autoría de archivos de otros creadores ni reemplaza la revisión del ZIP real de R19.
 
 ## A. Pase rápido — imprescindible (15-20 minutos)
 
@@ -34,7 +34,7 @@
 | `NV-R19-12` | Textos, partículas, pociones, portal, fuego y cristal tintado | Postprocesado encima de GUI, sprites con alpha incorrecta o halos cuadrados |
 | `NV-R19-13` | Ciclo día/noche natural sin comandos y 15-30 segundos frente a una fuente | Cambios de exposición a saltos y parpadeo temporal |
 | `NV-R19-14` | Cambiar FOV, tamaño de ventana, resolución, fullscreen, F3+T | Bordes cortados, desplazamientos, persistencia de render targets |
-| `NV-R19-15` | Shader original con pack independiente vs NotVisuals integrado, misma escena | Confirmar la apariencia sin alterar su origen; no distribuir materiales sin permiso |
+| `NV-R19-15` | Shader original con pack independiente vs NotVisuals integrado, misma escena | Confirmar la apariencia sin alterar su origen; mantener los créditos y licencias autorizados |
 | `NV-R19-16` | Solo Vanilla 26.3 vs Vanilla + NotVisuals; después mods habituales | Separar errores del pack de incompatibilidades con Sodium/otros mods |
 | `NV-R19-17` | Nether: biomas crimson/warped y basalt, soul fire, lava en movimiento | Parpadeos sensibles a color cálido/frío, partículas e iluminación animada |
 | `NV-R19-18` | Activar `depth_lab` y `depth_ink` por separado | Siluetas, mano, hojas, transparencia, profundidad invertida; nunca concluir por ambos activados simultáneamente |
