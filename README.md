@@ -85,6 +85,8 @@ NotVisuals uses **file-scoped GPL-3.0-only code + CC BY-NC-SA 4.0 cleared origin
 
 Before publishing a new release, run `python scripts/build_pack.py --release`; experimental builds are not proof of cleared distribution rights. See the [rights status](docs/RIGHTS_STATUS.json).
 
+The original Aurora Sky contributor **masteirdixy** has given author-reported permission for original artwork under CC BY-NC-SA 4.0 and original shader code under GPLv3; this pertains to the experimental v8 branch, **not** an integration of that content into stable v7. See [CREDITS.md](CREDITS.md) and [permission record](docs/AURORA_SKY_PERMISSION.md).
+
 Read [LICENSING.md](LICENSING.md), [LICENSE-CODE](LICENSE-CODE), [LICENSE-ASSETS.md](LICENSE-ASSETS.md), [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [Modrinth licensing](docs/MODRINTH_LICENSING.md).
 
 Not affiliated with Mojang Studios / Microsoft.
