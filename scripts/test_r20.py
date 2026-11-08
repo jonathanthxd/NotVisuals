@@ -27,7 +27,7 @@ class R20Tests(unittest.TestCase):
         description = meta["pack"]["description"]
         self.assertIsInstance(description, dict)
         segments = description["extra"]
-        self.assertEqual("".join(segment["text"] for segment in segments), "✦ NotVisuals v8\\ndiscord.gg/tflives")
+        self.assertEqual("".join(segment["text"] for segment in segments), "✦ NotVisuals v8\ndiscord.gg/tflives")
         self.assertEqual(segments[1]["color"], "#F3FAFF")
         self.assertEqual(segments[2]["color"], "#B79DFF")
         self.assertEqual(segments[-1]["color"], "#55D8F2")
