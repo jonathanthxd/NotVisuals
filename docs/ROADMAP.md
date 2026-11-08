@@ -1,3 +1,15 @@
+## Fase actual — R19: visual polish y QA
+
+El usuario ha confirmado que seguimos en **R19**. Las pruebas habituales son positivas, pero se ha reportado **parpadeo de emisivos en el Nether**. No se da por corregido sin reproducción.
+
+- [Matriz reproducible R19](R19_VISUAL_QA.md): pruebas de Nether, dimensiones, profundidad, cielo, clima, HUD, mano y reload.
+- [Estado visual y decisiones de alcance](R19_STATUS.md).
+- [Autorización pendiente del recurso aportado por un amigo](AURORA_SKY_PERMISSION.md).
+- **Optimización, ports y nuevas arquitecturas fuera de alcance**. Se reconsiderarán más adelante, potencialmente en V9 o V10.
+- El cierre de R19 requiere evidencia en Minecraft y resolución/legalización de recursos externos antes de publicación. No promover la candidata solo porque la CI pase.
+
+---
+
 # NotVisuals — Roadmap
 
 Prioridad: **calidad visual → optimización → compatibilidad**. Rama experimental

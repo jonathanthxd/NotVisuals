@@ -48,6 +48,16 @@ Otros efectos opcionales heredados: `notvisuals:pixel_vivid` y `notvisuals:soft_
 
 **Atención:** el postprocesamiento puede afectar parcialmente a HUD/partículas; la máscara perfecta de interfaz aún no existe. Si aparecen pantallas negras, errores ShaderC o problemas de transparencia, desactiva la candidata y conserva `latest.log`.
 
+## R19 — Último pulido visual (fase actual)
+
+El usuario ha informado que el pack se ve bien en las pruebas habituales, con **parpadeo de algunas luces en el Nether** como defecto conocido. Este feedback no equivale a QA completa.
+
+- [Pruebas dirigidas R19 y pasos reproducibles](docs/R19_VISUAL_QA.md)
+- [Estado y alcance de R19](docs/R19_STATUS.md)
+- [Solicitud de permiso al autor de Aurora Sky](docs/AURORA_SKY_PERMISSION.md)
+
+**No se trabaja en optimización todavía**; el rendimiento/VRAM y los ports quedan pospuestos (posiblemente V9/V10). No distribuir Aurora Sky hasta confirmar derechos.
+
 ## Desarrollo y estado técnico
 
 - [Arquitectura y dependencias](docs/ARCHITECTURE.md)

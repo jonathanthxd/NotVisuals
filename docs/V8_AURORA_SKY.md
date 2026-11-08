@@ -31,7 +31,7 @@ La transferencia binaria directa mediante el conector no soportó el PNG origina
 - La geometría de nubes Vanilla se oculta desde el vertex shader; verificar OIT, clima, Fancy/Fast/Off y distintas distancias de cámara dentro del cliente 26.3.
 - No se han añadido mejoras a sombras geométricas, SSAO ni a materiales de Chromaglow en esta candidata.
 - El funcionamiento observado por el propietario corresponde a **dos packs superpuestos**; que el pack unificado cargue, compile y reproduzca ese aspecto requiere pruebas reales.
-- La procedencia/licencia de los shaders y del atlas proporcionados por un tercero debe confirmarse antes de fusionar en `main` o distribuir oficialmente. El hecho de recibirlos no demuestra permiso de redistribución. El bloqueo se aplica mediante `python3 scripts/build_pack.py --release`; no se levantará hasta verificar evidencias y actualizar el manifiesto.
+- La procedencia/licencia de los shaders y del atlas proporcionados por un tercero debe confirmarse antes de fusionar en `main` o distribuir oficialmente. Para solicitar consentimiento explícito al autor, ver [AURORA_SKY_PERMISSION.md](AURORA_SKY_PERMISSION.md). El hecho de recibirlos no demuestra permiso de redistribución. El bloqueo se aplica mediante `python3 scripts/build_pack.py --release`; no se levantará hasta verificar evidencias y actualizar el manifiesto.
 
 ## Pruebas manuales esenciales
 
