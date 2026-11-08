@@ -16,9 +16,23 @@ from validate_pack import ROOT, verify
 
 
 class PackTests(unittest.TestCase):
-    def test_release_is_blocked_for_unverified_aurora_sky(self):
-        with self.assertRaisesRegex(SystemExit, 'aurora_sky'):
-            check_licenses(release=True)
+    def test_release_preflight_accepts_recorded_author_permission(self):
+        self.assertEqual(check_licenses(release=True), [])
+
+    def test_pending_consent_still_blocks_release(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            test_root = Path(tmp)
+            (test_root / "docs").mkdir()
+            (test_root / "source/aurora_sky/sun_atlas").mkdir(parents=True)
+            (test_root / "source/aurora_sky/sun_atlas/part_00.b64").write_text("synthetic")
+            for name in ("LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md", "LICENSING.md",
+                         "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md"):
+                shutil.copy2(ROOT / name, test_root / name)
+            manifest = json.loads((ROOT / "docs/RIGHTS_STATUS.json").read_text())
+            manifest["items"][0]["status"] = "pending"
+            (test_root / "docs/RIGHTS_STATUS.json").write_text(json.dumps(manifest))
+            with self.assertRaisesRegex(SystemExit, "aurora_sky_atlas"):
+                check_licenses(test_root, release=True)
 
     def test_current_graph(self):
         effects, passes = verify(quiet=True)
@@ -93,7 +107,7 @@ class PackTests(unittest.TestCase):
                 names = set(arc.namelist())
                 self.assertIn("pack.mcmeta", names)
                 self.assertIn("pack.png", names)
-                for notice in ("LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md", "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md", "docs/RIGHTS_STATUS.json"):
+                for notice in ("LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md", "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md", "CREDITS.md", "docs/RIGHTS_STATUS.json"):
                     self.assertIn(notice, names)
                 self.assertIn("assets/minecraft/textures/environment/celestial/sun.png", names)
                 import hashlib

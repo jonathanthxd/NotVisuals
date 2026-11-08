@@ -29,10 +29,10 @@ Desde esta rama:
 python3 scripts/validate_pack.py
 python3 -m unittest discover -s scripts -p 'test_*.py' -v
 python3 scripts/build_pack.py  # build experimental para pruebas locales
-# python3 scripts/build_pack.py --release  # BLOQUEADO hasta obtener autorizaciones
+python3 scripts/build_pack.py --release  # preflight documental, no certificación de QA
 ```
 
-El resultado se genera en `dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip`. CI construye y comprueba la candidata, pero **no publica el ZIP como artefacto descargable** mientras haya recursos externos con derechos no verificados. Para pruebas locales, utiliza el archivo generado por `scripts/build_pack.py` en tu entorno autorizado; no lo redistribuyas. Colócalo **sin extraer** en `.minecraft/resourcepacks/` y pruébalo en **Minecraft 26.3**. La publicación oficial requiere `python3 scripts/build_pack.py --release` y cerrar las comprobaciones de licencias.
+El resultado se genera en `dist/NotVisuals_26.3_v8_candidate_3_AuroraSky.zip`. CI construye y comprueba la candidata, pero **el workflow actual no publica ZIP descargable**. El consentimiento del autor está documentado; aún falta verificar la R19 real. Para pruebas locales, utiliza el archivo generado por `scripts/build_pack.py` en tu entorno autorizado; no lo redistribuyas. Colócalo **sin extraer** en `.minecraft/resourcepacks/` y pruébalo en **Minecraft 26.3**. La publicación oficial requiere `python3 scripts/build_pack.py --release` y cerrar las comprobaciones de licencias.
 
 El efecto base es automático. El laboratorio de profundidad es optativo:
 
@@ -54,9 +54,9 @@ El usuario ha informado que el pack se ve bien en las pruebas habituales, con **
 
 - [Pruebas dirigidas R19 y pasos reproducibles](docs/R19_VISUAL_QA.md)
 - [Estado y alcance de R19](docs/R19_STATUS.md)
-- [Solicitud de permiso al autor de Aurora Sky](docs/AURORA_SKY_PERMISSION.md)
+- [Consentimiento de masteirdixy](docs/AURORA_SKY_PERMISSION.md) · [Créditos](CREDITS.md)
 
-**No se trabaja en optimización todavía**; el rendimiento/VRAM y los ports quedan pospuestos (posiblemente V9/V10). No distribuir Aurora Sky hasta confirmar derechos.
+**No se trabaja en optimización todavía**; el rendimiento/VRAM y los ports quedan pospuestos (posiblemente V9/V10). Los derechos originales están documentados según el consentimiento recibido; la release requiere QA y revisar la R19 real.
 
 ## Desarrollo y estado técnico
 
@@ -75,7 +75,7 @@ La raíz del repositorio es directamente la raíz del resource pack. `pack.mcmet
 
 NotVisuals distingue **código original GPL-3.0-only** y **recursos artísticos originales CC BY-NC-SA 4.0**, sujetos a la verificación de los derechos correspondientes. El conjunto no es totalmente Open Source según la definición OSI.
 
-La procedencia de parte del atlas y los shaders de **Aurora Sky todavía está sin verificar**. Ninguna licencia nueva del proyecto se atribuye automáticamente a esos componentes; deben autorizarse o sustituirse antes de publicar R20. Los permisos GPL de versiones históricas siguen vigentes.
+El 2026-11-08 se documentó consentimiento expreso de `masteirdixy` para su arte original (CC BY-NC-SA 4.0) y sus shaders originales (GPLv3). Es una declaración privada aportada por el propietario, no verificada independientemente. Ver [CREDITS.md](CREDITS.md). R19 sigue en pruebas.
 
 La comprobación automática utiliza [el registro de derechos](docs/RIGHTS_STATUS.json); el comando `--release` impide publicar mientras los permisos conocidos sigan pendientes.
 

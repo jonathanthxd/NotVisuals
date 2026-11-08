@@ -16,14 +16,14 @@ This is the canonical **file-scoped license map** for NotVisuals. It is not a ne
 
 An extension, location under `assets/minecraft/`, or the presence of a public GitHub file **never** establishes that NotVisuals owns it. Specific file notices and [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) supersede defaults.
 
-## Unresolved Aurora Sky rights — v8 candidate
+## Aurora Sky — permission recorded (2026-11-08)
 
-The work on `feat/v8-ink-and-light` integrates externally supplied resources whose rights have **not** been confirmed:
+The project owner supplied a private Discord reply attributed to **masteirdixy**, who stated that they created the supplied Aurora Sky assets and expressly agreed to **CC BY-NC-SA 4.0 for their original sky artwork** and **GPLv3 for their original shader code**, with public modification and redistribution in NotVisuals. Attribution may use their Discord handle, and is required by CC BY-NC-SA.
 
-- `source/aurora_sky/sun_atlas/part_*.b64`, plus generated `assets/minecraft/textures/environment/celestial/sun.png`: third-party-supplied original sky atlas.
-- Relevant `assets/minecraft/shaders/core/{sky,clouds,position_tex,position_color,stars}.*` integration files: original authorship/permissions must be checked before assigning new GPL rights.
+- `source/aurora_sky/sun_atlas/part_*.b64` and generated `assets/minecraft/textures/environment/celestial/sun.png`: the author's original art, CC BY-NC-SA 4.0.
+- Original shader portions later adapted into `assets/minecraft/shaders/core/*`: GPLv3 as authorized. Additional NotVisuals changes and Minecraft-owned runtime interfaces are separately scoped.
 
-**These items are not automatically relicensed GPLv3 or CC BY-NC-SA 4.0 by the project.** Neither possession of the files nor local testing proves redistribution rights. They must be **cleared or replaced** before an official Modrinth release. See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) and [Aurora Sky notes](docs/V8_AURORA_SKY.md). Research references are not granted licenses merely by being discussed.
+**Evidence level:** self-declared rights through private Discord correspondence reported by the project owner; the original DM and files were not independently inspected. The correspondence has no public permalink; do not invent one. See [CREDITS.md](CREDITS.md) and [permission record](docs/AURORA_SKY_PERMISSION.md). Any content authored by others needs its own legal basis. This documented grant does **not** certify R19 technical QA or approve release.
 
 ## Rights and limitations
 
@@ -47,7 +47,7 @@ Contributors retain their copyrights. Contributions must be licensed as document
 
 See [TRADEMARKS.md](TRADEMARKS.md) for official-name and endorsement policy. Mandatory credit and lawful descriptive uses remain permitted.
 
-The maintained [rights manifest](docs/RIGHTS_STATUS.json) and `scripts/license_audit.py` provide a **mechanical pre-release gate**. Development builds may still include experimental material, but official release builds must run `python scripts/build_pack.py --release`. That command refuses to proceed while known third-party rights are pending; a passing check is not a legal opinion or proof of permission. The current v8 Aurora Sky candidate is **not cleared**.
+The maintained [rights manifest](docs/RIGHTS_STATUS.json) and `scripts/license_audit.py` provide a **mechanical pre-release gate**. Development builds may still include experimental material, but official release builds must run `python scripts/build_pack.py --release`. That command refuses to proceed while known third-party rights are pending; a passing check is not a legal opinion or proof of permission. The author's permission is recorded in the manifest; the actual R19 build, manual QA and release metadata remain to be reviewed.
 
 For Modrinth, use a custom/mixed/other license option (if offered) with **license URL**:
 
