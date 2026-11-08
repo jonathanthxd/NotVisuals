@@ -1,0 +1,234 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:directory",
+      "prefix": "block/",
+      "source": "block"
+    },
+    {
+      "type": "minecraft:directory",
+      "prefix": "entity/conduit/",
+      "source": "entity/conduit"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/bell/bell_body"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/enchantment/enchanting_table_book"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_01"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_02"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_03"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_04"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_05"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_06"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_07"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_08"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_09"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_10"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_11"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_12"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_13"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_14"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_15"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_16"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_17"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_18"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_19"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_20"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_21"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_22"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_23"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_24"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_25"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_26"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_27"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_28"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_29"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_30"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_31"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_32"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_33"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_34"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_35"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_36"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_37"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_38"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_39"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_40"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_41"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_42"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_43"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_44"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_45"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_46"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_47"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_48"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_49"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_50"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_51"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_52"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "notvisuals:block/radiance/marker_53"
+    }
+  ]
+}

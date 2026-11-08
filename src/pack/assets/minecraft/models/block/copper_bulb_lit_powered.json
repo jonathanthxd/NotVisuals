@@ -1,0 +1,204 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "minecraft:block/copper_bulb_lit",
+    "all": "minecraft:block/copper_bulb_lit_powered",
+    "down": "#all",
+    "up": "#all",
+    "north": "#all",
+    "south": "#all",
+    "west": "#all",
+    "east": "#all",
+    "radiance_marker": "notvisuals:block/radiance/marker_08"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#down",
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#up",
+          "cullface": "up"
+        },
+        "north": {
+          "texture": "#north",
+          "cullface": "north"
+        },
+        "south": {
+          "texture": "#south",
+          "cullface": "south"
+        },
+        "west": {
+          "texture": "#west",
+          "cullface": "west"
+        },
+        "east": {
+          "texture": "#east",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "from": [
+        7.575,
+        -0.015,
+        7.575
+      ],
+      "to": [
+        8.425,
+        0,
+        8.425
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "down": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        7.575,
+        16,
+        7.575
+      ],
+      "to": [
+        8.425,
+        16.015,
+        8.425
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "up": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "cullface": "up"
+        }
+      }
+    },
+    {
+      "from": [
+        7.575,
+        7.575,
+        -0.015
+      ],
+      "to": [
+        8.425,
+        8.425,
+        0
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "north": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "cullface": "north"
+        }
+      }
+    },
+    {
+      "from": [
+        7.575,
+        7.575,
+        16
+      ],
+      "to": [
+        8.425,
+        8.425,
+        16.015
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "south": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "cullface": "south"
+        }
+      }
+    },
+    {
+      "from": [
+        -0.015,
+        7.575,
+        7.575
+      ],
+      "to": [
+        0,
+        8.425,
+        8.425
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "west": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "cullface": "west"
+        }
+      }
+    },
+    {
+      "from": [
+        16,
+        7.575,
+        7.575
+      ],
+      "to": [
+        16.015,
+        8.425,
+        8.425
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "east": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "cullface": "east"
+        }
+      }
+    }
+  ]
+}

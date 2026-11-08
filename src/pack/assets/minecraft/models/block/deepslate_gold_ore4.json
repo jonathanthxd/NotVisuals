@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/nv_template_ore_r19",
+  "textures": {
+    "base": "minecraft:block/deepslate_gold_ore4",
+    "glow": "minecraft:block/deepslate_gold_ore4_e",
+    "nv_marker": "notvisuals:block/radiance/marker_46"
+  }
+}

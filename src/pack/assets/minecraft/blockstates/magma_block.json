@@ -1,0 +1,14 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minecraft:block/magma_block"
+      }
+    },
+    {
+      "apply": {
+        "model": "minecraft:block/radiance/emitter_40_cube"
+      }
+    }
+  ]
+}

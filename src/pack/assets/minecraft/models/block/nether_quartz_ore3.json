@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/nv_template_ore_r19",
+  "textures": {
+    "base": "minecraft:block/nether_quartz_ore3",
+    "glow": "minecraft:block/nether_quartz_ore3_e",
+    "nv_marker": "notvisuals:block/radiance/marker_49"
+  }
+}

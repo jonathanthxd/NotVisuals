@@ -1,8 +1,8 @@
 #version 330
 #extension GL_ARB_separate_shader_objects : require
-// The custom Aurora Sky sheet already contains cloud shapes.
-// Keep the 26.3 cloud fragment interface intact, but clip Vanilla cloud geometry.
-// This is a deliberate source-level opt-out from duplicate native clouds.
+// NotVisuals Aurora Sky: the atlas provides the cloud silhouettes.
+// Preserve the input layout required by clouds.fsh/OIT, but emit no cloud geometry.
+// Remove this override to opt back into native Fancy Clouds.
 layout(location = 0) out float vertexDistance;
 layout(location = 1) out vec4 vertexColor;
 void main() {

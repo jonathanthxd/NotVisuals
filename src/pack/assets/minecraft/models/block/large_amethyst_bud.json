@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/nv_amethyst_cluster_r19",
+  "textures": {
+    "cross": "minecraft:block/large_amethyst_bud",
+    "nv_marker": "notvisuals:block/radiance/marker_52"
+  }
+}

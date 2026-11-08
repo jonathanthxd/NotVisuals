@@ -1,0 +1,226 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "#all"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#all",
+          "cullface": "north",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#all",
+          "cullface": "south",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#all",
+          "cullface": "east",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#all",
+          "cullface": "west",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#all",
+          "cullface": "up",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#all",
+          "cullface": "down",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.05,
+        7.05,
+        -0.025
+      ],
+      "to": [
+        8.95,
+        8.95,
+        0.002
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "north": {
+          "texture": "#nv_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.05,
+        7.05,
+        15.998
+      ],
+      "to": [
+        8.95,
+        8.95,
+        16.025
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "south": {
+          "texture": "#nv_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        -0.025,
+        7.05,
+        7.05
+      ],
+      "to": [
+        0.002,
+        8.95,
+        8.95
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "west": {
+          "texture": "#nv_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        15.998,
+        7.05,
+        7.05
+      ],
+      "to": [
+        16.025,
+        8.95,
+        8.95
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "east": {
+          "texture": "#nv_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.05,
+        15.998,
+        7.05
+      ],
+      "to": [
+        8.95,
+        16.025,
+        8.95
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "up": {
+          "texture": "#nv_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.05,
+        -0.025,
+        7.05
+      ],
+      "to": [
+        8.95,
+        0.002,
+        8.95
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "down": {
+          "texture": "#nv_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

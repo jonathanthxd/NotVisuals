@@ -1,0 +1,14 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minecraft:block/crying_obsidian"
+      }
+    },
+    {
+      "apply": {
+        "model": "minecraft:block/radiance/emitter_26_cube"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/nv_template_debris_r19",
+  "textures": {
+    "end": "minecraft:block/ancient_debris_top",
+    "side": "minecraft:block/ancient_debris_side1",
+    "nv_marker": "notvisuals:block/radiance/marker_50"
+  }
+}

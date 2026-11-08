@@ -1,0 +1,6 @@
+{
+  "parent": "notvisuals:block/waving_leaves_tinted",
+  "textures": {
+    "all": "minecraft:block/mangrove_leaves"
+  }
+}

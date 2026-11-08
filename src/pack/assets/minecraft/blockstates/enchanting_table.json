@@ -1,0 +1,14 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minecraft:block/enchanting_table"
+      }
+    },
+    {
+      "apply": {
+        "model": "minecraft:block/radiance/emitter_38_cube"
+      }
+    }
+  ]
+}

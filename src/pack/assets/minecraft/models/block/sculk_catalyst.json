@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/nv_sculk_catalyst_r19",
+  "textures": {
+    "top": "minecraft:block/sculk_catalyst_top",
+    "side": "minecraft:block/sculk_catalyst_side",
+    "bottom": "minecraft:block/sculk_catalyst_bottom",
+    "nv_marker": "notvisuals:block/radiance/marker_53"
+  }
+}

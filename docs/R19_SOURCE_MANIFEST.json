@@ -1,0 +1,2918 @@
+{
+  "schema_version": 1,
+  "origin": "User-provided NotVisuals v8 Candidate 3 R19 Final Visual Update EXPERIMENTAL package",
+  "archive_sha256": "5ff3880673ea5d2facdf2d577b7b80129a1b3e01562a40776ffe5e8808b1fd8f",
+  "archive_name": "NotVisuals_26.3_v8_C3_R19_Final_Visual_Update_EXPERIMENTAL(3).zip",
+  "game_version": "Minecraft Java 26.3",
+  "pack_format": [
+    97,
+    1
+  ],
+  "content_files": 724,
+  "post_effect_passes": 41,
+  "shader_files": 41,
+  "sky_atlas": {
+    "path": "assets/minecraft/textures/environment/celestial/sun.png",
+    "sha256": "06cd49d8d53e5855e90d657cb6aa65d1a9d08954374dce0158ef5f846e990c00",
+    "storage": "Rebuilt from Git-tracked 15 Base64 parts in source/aurora_sky/sun_atlas"
+  },
+  "files": {
+    "LEEME_R19.md": {
+      "sha256": "c8fb4ebe78ee930f6d1d5c8d043638f4d31f65043063d5895d9ad8a7381bcf1e",
+      "size": 3817
+    },
+    "LICENSES/ANIMATED_ORE_MIT.txt": {
+      "sha256": "f96856f8b5d5ee1b7cf464262fdc41d8d0c610297483ec9708383aad0479189c",
+      "size": 1082
+    },
+    "LICENSES/R18_ATTRIBUTION.md": {
+      "sha256": "b1eb1346ccc19350df98b5b872b0f5a04b4b8b1084ee4956781b420fba8a67d1",
+      "size": 1757
+    },
+    "LICENSES/WATER_LILIES_MIT.txt": {
+      "sha256": "bba1836c2e83c23fde6c3c4c5e9e897406aa142466dfa2be065449fc86e07577",
+      "size": 1094
+    },
+    "assets/minecraft/atlases/blocks.json": {
+      "sha256": "b8ea25a1baa9402dbddac191049053019a37e9de08b65206f3ccf3ef87e04c50",
+      "size": 5916
+    },
+    "assets/minecraft/blockstates/ancient_debris.json": {
+      "sha256": "1fc8abff026720b84ce17923dde7157e7da68a66c8b551d5a5b583d753b2fe17",
+      "size": 225
+    },
+    "assets/minecraft/blockstates/black_candle.json": {
+      "sha256": "3ae96becec96538c4d92770274734a919db764646e296c093ff603579b9496c8",
+      "size": 2080
+    },
+    "assets/minecraft/blockstates/blast_furnace.json": {
+      "sha256": "281ec47dee3464e6506200d657847e49ef5a5ae75691f107f3b8725d6416040e",
+      "size": 2173
+    },
+    "assets/minecraft/blockstates/blue_candle.json": {
+      "sha256": "8bc3436e6f429479bedf7b26b881580a5c4f841c2f18840b2938298bc7617cce",
+      "size": 2072
+    },
+    "assets/minecraft/blockstates/brown_candle.json": {
+      "sha256": "11c3bf7b819cd88b3dc2aea0bdc74d7e7353683296d1d9ab42f88ae6d49523cc",
+      "size": 2080
+    },
+    "assets/minecraft/blockstates/campfire.json": {
+      "sha256": "5d5c2dea3bb503843521fee553314a1442e38b72fccb26283517e01976e930c2",
+      "size": 2137
+    },
+    "assets/minecraft/blockstates/candle.json": {
+      "sha256": "182df4013dbd640c2d02bba54e47e2a9f114715c65143f392426a7bd54d90631",
+      "size": 2032
+    },
+    "assets/minecraft/blockstates/cave_vines.json": {
+      "sha256": "08dedb4d29f76c19afafa14dbed23a2e323e71777777ef1c92b1ce733eb1fe56",
+      "size": 448
+    },
+    "assets/minecraft/blockstates/cave_vines_plant.json": {
+      "sha256": "590117f840882659c97a63d3520dec19d2217bc8f4462e350e01e843e09b2a77",
+      "size": 460
+    },
+    "assets/minecraft/blockstates/coal_ore.json": {
+      "sha256": "0e97426798fcffca041bef327b9026d33440564b047c554a5dc4718774b71e9b",
+      "size": 319
+    },
+    "assets/minecraft/blockstates/copper_ore.json": {
+      "sha256": "f6876fe6b71c3bcbfadedb2f97c53773c8b7ffe3a5f864dc44e01acf260837bb",
+      "size": 329
+    },
+    "assets/minecraft/blockstates/crying_obsidian.json": {
+      "sha256": "55ffbc1f9e2e0471d05aef61ffa0d388f45f4b251fa373cdd5dd056752678292",
+      "size": 211
+    },
+    "assets/minecraft/blockstates/cyan_candle.json": {
+      "sha256": "78b61c203d5ef03a268d5e97b457adcce04cc15a9eea2656c15dee3a5962feea",
+      "size": 2072
+    },
+    "assets/minecraft/blockstates/deepslate_coal_ore.json": {
+      "sha256": "4be8a41a9c496abb069bd141d1b106ef37b758e20c4bb1f3c1c132bb3ff96425",
+      "size": 369
+    },
+    "assets/minecraft/blockstates/deepslate_copper_ore.json": {
+      "sha256": "8b922dd5d3b9fa3c5b00e6d2d4dd62c7a9e6b101f61bf295fab4ebfbe94c50d5",
+      "size": 379
+    },
+    "assets/minecraft/blockstates/deepslate_diamond_ore.json": {
+      "sha256": "992862f76a9d70ec6467a7070d97007a44994d51fb8feb53cca0b3f8257d308a",
+      "size": 315
+    },
+    "assets/minecraft/blockstates/deepslate_emerald_ore.json": {
+      "sha256": "9cbb370d4775ef811616dd6e457128fbcf4c2ce23f30c07a98a2f01a51dc08e2",
+      "size": 384
+    },
+    "assets/minecraft/blockstates/deepslate_gold_ore.json": {
+      "sha256": "2d2a5969e34a6add01c4171e44395f06ffbbaebef0c53b12161e62d80313736b",
+      "size": 369
+    },
+    "assets/minecraft/blockstates/deepslate_iron_ore.json": {
+      "sha256": "0fc27d06767185d062fa728a0a69db9d9221535347aa4b72a1906d4b522c4a3f",
+      "size": 304
+    },
+    "assets/minecraft/blockstates/deepslate_lapis_ore.json": {
+      "sha256": "3166c24928b9af1af2b3838dd25e89182331ddef166d3f95bb4bd23d70559361",
+      "size": 307
+    },
+    "assets/minecraft/blockstates/deepslate_redstone_ore.json": {
+      "sha256": "9308fc4fe811087947e91dfa123cda08791bc9ea4cffff83385c5a8e13a34f96",
+      "size": 389
+    },
+    "assets/minecraft/blockstates/diamond_ore.json": {
+      "sha256": "3000b0e909931b2ad0b4b464f24eb471209f80c6e57800150e4ca3f07b671f67",
+      "size": 275
+    },
+    "assets/minecraft/blockstates/emerald_ore.json": {
+      "sha256": "6a4430120363d2f4e044f6312deecafd3587a19c73c9070df9869d46cd39449b",
+      "size": 334
+    },
+    "assets/minecraft/blockstates/enchanting_table.json": {
+      "sha256": "51b69a35f720e78e5b64034453f1005560d373254213c0239aef91c2b4e263a5",
+      "size": 212
+    },
+    "assets/minecraft/blockstates/end_portal_frame.json": {
+      "sha256": "3997857d9a5dce6cf9cf0b99f66c3ad912b959996ed5d83033016ccbe097decb",
+      "size": 2357
+    },
+    "assets/minecraft/blockstates/ender_chest.json": {
+      "sha256": "c814926c931ce779b383bd2c09f6a541b6923ff9f7c7ee5b1015a5948387be7d",
+      "size": 207
+    },
+    "assets/minecraft/blockstates/fire.json": {
+      "sha256": "e193e51c5e6c38dbcd499deffbb04cfa1bd476533610e51caf3438bdee250c04",
+      "size": 3414
+    },
+    "assets/minecraft/blockstates/furnace.json": {
+      "sha256": "af63c67111e3747291768d02d97915d9c3263655efa87c46e25fccecbae5ddea",
+      "size": 2125
+    },
+    "assets/minecraft/blockstates/gilded_blackstone.json": {
+      "sha256": "0a4a6cdd9c78459bb8125be5c703e58c76ca112f21ec3ea6e99cfbfa46d65504",
+      "size": 299
+    },
+    "assets/minecraft/blockstates/glow_lichen.json": {
+      "sha256": "e1f97d12a1e134b658b2f9bd022e6bc484698d68a0ba53ef8a99e04545a69bb3",
+      "size": 5740
+    },
+    "assets/minecraft/blockstates/gold_ore.json": {
+      "sha256": "da34bdfe2141cc66ad2dac0958be087e08d4ffc2f26c9be178f35faa864d7375",
+      "size": 320
+    },
+    "assets/minecraft/blockstates/gray_candle.json": {
+      "sha256": "48cc3ef5b80f224448dd5c68912e74cd661dd24198299b043e78cf4a1a3dd11b",
+      "size": 2072
+    },
+    "assets/minecraft/blockstates/green_candle.json": {
+      "sha256": "bcbb640b41cb27123cf588734e17a0f800b9c37b4a43c1b733a3e2b411e8228c",
+      "size": 2080
+    },
+    "assets/minecraft/blockstates/iron_ore.json": {
+      "sha256": "282d114be222db84c9ebdb9bf730f4fef5e139f4d6c7460837d65dd3ed57bddb",
+      "size": 263
+    },
+    "assets/minecraft/blockstates/jack_o_lantern.json": {
+      "sha256": "2dcd29b9ade8acb4d7021a89c9a3cf0d01122610655140a2939cfbfe80d8e701",
+      "size": 1282
+    },
+    "assets/minecraft/blockstates/lapis_ore.json": {
+      "sha256": "966b137ce68d1efe90be98b618f1d03ea0714bdebdb304b27a9d8a123c4921a3",
+      "size": 267
+    },
+    "assets/minecraft/blockstates/light_blue_candle.json": {
+      "sha256": "f486a2215efce43d631fbee3036f432ec590d8e76556212ace8d9512a71b0467",
+      "size": 2120
+    },
+    "assets/minecraft/blockstates/light_gray_candle.json": {
+      "sha256": "3488c8b2ef8429b6a5694b683cd41cfa00bd60f9ec0bb2a4322bc155d66a66ab",
+      "size": 2120
+    },
+    "assets/minecraft/blockstates/lily_pad.json": {
+      "sha256": "3583a48a096b2c474a7b28c2930c6ad6a13bd6d5fc547b17382b1c84424f839e",
+      "size": 1894
+    },
+    "assets/minecraft/blockstates/lime_candle.json": {
+      "sha256": "aa4fa8e0aeab17c07f1774f09b406aa74b121d9be620106d6128cc56ca93c7e5",
+      "size": 2072
+    },
+    "assets/minecraft/blockstates/magenta_candle.json": {
+      "sha256": "ffe1f65b7d8af2c135e214ed6dfd7f68fbd8a1092e33e74189a8c62bf47b0f8b",
+      "size": 2096
+    },
+    "assets/minecraft/blockstates/magma_block.json": {
+      "sha256": "107ccd4d7ef5b123a5fe98802ac62c768f08cf80cc97480af60b5af6f877e8f8",
+      "size": 207
+    },
+    "assets/minecraft/blockstates/nether_gold_ore.json": {
+      "sha256": "3dfc1a6976fa5344d84188fe77177d4362af9e7a0afb3a406dabb54918cbed2b",
+      "size": 354
+    },
+    "assets/minecraft/blockstates/nether_portal.json": {
+      "sha256": "51fdc50fe23bd4f2f8104af90e4a8a9b20614d6102e281161f88d26ac42f242e",
+      "size": 617
+    },
+    "assets/minecraft/blockstates/nether_quartz_ore.json": {
+      "sha256": "a259118a17c99fcd2b1439056a44b715253b65faf60e55c1888a2d223a7eda1b",
+      "size": 299
+    },
+    "assets/minecraft/blockstates/orange_candle.json": {
+      "sha256": "b1935b0df547faed5d345d75aeb6ad74775ab39604874bc498159fbfd7f5c958",
+      "size": 2088
+    },
+    "assets/minecraft/blockstates/pink_candle.json": {
+      "sha256": "748696446828ea87ba451172ddf6c946f3f184ca0b948bb64c7224760b4dbcf6",
+      "size": 2072
+    },
+    "assets/minecraft/blockstates/purple_candle.json": {
+      "sha256": "f80c8b8aa3e3047a84a6e0f0f83442439829fa968125f863de7e04a5512d2f74",
+      "size": 2088
+    },
+    "assets/minecraft/blockstates/red_candle.json": {
+      "sha256": "b85c78331b7d4a2290f5a40ad595f6437f0825e2ffaa69aad4e0ba72ffd6fb57",
+      "size": 2064
+    },
+    "assets/minecraft/blockstates/redstone_ore.json": {
+      "sha256": "9a7b1a2ca39c540efa8cf2c5d03bc166a4fb79ac1836ff25729b05571022f257",
+      "size": 339
+    },
+    "assets/minecraft/blockstates/respawn_anchor.json": {
+      "sha256": "1362eeeed930a0f120a6ad9f0eb1d08c2a6c2913c86dc99f858de579962a1688",
+      "size": 1298
+    },
+    "assets/minecraft/blockstates/sea_pickle.json": {
+      "sha256": "b62c15b3f19224db558f36c4b659ac3d50c1bcfb05042ba1363f1b9f8eb940d1",
+      "size": 4716
+    },
+    "assets/minecraft/blockstates/smoker.json": {
+      "sha256": "2b0936ba069cff766bfa94c4b0385b3ca5bcaa5c17a358e0e54bc89ba99e99de",
+      "size": 2117
+    },
+    "assets/minecraft/blockstates/soul_campfire.json": {
+      "sha256": "212c2593a23c6dcfb6b61c897be133902268149bae39e08531a8c901b875164e",
+      "size": 2157
+    },
+    "assets/minecraft/blockstates/soul_fire.json": {
+      "sha256": "57e2d575dbca17b9b3a2750c2cf93431bf5f03a1ac6c5ef001cdd83d093e35ff",
+      "size": 1910
+    },
+    "assets/minecraft/blockstates/white_candle.json": {
+      "sha256": "e808d6ca5afac3d4ba7e868aaa57fcea69b19ae53c927a18ded3cd93058ae6e1",
+      "size": 2080
+    },
+    "assets/minecraft/blockstates/yellow_candle.json": {
+      "sha256": "cc356770088d209a1d688cc3cc0e920e5de11fc6a61a60a2139a840665af140e",
+      "size": 2088
+    },
+    "assets/minecraft/models/block/acacia_leaves.json": {
+      "sha256": "382a3e9897519d87b866626294a62cf6c6bd2e66eeeafdfbe6b30b9b173b63f3",
+      "size": 120
+    },
+    "assets/minecraft/models/block/amethyst_cluster.json": {
+      "sha256": "1465a19497493fffd3cca0791e818b88a5f442a4f1426b11adf6a698a18ad926",
+      "size": 183
+    },
+    "assets/minecraft/models/block/ancient_debris.json": {
+      "sha256": "2d5f41c255d3f57eeb70d9c7fc42161361c8a4fdb06baef165c2ae18ca7cd43e",
+      "size": 233
+    },
+    "assets/minecraft/models/block/ancient_debris1.json": {
+      "sha256": "dafb89446f5dbf91b13c3a5efe0a3820d9345d2fcb64176b309615fda9bd83c2",
+      "size": 234
+    },
+    "assets/minecraft/models/block/ancient_debris2.json": {
+      "sha256": "1d1404889832276d72030f4106a7fa255a97bd286cc688a43b82f42f9975d69a",
+      "size": 234
+    },
+    "assets/minecraft/models/block/azalea_leaves.json": {
+      "sha256": "c9ccc434aac47c37670c6d7f2e287dcf7c2c3121ff7da6f4b6c1449ba236e05d",
+      "size": 119
+    },
+    "assets/minecraft/models/block/birch_leaves.json": {
+      "sha256": "a24c91dee64b8612ea9e0fff6bad96b25bc45ee2cf892090d53c17263a9d0ea4",
+      "size": 119
+    },
+    "assets/minecraft/models/block/cherry_leaves.json": {
+      "sha256": "af02a5404b0f14a8885e1b7c1e999ec71894a0f8c855e66b6447ea83d75ffcbc",
+      "size": 120
+    },
+    "assets/minecraft/models/block/coal_ore.json": {
+      "sha256": "456da6f9e5d5aef1725e0c2ae4408e57e126cf2e38ac8da761b7e42f918f0728",
+      "size": 170
+    },
+    "assets/minecraft/models/block/coal_ore1.json": {
+      "sha256": "924ef00e8fd066507cc398002934c54b46cb7d1965b50afd90f46694d04805f0",
+      "size": 171
+    },
+    "assets/minecraft/models/block/coal_ore2.json": {
+      "sha256": "2c85ac0d2cfbcb510aa07c804b97e33c5e3199828d3310639419bc772634c089",
+      "size": 171
+    },
+    "assets/minecraft/models/block/coal_ore3.json": {
+      "sha256": "fcdbbe75e074736321b502a034d89e6cc3997da039a906dd52623ddc38846fc9",
+      "size": 171
+    },
+    "assets/minecraft/models/block/coal_ore4.json": {
+      "sha256": "4774f97704fe52854582a44c747307142c057133a04b78268a17eacb371fa7d6",
+      "size": 171
+    },
+    "assets/minecraft/models/block/copper_bulb_lit.json": {
+      "sha256": "b55cf3f1d621fbeff7eb7e636e25d40c40f9b39fc34d7bce97ce45f4ae7f55bf",
+      "size": 3448
+    },
+    "assets/minecraft/models/block/copper_bulb_lit_powered.json": {
+      "sha256": "b078e144bf58d99b78aa00046aae38f5c186f93382697500c14f6785e4f0ce67",
+      "size": 3456
+    },
+    "assets/minecraft/models/block/copper_lantern.json": {
+      "sha256": "1f56d1c113c838caac672eecb1b19573ec20f684c64d2e7517575102206667f4",
+      "size": 5876
+    },
+    "assets/minecraft/models/block/copper_lantern_hanging.json": {
+      "sha256": "43a5bee8b462f5a8530b121f85538058fe05ec26944e84dc7be3f224b2fc587f",
+      "size": 5846
+    },
+    "assets/minecraft/models/block/copper_ore.json": {
+      "sha256": "efe7ab50b4756f6e1da968e47c811f16b88bde20602f8d1c8bdaabf00d458744",
+      "size": 216
+    },
+    "assets/minecraft/models/block/copper_ore1.json": {
+      "sha256": "4ee35211dabe983460d0213f634df86fd890f31a9067e153b7a52b86f1a94146",
+      "size": 218
+    },
+    "assets/minecraft/models/block/copper_ore2.json": {
+      "sha256": "d5f2d001224515d86ce60b674718f6be598bf8a09c5ac9a9754febaa852de5ef",
+      "size": 218
+    },
+    "assets/minecraft/models/block/copper_ore3.json": {
+      "sha256": "ea0f2d6867bb28910f2433aaab83100c4e39b39035c3d9d0e56bef7d46bdc2ed",
+      "size": 218
+    },
+    "assets/minecraft/models/block/copper_ore4.json": {
+      "sha256": "202a66d79c9101cfe4cee2160121146a8c2ab122d486127f4c17925e6a421048",
+      "size": 218
+    },
+    "assets/minecraft/models/block/copper_torch.json": {
+      "sha256": "32a424ef3fda4778870ca5982731d74373f2452719c3894ae996756fa15356bf",
+      "size": 3165
+    },
+    "assets/minecraft/models/block/copper_wall_torch.json": {
+      "sha256": "2b27094458afce5be36e39827b44ee4019e180f371814631455ca7fdffdf4b54",
+      "size": 4015
+    },
+    "assets/minecraft/models/block/dark_oak_leaves.json": {
+      "sha256": "40d92af2474725f0e9ae07852845178c2dff17e9a491f4b65f55833319b0ed9b",
+      "size": 122
+    },
+    "assets/minecraft/models/block/deepslate_coal_ore.json": {
+      "sha256": "7024bf7c9ffac91b8e7030ea17cd3fd4d5b14792666e331c35df65927cbe7ee0",
+      "size": 180
+    },
+    "assets/minecraft/models/block/deepslate_coal_ore1.json": {
+      "sha256": "eaa5e7a3cdde3d992b0abd2bb7f07f0d460b6f60f7870ca3099cbd33dc08de8c",
+      "size": 181
+    },
+    "assets/minecraft/models/block/deepslate_coal_ore2.json": {
+      "sha256": "9d21f821064b7f203a31a5abacc17aeec687ad8ebb6323a57875b19656183c34",
+      "size": 181
+    },
+    "assets/minecraft/models/block/deepslate_coal_ore3.json": {
+      "sha256": "3cc5eaf7e1b678c80333376101553bab498790ab52c3756c86f19066b6f2486e",
+      "size": 181
+    },
+    "assets/minecraft/models/block/deepslate_coal_ore4.json": {
+      "sha256": "014cbef3cc0c1016047e3a0373d2fbb0a377e4d96ab51c3868fbb81b3f6fff52",
+      "size": 181
+    },
+    "assets/minecraft/models/block/deepslate_copper_ore.json": {
+      "sha256": "b287196726d309d29b36a45fc2510bd6f37e9225aa4345b26c6c8af0de3cdff8",
+      "size": 236
+    },
+    "assets/minecraft/models/block/deepslate_copper_ore1.json": {
+      "sha256": "dae97411edc200ec2b38e13af003b3118e064fb71a9b654038231405419018d9",
+      "size": 238
+    },
+    "assets/minecraft/models/block/deepslate_copper_ore2.json": {
+      "sha256": "68df838c84e1c17ed5980f0cf76c5520eaa8a748ddc6c09cc8e80bf1abadebee",
+      "size": 238
+    },
+    "assets/minecraft/models/block/deepslate_copper_ore3.json": {
+      "sha256": "a681fd58edc321f500bcd6172c7dad4dc057bc8f4a705f170dff2f20c648ddd5",
+      "size": 238
+    },
+    "assets/minecraft/models/block/deepslate_copper_ore4.json": {
+      "sha256": "97eaf68ccf360026a9ee9660375e7b579feac376411ff6ff5eda0a0c2a81fd2b",
+      "size": 238
+    },
+    "assets/minecraft/models/block/deepslate_diamond_ore.json": {
+      "sha256": "ab6b89003abb02a88bd9b4eb905bdb73c3750176fc90cba34b29d715152e85d5",
+      "size": 238
+    },
+    "assets/minecraft/models/block/deepslate_diamond_ore1.json": {
+      "sha256": "0babe864e4b45d835a52dcee6d290e3e199d1b09bd001ce550a18ac995691ee4",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_diamond_ore2.json": {
+      "sha256": "79b24c4aa807e28f02e647e16652721f2e2143e5d45d15a8b422f4cffe892929",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_diamond_ore3.json": {
+      "sha256": "321c5d4081de61e7c8c7f7b6594fb60ec5ea7aae79ee8b403e06b210823a8f2d",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_emerald_ore.json": {
+      "sha256": "ee9e7fa6c2f3a61bc1e0324805b51d6b6805893cc0c1bcd6ea8fceb90c46ef62",
+      "size": 238
+    },
+    "assets/minecraft/models/block/deepslate_emerald_ore1.json": {
+      "sha256": "f2a25a44478623991579c9c5e3915d5ef9141cf259eaa077ec671c2ec32b5392",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_emerald_ore2.json": {
+      "sha256": "0454f73fd501940b8bb75fcbdb80bd7f9560f7cf225aa81ef634f3f95263cbb1",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_emerald_ore3.json": {
+      "sha256": "43f288bd6087131aa34be5ed74b97fc1b7a39d296f1856c522fa782952017fbe",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_emerald_ore4.json": {
+      "sha256": "42d66a243790ba682336c272bd2ab4c8068ce03bf3ddb8abdd36014e313b1106",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_gold_ore.json": {
+      "sha256": "f5d4786c4af088d6c47e2a71f842f8613386e32fb2adeeb36bdec07f6fbbfcb1",
+      "size": 232
+    },
+    "assets/minecraft/models/block/deepslate_gold_ore1.json": {
+      "sha256": "79455484443ec34937a621232028ffa7620969c9d4ea0215405152a84239127f",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_gold_ore2.json": {
+      "sha256": "c54eb025a37e5197731a18529282ca6d2d02053bdd9635942cb8373bad238c68",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_gold_ore3.json": {
+      "sha256": "ee061efa2c99d2cb29d9d825d04689b495cb77c98b2227a6499bd912641598d4",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_gold_ore4.json": {
+      "sha256": "3978cc862165358b04c3fb77ede1f1fcb0e6830578d5dcf0791fb0b70657bde6",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_iron_ore.json": {
+      "sha256": "6419143fb95acfa42668020fa41cec7f865342c5fa0ac1ed7cd9d9c4dd8f649c",
+      "size": 232
+    },
+    "assets/minecraft/models/block/deepslate_iron_ore1.json": {
+      "sha256": "f703df2de93ebae0a63cb0589d52425d86b950667cf192c81dd321cc5b577f21",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_iron_ore2.json": {
+      "sha256": "32ad18ae5f4d485c2b555b218ec531c3527eac993af981e999acb247f0177c80",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_iron_ore3.json": {
+      "sha256": "196a7500353f4d011fe0d4421a3319557b793b081689786f3ac6b68e63a1f12b",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_lapis_ore.json": {
+      "sha256": "4a12133570c7aa521ec23491cd95a60dc089d4fcc0ee941bb90c9b4b97e87cfe",
+      "size": 234
+    },
+    "assets/minecraft/models/block/deepslate_lapis_ore1.json": {
+      "sha256": "76d41d5ac41b64b75d2cfe127a2a3f61348ca9fe143bf2c52c6269d1fdbb0735",
+      "size": 236
+    },
+    "assets/minecraft/models/block/deepslate_lapis_ore2.json": {
+      "sha256": "ec7f1ebba1e0b6ec45961c839b240f04a34380a98c69b7a6bbb0728896efbea8",
+      "size": 236
+    },
+    "assets/minecraft/models/block/deepslate_lapis_ore3.json": {
+      "sha256": "07ef4f683ad84687695378ae93e7568ecbfa9365e8b592c49f85c2bb4aadb22c",
+      "size": 236
+    },
+    "assets/minecraft/models/block/deepslate_redstone_ore.json": {
+      "sha256": "079b7476b1507731da7677125f1243636a6566b39d58773d9c303d76ab5469b2",
+      "size": 240
+    },
+    "assets/minecraft/models/block/deepslate_redstone_ore1.json": {
+      "sha256": "db8c15abc2e7ea651ff7f8cc3d748b8b778d09888480d3dc65a036741827ba79",
+      "size": 242
+    },
+    "assets/minecraft/models/block/deepslate_redstone_ore2.json": {
+      "sha256": "7101214bf51e34d447f5d31324995bb7c2d32127f3a7a9c04554467a6e50f699",
+      "size": 242
+    },
+    "assets/minecraft/models/block/deepslate_redstone_ore3.json": {
+      "sha256": "b993812e755b5d14d647ca2750be57b1b38dcf4fe6f5f11aeada6e9c0e94d182",
+      "size": 242
+    },
+    "assets/minecraft/models/block/deepslate_redstone_ore4.json": {
+      "sha256": "c5752d23c2a1105a7545caf2b6895ee3194963f001cd7b60afbb574372ac65d3",
+      "size": 242
+    },
+    "assets/minecraft/models/block/diamond_ore.json": {
+      "sha256": "ed3f6d92fad4473075ceda135dfb0d0dd43a1981df5aad0f6fd084d9af1443a5",
+      "size": 218
+    },
+    "assets/minecraft/models/block/diamond_ore1.json": {
+      "sha256": "4e72f0e15e0790ea4fc79b580197c60b931639e9c1c2c3f863fa1d5e31f67df1",
+      "size": 220
+    },
+    "assets/minecraft/models/block/diamond_ore2.json": {
+      "sha256": "d2a5c9386cbe0471e23e86fed76aa7b85c56d87f25fb4a752db3666708816d4c",
+      "size": 220
+    },
+    "assets/minecraft/models/block/diamond_ore3.json": {
+      "sha256": "f5f203d8a0b28b9ba5571247074c3228dc9cb1ef64087bfeae3477250ab03046",
+      "size": 220
+    },
+    "assets/minecraft/models/block/emerald_ore.json": {
+      "sha256": "397ef44d463abda43f54359e1d393597970d741a81e4fbcf7f419c1f861b0441",
+      "size": 218
+    },
+    "assets/minecraft/models/block/emerald_ore1.json": {
+      "sha256": "94c541bdc70ed96ac494d9b7d6533c628ca878fd34464372a3e74044751268c1",
+      "size": 220
+    },
+    "assets/minecraft/models/block/emerald_ore2.json": {
+      "sha256": "7aab16d0f20f66ef15146bbdf954a7b00bfe58fb053ef13116f76db9c4aae501",
+      "size": 220
+    },
+    "assets/minecraft/models/block/emerald_ore3.json": {
+      "sha256": "0a7d7bb12fec95ae3fb651373792d89eb0ef55439ebf48d53f8aa42e6e6c69c0",
+      "size": 220
+    },
+    "assets/minecraft/models/block/emerald_ore4.json": {
+      "sha256": "2b43fc636b3c8c0be1e27e9d6853b7aa0bbaff2bc76036be6131d3290027f4d2",
+      "size": 220
+    },
+    "assets/minecraft/models/block/end_portal_frame_filled.json": {
+      "sha256": "73f4fb9c95eb87f55f4fbf9c1d45051e777dcf173e0ace627398f97cba59b30e",
+      "size": 4627
+    },
+    "assets/minecraft/models/block/end_portal_frame_filled_2.json": {
+      "sha256": "b684bde8be8e45efdf222727a5374dc7085d1906b612f34766ca49a17f3a252f",
+      "size": 4627
+    },
+    "assets/minecraft/models/block/end_portal_frame_filled_3.json": {
+      "sha256": "8616c4936b6c4638df782e23ba7fef05c9126d0429d921629739974dc79c6886",
+      "size": 4555
+    },
+    "assets/minecraft/models/block/end_portal_frame_filled_4.json": {
+      "sha256": "3efc8dd0c7e4a71be719a458a0be76578bc416ccb7bb2c252796d9fa8799f1f3",
+      "size": 4555
+    },
+    "assets/minecraft/models/block/end_rod.json": {
+      "sha256": "01c3151fdfeedd8674c080ecf8ddfb477f7dbd1bde005b6d487b2e40b4dd1874",
+      "size": 3066
+    },
+    "assets/minecraft/models/block/exposed_copper_bulb_lit.json": {
+      "sha256": "519c69bae92eda7ab8a234ffd9e9558602e0b6795d1489f31681bb959854a0d9",
+      "size": 3464
+    },
+    "assets/minecraft/models/block/exposed_copper_bulb_lit_powered.json": {
+      "sha256": "5ce0cda7b915b7bcfaca6ab6046503f2cb5030cb9e535ac17f8fd71c9ae2f651",
+      "size": 3472
+    },
+    "assets/minecraft/models/block/exposed_copper_lantern.json": {
+      "sha256": "37d46460f9cc6cf7fb8411508f8b2b73d52f155c56dbce915d32ddd7a9fb5e95",
+      "size": 5892
+    },
+    "assets/minecraft/models/block/exposed_copper_lantern_hanging.json": {
+      "sha256": "f6ee9921bb20567e168dd168a039865d926b909fd56641e7c3c3f5cfa2e3f08c",
+      "size": 5862
+    },
+    "assets/minecraft/models/block/firefly_bush.json": {
+      "sha256": "a200e3dd75ba9627fe3cbc9875b352fd8c8a85b1287a67dfa7bb9c4633b52c6c",
+      "size": 4072
+    },
+    "assets/minecraft/models/block/flowering_azalea_leaves.json": {
+      "sha256": "824fa77177eb4b57011977c31098b2b169063732e6c5ecebd5bb93b17abbdaa7",
+      "size": 129
+    },
+    "assets/minecraft/models/block/gilded_blackstone.json": {
+      "sha256": "c1647b6fd2aa7555848c1747a5934db926467afc63c97c8f370e2902dd03c35b",
+      "size": 230
+    },
+    "assets/minecraft/models/block/gilded_blackstone1.json": {
+      "sha256": "dac2ce739f83d8c6704629368d05b1b81042c8fb9c172a600713b4dd70b377e7",
+      "size": 232
+    },
+    "assets/minecraft/models/block/gilded_blackstone2.json": {
+      "sha256": "04dc4fa29477cc226fd8328f9da04936e63bf3a3fb769639fb31daa0b1daa126",
+      "size": 232
+    },
+    "assets/minecraft/models/block/gilded_blackstone3.json": {
+      "sha256": "e4181edda6325025f469fbd60185f7a9a9982974d8441094b1168ca0b46d7c19",
+      "size": 232
+    },
+    "assets/minecraft/models/block/glowstone.json": {
+      "sha256": "bc61b372f2a81be32b1fa8e3bf50bb4718001a6cfdd01b57be35d25d4462f08c",
+      "size": 3436
+    },
+    "assets/minecraft/models/block/gold_ore.json": {
+      "sha256": "b1087abbc71d5ced60b1a39985e7c406ac9e6a98f8de15a59f001e419f67360c",
+      "size": 212
+    },
+    "assets/minecraft/models/block/gold_ore1.json": {
+      "sha256": "1a20154f79a9a41525b8265d2d775587a4b738ff255293cfa551753b27b3b3c3",
+      "size": 214
+    },
+    "assets/minecraft/models/block/gold_ore2.json": {
+      "sha256": "a9d98ffa1efa02f099c125c4bbb1066be43db49eeb0296589ae0163717b2e33d",
+      "size": 214
+    },
+    "assets/minecraft/models/block/gold_ore3.json": {
+      "sha256": "ed9aaecb0b136eb968fef414a402a803f322a132f5fd638c33f5c80965049ee7",
+      "size": 214
+    },
+    "assets/minecraft/models/block/gold_ore4.json": {
+      "sha256": "e5613965be95304642e4280c01cb47ed390664f70785a7832ab9eabfd01629de",
+      "size": 214
+    },
+    "assets/minecraft/models/block/iron_ore.json": {
+      "sha256": "703c4708ac7789fb6c876815391578c39800f38d5cba7e361766ee8fa545a62b",
+      "size": 212
+    },
+    "assets/minecraft/models/block/iron_ore1.json": {
+      "sha256": "06c1f142542710bbc768e092064e82af8224b704f01dbd26d9bae8248f6168f0",
+      "size": 214
+    },
+    "assets/minecraft/models/block/iron_ore2.json": {
+      "sha256": "514e60acbab4f18489dd012bae9c93f309b5dc3ac1f55ec88f83638c5db508ae",
+      "size": 214
+    },
+    "assets/minecraft/models/block/iron_ore3.json": {
+      "sha256": "6947e9213416be09e11532d1e747dd7dd7aa72f78b665451fcad98e4e31d9b77",
+      "size": 214
+    },
+    "assets/minecraft/models/block/jungle_leaves.json": {
+      "sha256": "d75ae0bbde17a5744796e547ecc1022ceb826dba02883ef9d1eb87ee5ef67f4f",
+      "size": 120
+    },
+    "assets/minecraft/models/block/lantern.json": {
+      "sha256": "3da9db5f82534afffddcd4027292e145fbaffc91ce8614e109a936c9a9c5bd95",
+      "size": 5847
+    },
+    "assets/minecraft/models/block/lantern_hanging.json": {
+      "sha256": "4bcecf60f0d8bb75d55797b11a86de623d881b5a674e36c21216c836293c1614",
+      "size": 5817
+    },
+    "assets/minecraft/models/block/lapis_ore.json": {
+      "sha256": "edd044fa2cb286040267db41985549092e89496736effadaf81de8c8e0444c04",
+      "size": 214
+    },
+    "assets/minecraft/models/block/lapis_ore1.json": {
+      "sha256": "39ac09467878e9e35dda117f033e0ac82b59835f1ce070f46619bb9b159e93e3",
+      "size": 216
+    },
+    "assets/minecraft/models/block/lapis_ore2.json": {
+      "sha256": "9c15da04e57956b020ae283e6952345ec8858cf9c6d720004d6f619ce932d048",
+      "size": 216
+    },
+    "assets/minecraft/models/block/lapis_ore3.json": {
+      "sha256": "42464b57c5736af353b8d4a5f55694bbe701b8f0299081a91af9a01d64a60cd9",
+      "size": 216
+    },
+    "assets/minecraft/models/block/large_amethyst_bud.json": {
+      "sha256": "2d3a25f2c5a488ebb3cac735e7d9608b6912e4752f6746c40e885d99a2dab100",
+      "size": 185
+    },
+    "assets/minecraft/models/block/lily_pad.json": {
+      "sha256": "e29ed666d91caebbb32e4bde2d3230a246c3438440c33d754ff78d2ced90905a",
+      "size": 1164
+    },
+    "assets/minecraft/models/block/mangrove_leaves.json": {
+      "sha256": "4a8c42e38f2ad4e2ecfc399212ed6a49c576f63e8839554c65d4564c5be88cc0",
+      "size": 122
+    },
+    "assets/minecraft/models/block/medium_amethyst_bud.json": {
+      "sha256": "85c8abe666460aac4edc8cb89254f2b2f7f240ea82762ca8c1dc1beda4277ef3",
+      "size": 186
+    },
+    "assets/minecraft/models/block/nether_gold_ore.json": {
+      "sha256": "9d4589d37bf08c27b622edd2359815ecb1c006e2c6194c9cced9f07a787377be",
+      "size": 226
+    },
+    "assets/minecraft/models/block/nether_gold_ore1.json": {
+      "sha256": "e7dbc101f9817e89eddf571302c725e89fffebbbf7650b8899f9263f93661230",
+      "size": 228
+    },
+    "assets/minecraft/models/block/nether_gold_ore2.json": {
+      "sha256": "fd305af84a000359200e48508a00c6b01e560a139272dbb8ed15a968bd996419",
+      "size": 228
+    },
+    "assets/minecraft/models/block/nether_gold_ore3.json": {
+      "sha256": "317431f05a7d6ac70e4e379106089f5a28f1fde98386546507d89d26e4b4d5a8",
+      "size": 228
+    },
+    "assets/minecraft/models/block/nether_gold_ore4.json": {
+      "sha256": "550c0aa8f725f020befd49e693d520522a23bf8bf4ce94d173c5cef55d634690",
+      "size": 228
+    },
+    "assets/minecraft/models/block/nether_quartz_ore.json": {
+      "sha256": "20ccbe9ae6989e4330c9acc6b14026960e26d7ff4cc608c7f7533ed60692330d",
+      "size": 230
+    },
+    "assets/minecraft/models/block/nether_quartz_ore1.json": {
+      "sha256": "3f83d0cd963a3a876c208ba59a008b7c12a3f6112f366133e7239444ed8f4f67",
+      "size": 232
+    },
+    "assets/minecraft/models/block/nether_quartz_ore2.json": {
+      "sha256": "9557ff6a6558e2687471c550716e9ac35e7eaf904bfbba5cd7098b132e78ec87",
+      "size": 232
+    },
+    "assets/minecraft/models/block/nether_quartz_ore3.json": {
+      "sha256": "db810c28ce0954d99d7947a70c85c68d6b86db56ff6e42c8bfad167584e8e316",
+      "size": 232
+    },
+    "assets/minecraft/models/block/nv_amethyst_cluster_r19.json": {
+      "sha256": "4e9c111d2dd4c3e8deac64a23cbd42b2d70dfd1bbfa9a729fd55d465b2a72254",
+      "size": 2549
+    },
+    "assets/minecraft/models/block/nv_sculk_catalyst_r19.json": {
+      "sha256": "302f5b844e09ff7c5150b68c3fc38f12858e895912bb481228c7fe7d2b31a6bf",
+      "size": 3531
+    },
+    "assets/minecraft/models/block/nv_stalactite_material_r19.json": {
+      "sha256": "0dac763b15877d8986ee2f2c35ac2662506d6c414bb67c2a0f23660e37f33deb",
+      "size": 2806
+    },
+    "assets/minecraft/models/block/nv_template_coal_r19.json": {
+      "sha256": "60b3714693067b4b31073c2528538be3dbc2ba5f46783df95908c88be16bff1e",
+      "size": 3523
+    },
+    "assets/minecraft/models/block/nv_template_debris_r19.json": {
+      "sha256": "4267a203a05dd59b407dd9dd7c07c5896e74a9717c6a7aa71320c125612725d6",
+      "size": 3528
+    },
+    "assets/minecraft/models/block/nv_template_ore_r19.json": {
+      "sha256": "bb6dcf6b4948996b3db80e915f304a1fc4d575f220877834b07870b2ab6d624e",
+      "size": 5092
+    },
+    "assets/minecraft/models/block/oak_leaves.json": {
+      "sha256": "3c63ce390c5d62e306e2db9f33bd3b762943229caa9d0cb00eaa8f7c461e2163",
+      "size": 117
+    },
+    "assets/minecraft/models/block/ochre_froglight.json": {
+      "sha256": "e9b8a302c2d29c7bbd266425383cf049bd38038cef3b96560a45deb3552a995b",
+      "size": 3513
+    },
+    "assets/minecraft/models/block/orange_poplar_leaves.json": {
+      "sha256": "8ec618d7dc942b32255db7b312737f13d01ef73e52a73074d078b0f562176bf6",
+      "size": 126
+    },
+    "assets/minecraft/models/block/orange_water_lily.json": {
+      "sha256": "c492529c59fcdc8240f9a298de3ad9de8443ed7d901c177b0942b521a6d4177f",
+      "size": 2981
+    },
+    "assets/minecraft/models/block/oxidized_copper_bulb_lit.json": {
+      "sha256": "a2164035bd2b612da41fc73e7edbb69f6ea7dfcbc14488a1e552bdb171419303",
+      "size": 3466
+    },
+    "assets/minecraft/models/block/oxidized_copper_bulb_lit_powered.json": {
+      "sha256": "5298741fdcb3820723491fb53b4e51aaf79231dd4a1b3455b11849d8bbcb48c6",
+      "size": 3474
+    },
+    "assets/minecraft/models/block/oxidized_copper_lantern.json": {
+      "sha256": "fbe422d1ce15ba408f2f47a5e9748608d1c36a09c1a56ccb26a6199793374e59",
+      "size": 5894
+    },
+    "assets/minecraft/models/block/oxidized_copper_lantern_hanging.json": {
+      "sha256": "02d2f6ce208b1dd6a6767fd66c1af4d97adfd7818e8cbee71971e28343c4ddb8",
+      "size": 5864
+    },
+    "assets/minecraft/models/block/pale_oak_leaves.json": {
+      "sha256": "f2d39985c14231b846b7a6401a91f3a9ff8be8b78d51e55c2e8e652f01ca39a5",
+      "size": 122
+    },
+    "assets/minecraft/models/block/pearlescent_froglight.json": {
+      "sha256": "70058a6d355eddacfc48e73e20f4356641d61f7c6358f593f3c1e82a29a3fb7c",
+      "size": 3531
+    },
+    "assets/minecraft/models/block/pink_water_lily.json": {
+      "sha256": "12a6fcec8efbe214129e900b0fd047d50128fbf60191e12ebb1fcda4a50c1da3",
+      "size": 2977
+    },
+    "assets/minecraft/models/block/pointed_dripstone_down_base.json": {
+      "sha256": "963a1b06c11de29ae905906cd4b38b46d02f32da2ae20c576e5609fc476250ff",
+      "size": 199
+    },
+    "assets/minecraft/models/block/pointed_dripstone_down_frustum.json": {
+      "sha256": "1996b0553fe330ae66b269316c75254ff02b5e2ef2122ce1799f5334151ff6ba",
+      "size": 202
+    },
+    "assets/minecraft/models/block/pointed_dripstone_down_middle.json": {
+      "sha256": "7a3dcc282a1ca7edb319ac3cf4c0b41a949e688a160d91ba82f7ab3011a66351",
+      "size": 201
+    },
+    "assets/minecraft/models/block/pointed_dripstone_down_tip.json": {
+      "sha256": "a67e3ab2720111b7a420184be76bd813ede1ff00c35a93f6d2cde969f7b09e56",
+      "size": 198
+    },
+    "assets/minecraft/models/block/pointed_dripstone_down_tip_merge.json": {
+      "sha256": "0aae1f88c9a88af1c4e2a5f2bd8220e5d1daad05f6f1d1ddc465cf691ae8d8d9",
+      "size": 204
+    },
+    "assets/minecraft/models/block/pointed_dripstone_up_base.json": {
+      "sha256": "ea5b4624ff7c39bfe802a843d15eefa234b4d0d3770b4869af80bb4668a0d7f5",
+      "size": 197
+    },
+    "assets/minecraft/models/block/pointed_dripstone_up_frustum.json": {
+      "sha256": "61856cc2bb570c9698ce5ed4c8f9f01ea89ba1f8d23232f7e5b1a92621727c9f",
+      "size": 200
+    },
+    "assets/minecraft/models/block/pointed_dripstone_up_middle.json": {
+      "sha256": "d08c90790b73e5bb17f1f5b9e72679c0c0f0e850d7ae8653e0827bbbe62d1c60",
+      "size": 199
+    },
+    "assets/minecraft/models/block/pointed_dripstone_up_tip.json": {
+      "sha256": "8c1f8d115dc43e8498700af19dc60ae262f8fb52d625350bbba294eba234b34a",
+      "size": 196
+    },
+    "assets/minecraft/models/block/pointed_dripstone_up_tip_merge.json": {
+      "sha256": "030a13407d2df2de3fc3d3fe456e5aa8c950809d89489cf36a767651795198ea",
+      "size": 202
+    },
+    "assets/minecraft/models/block/purple_water_lily.json": {
+      "sha256": "911bff2ece3222424fc9beeb4046ff19b6d7010ac4e95c649bbee0420c324fca",
+      "size": 2981
+    },
+    "assets/minecraft/models/block/radiance/emitter_09_flame.json": {
+      "sha256": "e6e62df9fcfa6390c784d9aa55491370a42741e5420385a4140f59246612a9f3",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_10_flame.json": {
+      "sha256": "d8ec8c9d0c3c1aa6d83c84f4c4b3086dcb79bc1d7872b5f3457d9c744332b71e",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_19_flame.json": {
+      "sha256": "88e9734e134b4221ce6c11e47830c2fd0ce5106a333050c9a14a86b4996596d2",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_20_flame.json": {
+      "sha256": "4689959063899854f9ef5952c3df6a567e53d0573842d6c04ba66a041d0c5f8c",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_21_flame.json": {
+      "sha256": "492581a79966c7e323730e8af798083a11467c143f0bb5431030d559db430c50",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_22_flame.json": {
+      "sha256": "464a4232c1a8249863b87bc9609a5327db2cee76497298b085f611998915e99b",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_23_front.json": {
+      "sha256": "ca9ef5bdbff589d6f7a2e5b4fa5eac4ff9ac693e3e4e6f2a80ab3a89e3242239",
+      "size": 545
+    },
+    "assets/minecraft/models/block/radiance/emitter_24_front.json": {
+      "sha256": "35745a521568d956e66b9bdbe2cff35b296366225cd38d7d4c416ac9dfaa2169",
+      "size": 545
+    },
+    "assets/minecraft/models/block/radiance/emitter_25_lichen.json": {
+      "sha256": "3e3f5f4b6a34bae40d300221e88238a47cc6553eb3e5e008b086901cac044b01",
+      "size": 543
+    },
+    "assets/minecraft/models/block/radiance/emitter_25_vine.json": {
+      "sha256": "beeb0aaad65cf4128dfe206922e439324e576cdcdc176c7c8653b1c8a70d409b",
+      "size": 541
+    },
+    "assets/minecraft/models/block/radiance/emitter_26_cube.json": {
+      "sha256": "c67f6a6b8a63ca65fe243771cce9ce5a03ad8eeaeaf9169596018a2dbbb6b366",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/radiance/emitter_27_cube.json": {
+      "sha256": "647e74f9a48765973ccb484b4290d114f49f5c3a40772f1e2305e7e26a007ddd",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/radiance/emitter_28_cube.json": {
+      "sha256": "95baddaef5592930ac41883949b30becbd54a08689389863fdfa8277dd88fdff",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/radiance/emitter_29_cube.json": {
+      "sha256": "f81637fdebeab67bcd5effcfaa72dbcc2a3c321df2b5c0ed0fee39a2e8b2ca20",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/radiance/emitter_30_cube.json": {
+      "sha256": "bc47a895d23be0933fdbe77c79edc7b5e68e7ff5aa25a0c9fa03f46bd189db04",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/radiance/emitter_31_water.json": {
+      "sha256": "03533842fae94b08feb2897e30261e2776b456faf84a986956c25eabd4597dff",
+      "size": 537
+    },
+    "assets/minecraft/models/block/radiance/emitter_32_water.json": {
+      "sha256": "9d556f840a3c6cd3849e997fb15228485859f66bcc93e3449cf9bcda5d62684c",
+      "size": 537
+    },
+    "assets/minecraft/models/block/radiance/emitter_33_water.json": {
+      "sha256": "f024b05dafb0544914e7c54c84fb188a3921e7c454158d1f84e69766cdb98fda",
+      "size": 537
+    },
+    "assets/minecraft/models/block/radiance/emitter_34_water.json": {
+      "sha256": "477856d1d11aedfcedbb1071212e1abdc6bc7227806686d5826ee4fdcfd14858",
+      "size": 537
+    },
+    "assets/minecraft/models/block/radiance/emitter_35_portal.json": {
+      "sha256": "371406636e52325d8d51d57365e7fec561423a7c7ef39e46e980916d99e516a9",
+      "size": 704
+    },
+    "assets/minecraft/models/block/radiance/emitter_36_flame.json": {
+      "sha256": "fe762d4b2498582931c6e6c95727a8542d7d609bac7275e359d4c2f609e1dc67",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_37_flame.json": {
+      "sha256": "0d5879a09a64a3b26d31cb919feaacd750a1bd8907716aadb10ea31cdd4faede",
+      "size": 868
+    },
+    "assets/minecraft/models/block/radiance/emitter_38_cube.json": {
+      "sha256": "4c0c21d0a17a5cbceebc352fd6384d49a25003425ca23288ad7adb018eac04a3",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/radiance/emitter_39_cube.json": {
+      "sha256": "01cf43ff82c8dadc1eaa38e1f5f6612897892c893435552f15d4c674a2227699",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/radiance/emitter_40_cube.json": {
+      "sha256": "407844abe4edce7a54ed0057aa9a55612073bf2205c0487273e9d3579120c3a1",
+      "size": 2172
+    },
+    "assets/minecraft/models/block/red_poplar_leaves.json": {
+      "sha256": "a2ee8c59605d773295b03a4131d73cc0cfc11ed976256faf0fa6c49aa9ce0661",
+      "size": 123
+    },
+    "assets/minecraft/models/block/redstone_lamp_on.json": {
+      "sha256": "373e7a86fe15caac7344e308414d185a885a7492278613930ecf1ad1c02df8a1",
+      "size": 3450
+    },
+    "assets/minecraft/models/block/redstone_ore.json": {
+      "sha256": "bb6f7dba2b95f66c7dfa43f56497625f6df77cf611abd564404977d0ce9f4116",
+      "size": 220
+    },
+    "assets/minecraft/models/block/redstone_ore1.json": {
+      "sha256": "6f26e68a7bc1803bff5395f2d908c020fa3ea721f1ebd0ab88a3cfdc47f0d62c",
+      "size": 222
+    },
+    "assets/minecraft/models/block/redstone_ore2.json": {
+      "sha256": "4f1a1b0487e3c087acd03a38b34aac4bf149fa11d7bb7aa4c53ead89dfbc894f",
+      "size": 222
+    },
+    "assets/minecraft/models/block/redstone_ore3.json": {
+      "sha256": "e98d2167570e202004fc20f74d3cf5196f68cecb2fc58d7bed5aa8bedebd857c",
+      "size": 222
+    },
+    "assets/minecraft/models/block/redstone_ore4.json": {
+      "sha256": "089aad32ee6b0fc1baeb547786e74d5d656ec0a90aba6713c707762770c728f7",
+      "size": 222
+    },
+    "assets/minecraft/models/block/redstone_torch.json": {
+      "sha256": "bdb2b7a06f535048a806848d1709b2b6cfe146080fa53f02a84c9ea510776dfc",
+      "size": 5269
+    },
+    "assets/minecraft/models/block/redstone_wall_torch.json": {
+      "sha256": "7135c7c2d85d2dd54c988c1ff5a083d0a0a74d48828016be945d26325aefe33f",
+      "size": 6977
+    },
+    "assets/minecraft/models/block/sculk_catalyst.json": {
+      "sha256": "cd28e67e7e08e9e1c4285f5dc1b1922f90606773529082197763068f241aebf3",
+      "size": 287
+    },
+    "assets/minecraft/models/block/sea_lantern.json": {
+      "sha256": "0e9f0a62c8a7f0537601eaf10fc312c56e9c05a31c77c4057fec82bdbedd21b3",
+      "size": 3440
+    },
+    "assets/minecraft/models/block/shroomlight.json": {
+      "sha256": "9f668650555fb0e27577f50e48dc34e479ef88155125c376ab84d552f9fe6482",
+      "size": 3440
+    },
+    "assets/minecraft/models/block/small_amethyst_bud.json": {
+      "sha256": "ab3c0ee33c0dc566378a2856002630e4881b9d573aa9e6172e7d1205e64855c3",
+      "size": 185
+    },
+    "assets/minecraft/models/block/soul_lantern.json": {
+      "sha256": "d720fe585c41641a476e3b29fae9a75fb34168f9a0724d29c67397571eb679b3",
+      "size": 5852
+    },
+    "assets/minecraft/models/block/soul_lantern_hanging.json": {
+      "sha256": "334438b724d7b9190cdada4df277beeb3dc9ff81fdc0376076d1df224f5dc301",
+      "size": 5822
+    },
+    "assets/minecraft/models/block/soul_torch.json": {
+      "sha256": "41524c40dc8987d5f907ddfdd4c29819203707eb4a8e46dfe1f73edfeffdda6f",
+      "size": 3163
+    },
+    "assets/minecraft/models/block/soul_wall_torch.json": {
+      "sha256": "628b41f61d58d7d684c47acbc1326264f52de239d1c7c9ac4224be9311324a2b",
+      "size": 4013
+    },
+    "assets/minecraft/models/block/spruce_leaves.json": {
+      "sha256": "ab41528791d93a0a507a45399a7196e5e39a37888f106917a86a406bd1e416af",
+      "size": 120
+    },
+    "assets/minecraft/models/block/sulfur_spike_down_base.json": {
+      "sha256": "89f17f843aa69fadfdcb499701223f462a94ad2435b24ac4c4e33a6a597a45c8",
+      "size": 191
+    },
+    "assets/minecraft/models/block/sulfur_spike_down_frustum.json": {
+      "sha256": "b1bf57428f989d4d873838047471247c49e766100498dc6474a9bf6fa7132175",
+      "size": 194
+    },
+    "assets/minecraft/models/block/sulfur_spike_down_middle.json": {
+      "sha256": "c3a25a3a0cb4809a2593a6c40746507cc28028194fb7cf6f7ffb151e0dfa5eac",
+      "size": 193
+    },
+    "assets/minecraft/models/block/sulfur_spike_down_tip.json": {
+      "sha256": "aa2249d887cf087b9bc5d0307ffb7b7a0fa2026e507c93657b76df5d7a42b82e",
+      "size": 190
+    },
+    "assets/minecraft/models/block/sulfur_spike_down_tip_merge.json": {
+      "sha256": "dc475f85173d6ce982abbb524fc69260e86080cf7b5813e746c87e503bdbb1e4",
+      "size": 196
+    },
+    "assets/minecraft/models/block/sulfur_spike_up_base.json": {
+      "sha256": "2bcbd1a118324fd499c91f96260111183d688282e1280b0fc761f314e8a5ab09",
+      "size": 189
+    },
+    "assets/minecraft/models/block/sulfur_spike_up_frustum.json": {
+      "sha256": "e9fb0244cd3cf0a7a6cd198a9137ae7f76c0afbae3b0fa79fe9df342f3757e7e",
+      "size": 192
+    },
+    "assets/minecraft/models/block/sulfur_spike_up_middle.json": {
+      "sha256": "d8c0083b5b6c78aec75a50132b6f83a0662d7fee765ad6c0d49f6f73e8c61fa5",
+      "size": 191
+    },
+    "assets/minecraft/models/block/sulfur_spike_up_tip.json": {
+      "sha256": "1044ad0e68e2ad709839ff2b0c4e106bb75658727566d5645b05aaee841e017c",
+      "size": 188
+    },
+    "assets/minecraft/models/block/sulfur_spike_up_tip_merge.json": {
+      "sha256": "85af72b9b4e4216b33e2b77a2b1258b31bb6799c41908021f2e9baa661ae76f9",
+      "size": 194
+    },
+    "assets/minecraft/models/block/template_ore.json": {
+      "sha256": "2172f915e26291d29f129d5a931fae3d5f7f38f4dadb356d3097cccefb3e8495",
+      "size": 2951
+    },
+    "assets/minecraft/models/block/torch.json": {
+      "sha256": "1ad9c4e39cc322e65410c93dfffe566fb857ec6da63d645b5ed5137182b28e4c",
+      "size": 3158
+    },
+    "assets/minecraft/models/block/verdant_froglight.json": {
+      "sha256": "1c8f1c813c75c7dcbe1eb0781169b9ba4656ecd663e4bbcdb43b96babdce3280",
+      "size": 3519
+    },
+    "assets/minecraft/models/block/wall_torch.json": {
+      "sha256": "28be47b9de19cfccc8d0e3d9662c3a5ae289e1b491e0387c55cf7cae11bcae50",
+      "size": 4008
+    },
+    "assets/minecraft/models/block/weathered_copper_bulb_lit.json": {
+      "sha256": "52ce8955e985a35c196f884984dd1b0de9ec28661512c93c51a0628781bccb13",
+      "size": 3468
+    },
+    "assets/minecraft/models/block/weathered_copper_bulb_lit_powered.json": {
+      "sha256": "c570bae120271221d7629427ca3189f9cf6f8161bf74a7acab2f7516ca7bb82a",
+      "size": 3476
+    },
+    "assets/minecraft/models/block/weathered_copper_lantern.json": {
+      "sha256": "a30ec8cee35878d489985bdd2f3aded500f943c9752f69b0dd5fb741dcaf73bc",
+      "size": 5896
+    },
+    "assets/minecraft/models/block/weathered_copper_lantern_hanging.json": {
+      "sha256": "7662f26fc49e0f9743789184333e1a9ce6ec71f8041b4a1153e5bd3be5109d90",
+      "size": 5866
+    },
+    "assets/minecraft/models/block/white_water_lily.json": {
+      "sha256": "cc1483fc28aaf8a0c5a30adbf149d9809dfbd3c3eedbf39207c2be682e844b08",
+      "size": 2979
+    },
+    "assets/minecraft/models/block/yellow_poplar_leaves.json": {
+      "sha256": "82dbba435bfd3dfcd2789f2a9d2f7c659043102faf4fc456e103ea13c4127312",
+      "size": 126
+    },
+    "assets/minecraft/models/block/yellow_water_lily.json": {
+      "sha256": "95b00e73f0f2a91dc595b5f6684fccba5b4341a7cbd328fd72281257cfcb3c78",
+      "size": 2981
+    },
+    "assets/minecraft/post_effect/end_of_frame.json": {
+      "sha256": "fa68d7647aa3ed4b470c6714dd5e3a07d0cba1b9a860151b59ff07c0e3adb469",
+      "size": 22462
+    },
+    "assets/minecraft/shaders/core/clouds.fsh": {
+      "sha256": "b0c9bf652e9403ae4007c55e1868a6a11c39ff114d66a8346ede1f9c0ae8cf2a",
+      "size": 1678
+    },
+    "assets/minecraft/shaders/core/clouds.vsh": {
+      "sha256": "9550a2290fd789051f40fe76013c6730c4b63b862664074a0f60e2a343a666a8",
+      "size": 485
+    },
+    "assets/minecraft/shaders/core/entity.fsh": {
+      "sha256": "9f6effd5eb25d0f016774ac9e63dd0e353567fd5909d1f4f4a20ee6717648cd2",
+      "size": 4569
+    },
+    "assets/minecraft/shaders/core/entity.vsh": {
+      "sha256": "20c22c88a87f3d5aeab2ca9655cc81052e617be185bb8236db303a98a22e42a6",
+      "size": 2402
+    },
+    "assets/minecraft/shaders/core/item.fsh": {
+      "sha256": "7339fca159779fa08b97e3ce9c36b322c5c66377f87f54646ec4feb56ca017e8",
+      "size": 2896
+    },
+    "assets/minecraft/shaders/core/position_color.vsh": {
+      "sha256": "9a822824a49382fb52a5b9d22b5cc19964fd8181cc808047faba95f2dbae32c3",
+      "size": 624
+    },
+    "assets/minecraft/shaders/core/position_tex.fsh": {
+      "sha256": "80343503ff39ddefbd5ca22bc5ec2f539b3d4e15eec16b75ec7631352edd697e",
+      "size": 11031
+    },
+    "assets/minecraft/shaders/core/position_tex.vsh": {
+      "sha256": "8a713ee122a067715528171fe1f0d3c103f4f6e7f2b4ba0a01b6b524f7f4e7c6",
+      "size": 2180
+    },
+    "assets/minecraft/shaders/core/position_tex_color.fsh": {
+      "sha256": "8fd05681a98ad0612347f496fc1c328ee6674a772f43542893366ecb80ee1074",
+      "size": 6085
+    },
+    "assets/minecraft/shaders/core/position_tex_color.vsh": {
+      "sha256": "85238e4ab545b9ebafff2ceb83aa949e2910bac8f79e1a8e51f9eab1c42a543d",
+      "size": 1424
+    },
+    "assets/minecraft/shaders/core/rendertype_solid.json": {
+      "sha256": "4ccaa27dfbb1ee19a655294536228fa7c35ad145d4b0b0c92e5b22b0c9b1c4ee",
+      "size": 1661
+    },
+    "assets/minecraft/shaders/core/sky.fsh": {
+      "sha256": "b550e39e17bf25d59408c0706d11c9110b656cc3e255dc2ad46d74adc38297b7",
+      "size": 1553
+    },
+    "assets/minecraft/shaders/core/sky.vsh": {
+      "sha256": "e9e76ef32637be93e460724f6d2476c0c9f3c68812d9b37e4cd2a99ad96933be",
+      "size": 1860
+    },
+    "assets/minecraft/shaders/core/stars.vsh": {
+      "sha256": "80a619faba30cb7bc55308cd97428f8974f7e09f0f513b2f27cfcce6dc8811ed",
+      "size": 393
+    },
+    "assets/minecraft/shaders/core/terrain.fsh": {
+      "sha256": "8548aef384a2184ea73ffd6ca20b0fbdb840762c8c596c8c86283d3b4e731726",
+      "size": 4783
+    },
+    "assets/minecraft/shaders/core/terrain.vsh": {
+      "sha256": "3e2db1e7fcef3ab3c72974a1efa3f6d9f5eab5ec9630e26b0449a6e9c5cb89b3",
+      "size": 5496
+    },
+    "assets/minecraft/textures/block/ancient_debris_side.png": {
+      "sha256": "77e30ab1533044c62a85552e6c44c3020d7adda25eb1e45b43bbdd8037bf7edf",
+      "size": 564
+    },
+    "assets/minecraft/textures/block/ancient_debris_side.png.mcmeta": {
+      "sha256": "b509f15e88056e9af64b71f85609ae9364fa44ff4cba41eaa431d86a353abda5",
+      "size": 342
+    },
+    "assets/minecraft/textures/block/ancient_debris_side1.png": {
+      "sha256": "b81a8a1936470658d1e54cc2db9d70c4e417186edd7c2e8f24681a232b20a3cf",
+      "size": 509
+    },
+    "assets/minecraft/textures/block/ancient_debris_side1.png.mcmeta": {
+      "sha256": "b509f15e88056e9af64b71f85609ae9364fa44ff4cba41eaa431d86a353abda5",
+      "size": 342
+    },
+    "assets/minecraft/textures/block/ancient_debris_side2.png": {
+      "sha256": "34fd2fce5c9b9a5742ed05e878233067c3a8f44e244c77a77dada1cd63edd367",
+      "size": 499
+    },
+    "assets/minecraft/textures/block/ancient_debris_side2.png.mcmeta": {
+      "sha256": "b509f15e88056e9af64b71f85609ae9364fa44ff4cba41eaa431d86a353abda5",
+      "size": 342
+    },
+    "assets/minecraft/textures/block/ancient_debris_top.png": {
+      "sha256": "2aaa9983047e46aa9145fd064a519b891f245a84621b97aa69f80c5dd0582b85",
+      "size": 590
+    },
+    "assets/minecraft/textures/block/ancient_debris_top.png.mcmeta": {
+      "sha256": "b509f15e88056e9af64b71f85609ae9364fa44ff4cba41eaa431d86a353abda5",
+      "size": 342
+    },
+    "assets/minecraft/textures/block/coal_ore.png": {
+      "sha256": "9f1416938aae93d0fccb953ba7004d8a68e939ff6bb6996cbee4ff050e16600a",
+      "size": 301
+    },
+    "assets/minecraft/textures/block/coal_ore1.png": {
+      "sha256": "0f103b1cff786995df2027121e373fed6a6c830c4568f7d46cc7e9e088260f3c",
+      "size": 254
+    },
+    "assets/minecraft/textures/block/coal_ore2.png": {
+      "sha256": "998e08532f4cf4824bc63dadc1f0b9d95ed5603f3673c418478935c4a9423dcb",
+      "size": 255
+    },
+    "assets/minecraft/textures/block/coal_ore3.png": {
+      "sha256": "e3a8b4d114891aff01a284a63da10c5e4d66bc00579f7d2ec057a428ea537279",
+      "size": 252
+    },
+    "assets/minecraft/textures/block/coal_ore4.png": {
+      "sha256": "dbe931e0919266b6cc2acdd5db447380e6a7d41bfe288006f0026be43b3bba3d",
+      "size": 254
+    },
+    "assets/minecraft/textures/block/copper_ore.png": {
+      "sha256": "9a6e8c51a0c8be63552ed8e16fa6c174b1d25db134d41d2ee097fac1aab8845d",
+      "size": 620
+    },
+    "assets/minecraft/textures/block/copper_ore.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore1.png": {
+      "sha256": "3bbdfdce8551d8eea8bb4f5de79582bd663c05d63e2063bce859cfc8de368b6c",
+      "size": 628
+    },
+    "assets/minecraft/textures/block/copper_ore1.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore1_e.png": {
+      "sha256": "736d1664686851122d7eca0eaaf21cbc9c68dafa6a8d84a718b111fb83caeeb4",
+      "size": 558
+    },
+    "assets/minecraft/textures/block/copper_ore1_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore2.png": {
+      "sha256": "b466c9f4dc03756870b418a8a54daa773f2879b383f2d233fd361ed411732490",
+      "size": 683
+    },
+    "assets/minecraft/textures/block/copper_ore2.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore2_e.png": {
+      "sha256": "f0a28ec7a3e8e1157f44238f617979682b48f4cf532fc6526f8f110ba20a1b03",
+      "size": 603
+    },
+    "assets/minecraft/textures/block/copper_ore2_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore3.png": {
+      "sha256": "d3eb2d54887ad3671b012ac2d5115aab15f4b11780fc3176d72aea05bff794e0",
+      "size": 639
+    },
+    "assets/minecraft/textures/block/copper_ore3.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore3_e.png": {
+      "sha256": "a6966bfa46a38e916735c9aad90396f60a9180e70fa870bb5e535c8de0b0679a",
+      "size": 563
+    },
+    "assets/minecraft/textures/block/copper_ore3_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore4.png": {
+      "sha256": "f59b67d86137fca85c43da52fa1f9ec90136d76bb668c5a627abe05766004349",
+      "size": 642
+    },
+    "assets/minecraft/textures/block/copper_ore4.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore4_e.png": {
+      "sha256": "e1d8abbd69fd6916f0cba1aab92484830fb3d5dbbfea2be0020ec2457cdd526d",
+      "size": 557
+    },
+    "assets/minecraft/textures/block/copper_ore4_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/copper_ore_e.png": {
+      "sha256": "57d4be15790966f719ccf60d9678474d7580ca24b0b482345c23225b8ab00952",
+      "size": 651
+    },
+    "assets/minecraft/textures/block/copper_ore_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_coal_ore.png": {
+      "sha256": "bf90cc623bf740fcd4fa107b6c41dee73d04f640bf2110cff3dfa5ac0b39f8ba",
+      "size": 289
+    },
+    "assets/minecraft/textures/block/deepslate_coal_ore1.png": {
+      "sha256": "c31301bd326db6359c19537fd399c32cfd80a0c6fa82ad58c7a6e18c72af6b59",
+      "size": 275
+    },
+    "assets/minecraft/textures/block/deepslate_coal_ore2.png": {
+      "sha256": "35cbb62f36dcbe7df29f2548452f927cef18e92b3b552f481100893ed918ba0f",
+      "size": 265
+    },
+    "assets/minecraft/textures/block/deepslate_coal_ore3.png": {
+      "sha256": "62acab15f908ce1e9c43c576c41c7140975016781f6ba4b92eb941cdad506c1c",
+      "size": 269
+    },
+    "assets/minecraft/textures/block/deepslate_coal_ore4.png": {
+      "sha256": "c449a1c90f44b064d172e2e791eb241e7339024362a69af9e2f6655ecaae2ed9",
+      "size": 279
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore.png": {
+      "sha256": "053ca196576c24cb5b34c5e3ad539a3fa3dd60d4522e3338ab4ed90768a04584",
+      "size": 634
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore1.png": {
+      "sha256": "b693f4ebdfc140e2017ad3ea06e27bb1496cee1a4ce05222c454e1da70788373",
+      "size": 630
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore1.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore1_e.png": {
+      "sha256": "736d1664686851122d7eca0eaaf21cbc9c68dafa6a8d84a718b111fb83caeeb4",
+      "size": 558
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore1_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore2.png": {
+      "sha256": "fc43c24c516d42d7839bf7f5e1df06da0868e6b60b8dc65db73c2165b08cbe76",
+      "size": 685
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore2.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore2_e.png": {
+      "sha256": "f0a28ec7a3e8e1157f44238f617979682b48f4cf532fc6526f8f110ba20a1b03",
+      "size": 603
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore2_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore3.png": {
+      "sha256": "a9e35d0725dd21c483b650bcf0a611b28b6d07a2cb99fbe5bff3c285981dcf17",
+      "size": 633
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore3.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore3_e.png": {
+      "sha256": "a6966bfa46a38e916735c9aad90396f60a9180e70fa870bb5e535c8de0b0679a",
+      "size": 563
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore3_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore4.png": {
+      "sha256": "785136c270e65cb336165c1d361c05f03693a645719b8046174126fc6ab5298d",
+      "size": 636
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore4.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore4_e.png": {
+      "sha256": "e1d8abbd69fd6916f0cba1aab92484830fb3d5dbbfea2be0020ec2457cdd526d",
+      "size": 557
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore4_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore_e.png": {
+      "sha256": "57d4be15790966f719ccf60d9678474d7580ca24b0b482345c23225b8ab00952",
+      "size": 651
+    },
+    "assets/minecraft/textures/block/deepslate_copper_ore_e.png.mcmeta": {
+      "sha256": "7b965582b8065ca9e47fa1dca062b59f6c7e2837ef78210eb59fc9ee581ebf7e",
+      "size": 423
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore.png": {
+      "sha256": "cbce595c402478f47f69a725d12fd050c6cfb8ddbb8257a91e1522d34115019c",
+      "size": 704
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore1.png": {
+      "sha256": "a6996e18ae1b00fb184e96e623425e4ed5d764b5940951edfd00a8587ef113e6",
+      "size": 590
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore1.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore1_e.png": {
+      "sha256": "9e4222b15281f3eba6930e71c88709959fbe801cf4e743a88bfd526c4f6bd2dc",
+      "size": 457
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore1_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore2.png": {
+      "sha256": "f031d79e86108dcffc1ad61c31db7f9585ed3bdc2a69d7c82254756d5744d9d9",
+      "size": 588
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore2.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore2_e.png": {
+      "sha256": "f773d9e4edcb061be201f94f6b5066fcef1373f7c587098894cc73efa0dfd225",
+      "size": 457
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore2_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore3.png": {
+      "sha256": "c11d317ffaa2d7ac6b45aef17de2b962a11dc88f4ffc9401bf53a1bc0404a1bf",
+      "size": 593
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore3.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore3_e.png": {
+      "sha256": "da6e05e4a96612d44e9f6eecb9c7e058caa15904c759543aad7e489f1482aa71",
+      "size": 469
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore3_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore_e.png": {
+      "sha256": "765fd737bce1c96d16bd7f4d24193a3e543d5c1eec5c69db849d757db0c61493",
+      "size": 704
+    },
+    "assets/minecraft/textures/block/deepslate_diamond_ore_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore.png": {
+      "sha256": "2a673d0e3cf0c1cab26a61dede8b0b238aaaaf55391f948b379bb3f7e592fdec",
+      "size": 718
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore1.png": {
+      "sha256": "2fa1707cd7cb6acd020a40053f2e7750f898827fc97c4e4cec668ce3c014a21e",
+      "size": 578
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore1.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore1_e.png": {
+      "sha256": "d12ba06ce3ac3d574394c9d3e728324d5660ecffa22e6a7f65046f60bf5bdfb5",
+      "size": 489
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore1_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore2.png": {
+      "sha256": "08b7213fdb9c5d6829d7842558d83014c1bb38b6bfb037b82bcdbca2b1c06673",
+      "size": 619
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore2.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore2_e.png": {
+      "sha256": "bc99ac69293c00fc4d9fa5f70411874686acbd6d9cb353d5a59e4eb2cb9ee5d8",
+      "size": 542
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore2_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore3.png": {
+      "sha256": "5a2e42b6c4251393bd79c8684d5997bbb696facd3922e3e53e460a30c4afe933",
+      "size": 649
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore3.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore3_e.png": {
+      "sha256": "6c82099cbb20d6965aa266cc27833fa32315bd0600dfb24c2cf5c00e07266212",
+      "size": 571
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore3_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore4.png": {
+      "sha256": "5659740bebbcd5de72a73b658eccd251265291d9f73bd7ab01b8c56cc3a639f4",
+      "size": 575
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore4.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore4_e.png": {
+      "sha256": "4bbffa4cbbb6fa0786bc457d380ef556fe3821b9f6bdf1040f095e09bc0258e1",
+      "size": 466
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore4_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore_e.png": {
+      "sha256": "01cf923f5abb3bd9ddb77b0bbd1d791b522d7c328637ce27735c2b4c38c268a4",
+      "size": 760
+    },
+    "assets/minecraft/textures/block/deepslate_emerald_ore_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore.png": {
+      "sha256": "afa5bc945fd61ae813666a915d08d7d34a0e7d3cfe68b4bba696af613e043e05",
+      "size": 601
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore1.png": {
+      "sha256": "6b48b986fea784e77f401fb40151cfd90fb275d0eeec5c78606045adf675d65a",
+      "size": 560
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore1.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore1_e.png": {
+      "sha256": "59f41a1f010e906370016b035883cbbccb119d9af6636594b7c2d631698cd7b6",
+      "size": 471
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore1_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore2.png": {
+      "sha256": "4fc141d9ddc95c61fefe2f4afe8d62442366c72e24b9d20ba5cf7be21bf1c900",
+      "size": 631
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore2.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore2_e.png": {
+      "sha256": "1ebede0d52e307f30a9f1574ddb9ae73139e761f4869492120c4914342a614f2",
+      "size": 541
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore2_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore3.png": {
+      "sha256": "3cbcb7b799ff200e1aaadf8abecba71580ea9e412174a7dc5c76d658add7b5e2",
+      "size": 595
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore3.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore3_e.png": {
+      "sha256": "19469ef08f37ed37bb37285d569cbef9c8468b903cb58f7c41ca22b1e5f4194e",
+      "size": 503
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore3_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore4.png": {
+      "sha256": "8c654c2d3dc30174af175d846b306fc8334cfd95ecbcebe4cbc3e3520db753d7",
+      "size": 580
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore4.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore4_e.png": {
+      "sha256": "431f5d3ac2ce41f430841336349f8eae5d55021a9bf9d3da84921564a6ee4298",
+      "size": 497
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore4_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore_e.png": {
+      "sha256": "751a43bf7fc02539b24ceaa5ce9736892365f537a2650a58120bacb6f5c5c833",
+      "size": 784
+    },
+    "assets/minecraft/textures/block/deepslate_gold_ore_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore.png": {
+      "sha256": "33ecfb2455d4add8aa8459ca91cb109d31deab6bb16be2511d96087eafe2c07d",
+      "size": 597
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore1.png": {
+      "sha256": "b0f93066b94fc2b3cc90a9ce0094979a3e956a8f6bd2227c79e440f5443deaf2",
+      "size": 567
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore1.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore1_e.png": {
+      "sha256": "02b485dbfd034276d66674cb8c2568a36e2970d1fe4a99e60bd05a5c4da357ef",
+      "size": 481
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore1_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore2.png": {
+      "sha256": "69cbe17439b8beb702c5cc0e22caf69ae51bb7d0ec84ac79a12671448ee43e81",
+      "size": 573
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore2.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore2_e.png": {
+      "sha256": "c19ebe6c977491b20a24c2e1c89111a14cd280effd970d4781c4cacaa769d9e4",
+      "size": 478
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore2_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore3.png": {
+      "sha256": "f8f96210bd56811c78a94f603236ba6f484aa0287d25cd8d419094d2efa9fb8d",
+      "size": 600
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore3.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore3_e.png": {
+      "sha256": "4f5838dc7d4d902c08982f41a07dd3a3c9dfef2a8b03d9c59c362f4c7a6a94aa",
+      "size": 514
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore3_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore_e.png": {
+      "sha256": "9e22549caf9cb928d5ef4324f0f27585ab5c7eef2463b7cd8e65397fce26c6aa",
+      "size": 752
+    },
+    "assets/minecraft/textures/block/deepslate_iron_ore_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore.png": {
+      "sha256": "bec43ca7565bb6f0e31f06ffc4f5888c38cdcb509de279e1ce007d8a428782a5",
+      "size": 425
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore1.png": {
+      "sha256": "eb0f0f798af39597d69b2a6cf4b99791a47d0e0395e550bcd0c1406e3a59f404",
+      "size": 396
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore1.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore1_e.png": {
+      "sha256": "7105686c789f933998d6b5796c45b2cf3242ee0a752d556fa4624f42b69c068e",
+      "size": 316
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore1_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore2.png": {
+      "sha256": "13d9303ae78f80931427c6071553badf9d5fe2d3940fd7c4d151160f7f56eaea",
+      "size": 405
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore2.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore2_e.png": {
+      "sha256": "0ef2614129e6898bca48ba12e94b9ce39bcca6ee52b818a470df4374e06638a9",
+      "size": 315
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore2_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore3.png": {
+      "sha256": "91166205b8716ece0794db343d3986fcc83117d32babb50fa5d800d17ad63d92",
+      "size": 403
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore3.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore3_e.png": {
+      "sha256": "d5a59d0ad2ec606bd5ba106a12fd62f408004bb3168a93e3f565d5bb5180b855",
+      "size": 377
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore3_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore_e.png": {
+      "sha256": "32196df6080cdbb7ee84f852fe52953cb3d3120b9227bb36a94d7e723425ce0e",
+      "size": 376
+    },
+    "assets/minecraft/textures/block/deepslate_lapis_ore_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore.png": {
+      "sha256": "ef15c2f2b45e761e912587e5031b300bfe830361cdac8da70eb31d26959af7fd",
+      "size": 494
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore1.png": {
+      "sha256": "fcc46d805b1462e5a6960711cccdb0f764e6bf7bdce637f29d3976198ed58afb",
+      "size": 477
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore1.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore1_e.png": {
+      "sha256": "0080a0008ca0f0051f3e2e2fe49743888baa0d58ecff00602c54cfb8a0843776",
+      "size": 335
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore1_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore2.png": {
+      "sha256": "ed59a504d677348fb81e186f9acaf2d95f31ff9403ca655797d4d2e6e0a35a7b",
+      "size": 481
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore2.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore2_e.png": {
+      "sha256": "fbe77edc3a91bd3cf45ffd46d8d2d35b452f530e6fd5d420f1a4b4c91a2f9694",
+      "size": 335
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore2_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore3.png": {
+      "sha256": "6ea9372ecb9905f0c7323349023175cd6e9e0be7b208117a42d2e1a8fc6daf81",
+      "size": 491
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore3.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore3_e.png": {
+      "sha256": "f474137cd27d6af40d4765d459f57950257a73ae827c59c3b38c77a27bedb42f",
+      "size": 340
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore3_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore4.png": {
+      "sha256": "95a4e59986c86f34942cd97d8b9e86ce04596f9dc2486e97a84562430d3f5e1d",
+      "size": 508
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore4.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore4_e.png": {
+      "sha256": "f94ccd515b0cf7bce7992c6260de504c99fd86f27531b69fb69067435bdb24aa",
+      "size": 368
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore4_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore_e.png": {
+      "sha256": "98d1294bd858cdcf772e69456e225d040422172250c491637a013cb94cf685db",
+      "size": 409
+    },
+    "assets/minecraft/textures/block/deepslate_redstone_ore_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/diamond_ore.png": {
+      "sha256": "24236c27dca70fe9467b40a5219276e6128bd47316f004acea0fc9d5c4f0ad6d",
+      "size": 596
+    },
+    "assets/minecraft/textures/block/diamond_ore.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/diamond_ore1.png": {
+      "sha256": "bf94c856d644c9295446c30394f9507724a852f6ae1f995aaccc65b447f9bbd4",
+      "size": 569
+    },
+    "assets/minecraft/textures/block/diamond_ore1.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/diamond_ore1_e.png": {
+      "sha256": "9e4222b15281f3eba6930e71c88709959fbe801cf4e743a88bfd526c4f6bd2dc",
+      "size": 457
+    },
+    "assets/minecraft/textures/block/diamond_ore1_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/diamond_ore2.png": {
+      "sha256": "de1d49bb01d9422f7940faa30b5dc7555a1642023fd5bbceaa1d008c2ecf8863",
+      "size": 570
+    },
+    "assets/minecraft/textures/block/diamond_ore2.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/diamond_ore2_e.png": {
+      "sha256": "f773d9e4edcb061be201f94f6b5066fcef1373f7c587098894cc73efa0dfd225",
+      "size": 457
+    },
+    "assets/minecraft/textures/block/diamond_ore2_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/diamond_ore3.png": {
+      "sha256": "ebd9f979406b6063d299faf34bddcf68c8d0afc094a68a0a6ea3868497fa75b1",
+      "size": 580
+    },
+    "assets/minecraft/textures/block/diamond_ore3.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/diamond_ore3_e.png": {
+      "sha256": "da6e05e4a96612d44e9f6eecb9c7e058caa15904c759543aad7e489f1482aa71",
+      "size": 469
+    },
+    "assets/minecraft/textures/block/diamond_ore3_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/diamond_ore_e.png": {
+      "sha256": "765fd737bce1c96d16bd7f4d24193a3e543d5c1eec5c69db849d757db0c61493",
+      "size": 704
+    },
+    "assets/minecraft/textures/block/diamond_ore_e.png.mcmeta": {
+      "sha256": "2adb8275396a8b6c11126c555eadd1e794ee33907038ce121789145b4ec22fd0",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore.png": {
+      "sha256": "2133440771417747f3ab637cd1a22d4ab2ef6d057bb28c0dbc62e480bffb738d",
+      "size": 748
+    },
+    "assets/minecraft/textures/block/emerald_ore.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore1.png": {
+      "sha256": "4002360f70d81e911b63b43955de0b19e6dbf99b2673086425737ee8500479d6",
+      "size": 576
+    },
+    "assets/minecraft/textures/block/emerald_ore1.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore1_e.png": {
+      "sha256": "d12ba06ce3ac3d574394c9d3e728324d5660ecffa22e6a7f65046f60bf5bdfb5",
+      "size": 489
+    },
+    "assets/minecraft/textures/block/emerald_ore1_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore2.png": {
+      "sha256": "8cd406511539baee57dfc9f1fe55b118ba0d688af5568c712f5957801c868e5c",
+      "size": 623
+    },
+    "assets/minecraft/textures/block/emerald_ore2.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore2_e.png": {
+      "sha256": "bc99ac69293c00fc4d9fa5f70411874686acbd6d9cb353d5a59e4eb2cb9ee5d8",
+      "size": 542
+    },
+    "assets/minecraft/textures/block/emerald_ore2_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore3.png": {
+      "sha256": "94fe0cbc0cfb056bec0c19ef15338218c1fbeeb1504a27ee4630de2d4f1437ba",
+      "size": 652
+    },
+    "assets/minecraft/textures/block/emerald_ore3.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore3_e.png": {
+      "sha256": "6c82099cbb20d6965aa266cc27833fa32315bd0600dfb24c2cf5c00e07266212",
+      "size": 571
+    },
+    "assets/minecraft/textures/block/emerald_ore3_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore4.png": {
+      "sha256": "a225b971afdb6bba18358d255f0beee204436950c94d0c1b35783aa31c2b92fb",
+      "size": 565
+    },
+    "assets/minecraft/textures/block/emerald_ore4.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore4_e.png": {
+      "sha256": "4bbffa4cbbb6fa0786bc457d380ef556fe3821b9f6bdf1040f095e09bc0258e1",
+      "size": 466
+    },
+    "assets/minecraft/textures/block/emerald_ore4_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/emerald_ore_e.png": {
+      "sha256": "01cf923f5abb3bd9ddb77b0bbd1d791b522d7c328637ce27735c2b4c38c268a4",
+      "size": 760
+    },
+    "assets/minecraft/textures/block/emerald_ore_e.png.mcmeta": {
+      "sha256": "5929229ced7a3b80198da55afe026b168ad7a214f8b5937a4dae82701cc154ae",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone.png": {
+      "sha256": "31e4cf5ea2027bdb223df9655f97dd72ef522df7b2ed478f2dc2d797ead309ba",
+      "size": 514
+    },
+    "assets/minecraft/textures/block/gilded_blackstone.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone1.png": {
+      "sha256": "6aa830f9ff62a7b3aa3cb6c9ed639def9f3abfac5f6cbb1098eb4647aab235bf",
+      "size": 495
+    },
+    "assets/minecraft/textures/block/gilded_blackstone1.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone1_e.png": {
+      "sha256": "4b1babd35c3409f607804a3c46db7debca57c68f95e5263733e53df9ef4da272",
+      "size": 398
+    },
+    "assets/minecraft/textures/block/gilded_blackstone1_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone2.png": {
+      "sha256": "b711ab609177e61b1546528f923ee9e23db0293897c9377925f291b3561d78e4",
+      "size": 482
+    },
+    "assets/minecraft/textures/block/gilded_blackstone2.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone2_e.png": {
+      "sha256": "6c8d73e24b90838caac023d6840c91df4c2147c26cbc440209d5a8ce4dc91fcc",
+      "size": 390
+    },
+    "assets/minecraft/textures/block/gilded_blackstone2_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone3.png": {
+      "sha256": "df72e71b4b6bb29ea24f60fa19a1f66b04e89bbd6822907e39b708c94708d542",
+      "size": 492
+    },
+    "assets/minecraft/textures/block/gilded_blackstone3.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone3_e.png": {
+      "sha256": "1b4f37f88c9cbcd19ce4a6dd4eb58717e6f3e3a017e7b4605824e5ff0b8f521d",
+      "size": 394
+    },
+    "assets/minecraft/textures/block/gilded_blackstone3_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gilded_blackstone_e.png": {
+      "sha256": "386da908801ad54ea29b6b8aba0ea88227df0c59678d68e892c1c63774f14ffc",
+      "size": 628
+    },
+    "assets/minecraft/textures/block/gilded_blackstone_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/glow.png": {
+      "sha256": "e8350f282f43e3a3e542e940b8f7bc935a74f194b2e15c969be651267cc6863d",
+      "size": 11529
+    },
+    "assets/minecraft/textures/block/glow.png.mcmeta": {
+      "sha256": "d1b0b81228dbf15932f8feb85ebad776e8d9c2e6e39f44f52a46bd87b65879ee",
+      "size": 62
+    },
+    "assets/minecraft/textures/block/gold_ore.png": {
+      "sha256": "ffdd607cd114ca01ed6d2ea8224b18895e46bdafa9b79b2f7a2dfd9c2580a04f",
+      "size": 614
+    },
+    "assets/minecraft/textures/block/gold_ore.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore1.png": {
+      "sha256": "e206428df6c40d59878f8e4a2bda3f8a91b3b0d8bdbd00e6bed90ddf52015f3b",
+      "size": 569
+    },
+    "assets/minecraft/textures/block/gold_ore1.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore1_e.png": {
+      "sha256": "59f41a1f010e906370016b035883cbbccb119d9af6636594b7c2d631698cd7b6",
+      "size": 471
+    },
+    "assets/minecraft/textures/block/gold_ore1_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore2.png": {
+      "sha256": "320704b67752036bc1d22038bd32def5812d41e30d95e42e316e77ba65222fe1",
+      "size": 638
+    },
+    "assets/minecraft/textures/block/gold_ore2.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore2_e.png": {
+      "sha256": "1ebede0d52e307f30a9f1574ddb9ae73139e761f4869492120c4914342a614f2",
+      "size": 541
+    },
+    "assets/minecraft/textures/block/gold_ore2_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore3.png": {
+      "sha256": "aba98b328d9456324bfdf3f49518b2b65adf36b4335903c2da608e2b3e692ec8",
+      "size": 605
+    },
+    "assets/minecraft/textures/block/gold_ore3.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore3_e.png": {
+      "sha256": "19469ef08f37ed37bb37285d569cbef9c8468b903cb58f7c41ca22b1e5f4194e",
+      "size": 503
+    },
+    "assets/minecraft/textures/block/gold_ore3_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore4.png": {
+      "sha256": "43de292d8652a4400914b0d256d4d772e0df3a1a0474e4404ff9cc8a13327d49",
+      "size": 591
+    },
+    "assets/minecraft/textures/block/gold_ore4.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore4_e.png": {
+      "sha256": "431f5d3ac2ce41f430841336349f8eae5d55021a9bf9d3da84921564a6ee4298",
+      "size": 497
+    },
+    "assets/minecraft/textures/block/gold_ore4_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/gold_ore_e.png": {
+      "sha256": "280be3d0dd0552dd8277a7ff9a2c7d99aad8de6ab94b9e775fc99d8bd775a622",
+      "size": 784
+    },
+    "assets/minecraft/textures/block/gold_ore_e.png.mcmeta": {
+      "sha256": "36fa1f88200af0edb9066aa8b263f8ebd748a6393c3f6ac06693f3a9f2a379c8",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/iron_ore.png": {
+      "sha256": "2131eb084e59bc6a10022ca58c5050de1f6597528175a9a63d90c8d9037766d2",
+      "size": 588
+    },
+    "assets/minecraft/textures/block/iron_ore.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/iron_ore1.png": {
+      "sha256": "3c5a2997fe011c96cc7e1b936e8a4b626b30abd48e117ce5a396c4783e85c4c4",
+      "size": 549
+    },
+    "assets/minecraft/textures/block/iron_ore1.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/iron_ore1_e.png": {
+      "sha256": "02b485dbfd034276d66674cb8c2568a36e2970d1fe4a99e60bd05a5c4da357ef",
+      "size": 481
+    },
+    "assets/minecraft/textures/block/iron_ore1_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/iron_ore2.png": {
+      "sha256": "109be11ac77b10bd180539e31d1daf958074860ec69d890af1db0c7297a18bdb",
+      "size": 561
+    },
+    "assets/minecraft/textures/block/iron_ore2.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/iron_ore2_e.png": {
+      "sha256": "c19ebe6c977491b20a24c2e1c89111a14cd280effd970d4781c4cacaa769d9e4",
+      "size": 478
+    },
+    "assets/minecraft/textures/block/iron_ore2_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/iron_ore3.png": {
+      "sha256": "a3d96769ff8d24f80141d94f8fe21a81574ec597128e184cc9546cef7b681c60",
+      "size": 586
+    },
+    "assets/minecraft/textures/block/iron_ore3.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/iron_ore3_e.png": {
+      "sha256": "4f5838dc7d4d902c08982f41a07dd3a3c9dfef2a8b03d9c59c362f4c7a6a94aa",
+      "size": 514
+    },
+    "assets/minecraft/textures/block/iron_ore3_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/iron_ore_e.png": {
+      "sha256": "9e22549caf9cb928d5ef4324f0f27585ab5c7eef2463b7cd8e65397fce26c6aa",
+      "size": 752
+    },
+    "assets/minecraft/textures/block/iron_ore_e.png.mcmeta": {
+      "sha256": "9c37001fa6d7829bec57821be921cf3e51b0fdb5a56fed070faefb9d1bbd9b16",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/lapis_ore.png": {
+      "sha256": "f4ac69c48434183947fbe4d054a441d68ddf5db8c75570ea8b2341854dd32fca",
+      "size": 438
+    },
+    "assets/minecraft/textures/block/lapis_ore.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lapis_ore1.png": {
+      "sha256": "2a5d583a3689fe8031601ae17ac6f15d5494474d9a93db78a4fe2b83ba00dd91",
+      "size": 402
+    },
+    "assets/minecraft/textures/block/lapis_ore1.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lapis_ore1_e.png": {
+      "sha256": "7105686c789f933998d6b5796c45b2cf3242ee0a752d556fa4624f42b69c068e",
+      "size": 316
+    },
+    "assets/minecraft/textures/block/lapis_ore1_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lapis_ore2.png": {
+      "sha256": "1c372bed35a43983ee066380598501c1cb90a4305752cef12cf3228a60107eb1",
+      "size": 398
+    },
+    "assets/minecraft/textures/block/lapis_ore2.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lapis_ore2_e.png": {
+      "sha256": "0ef2614129e6898bca48ba12e94b9ce39bcca6ee52b818a470df4374e06638a9",
+      "size": 315
+    },
+    "assets/minecraft/textures/block/lapis_ore2_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lapis_ore3.png": {
+      "sha256": "a6ac78f20d6cf66214270e704ec3f0bdef1711f6e8d46dfa634cb714ab102e1c",
+      "size": 403
+    },
+    "assets/minecraft/textures/block/lapis_ore3.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lapis_ore3_e.png": {
+      "sha256": "d5a59d0ad2ec606bd5ba106a12fd62f408004bb3168a93e3f565d5bb5180b855",
+      "size": 377
+    },
+    "assets/minecraft/textures/block/lapis_ore3_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lapis_ore_e.png": {
+      "sha256": "32196df6080cdbb7ee84f852fe52953cb3d3120b9227bb36a94d7e723425ce0e",
+      "size": 376
+    },
+    "assets/minecraft/textures/block/lapis_ore_e.png.mcmeta": {
+      "sha256": "ad66aed52918d9af3be054fea3b629e58f4b19080f571f47540b9fa3f8f1298a",
+      "size": 346
+    },
+    "assets/minecraft/textures/block/lily_pad.png": {
+      "sha256": "b78f34b1a1ee1000419d3a9c6909c19afad8b6c80008fc6206c0c75d35389e04",
+      "size": 355
+    },
+    "assets/minecraft/textures/block/lily_pad_bottom.png": {
+      "sha256": "25578c05349a77cfe9a31df2e30f15c3bda1bfa11f45f644647189815f77229e",
+      "size": 349
+    },
+    "assets/minecraft/textures/block/lily_pad_rhizome.png": {
+      "sha256": "22e8d0847d6071cf1f26a5bfdd938fd9f274c2fbc69906c02874e809ba3aac37",
+      "size": 316
+    },
+    "assets/minecraft/textures/block/nether_gold_ore.png": {
+      "sha256": "80ed7fde182cbe9d58d7788c5526f502a2be94fd0c47d6cdb773afd13a70228a",
+      "size": 572
+    },
+    "assets/minecraft/textures/block/nether_gold_ore.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore1.png": {
+      "sha256": "b08a266a0b0db1d8ebf15d102926abd6d60ad5d4484228a350cadcfc4311cd31",
+      "size": 554
+    },
+    "assets/minecraft/textures/block/nether_gold_ore1.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore1_e.png": {
+      "sha256": "91f2732d644c383a76c866146fbf6ad9dd24814492b9e66fcb4b7727c97dda16",
+      "size": 455
+    },
+    "assets/minecraft/textures/block/nether_gold_ore1_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore2.png": {
+      "sha256": "d3d5f970e3bf4e768ac331456b74c8f8f4267c101be18b9e539785e9d325d838",
+      "size": 554
+    },
+    "assets/minecraft/textures/block/nether_gold_ore2.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore2_e.png": {
+      "sha256": "83738af1ad7aac82f337e943e2a7c93d335d6c05e8bb3eee02eb4c36d1e7da34",
+      "size": 458
+    },
+    "assets/minecraft/textures/block/nether_gold_ore2_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore3.png": {
+      "sha256": "2d80c15e4e8a73d00935bca74f91de233c37e1923699d7ae0bb19b7bbee7b7ee",
+      "size": 532
+    },
+    "assets/minecraft/textures/block/nether_gold_ore3.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore3_e.png": {
+      "sha256": "7cdb8bb8a4ef5a8b5df9f43d315f595edb157b7f9e7547b3e0e063bd994d58ed",
+      "size": 425
+    },
+    "assets/minecraft/textures/block/nether_gold_ore3_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore4.png": {
+      "sha256": "c280718da5ec08ad21410bc8e98edfbbf250990c61a03b58d81c525a5a7e0e23",
+      "size": 527
+    },
+    "assets/minecraft/textures/block/nether_gold_ore4.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore4_e.png": {
+      "sha256": "fdb946c86077faf9ed7970bc745853e82bfbacfc61ca558d0e4d9728f7fc7b97",
+      "size": 414
+    },
+    "assets/minecraft/textures/block/nether_gold_ore4_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_gold_ore_e.png": {
+      "sha256": "c6a23de563ce3553de4e8613bf444d7784ac3451e7185bb6e0d752fb4350fbe4",
+      "size": 615
+    },
+    "assets/minecraft/textures/block/nether_gold_ore_e.png.mcmeta": {
+      "sha256": "f87b23db7336753032ec6f2e2eb450a8dd4d799ef70cd825cbcc4813173725ec",
+      "size": 422
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore.png": {
+      "sha256": "55cb5066fee9a26a16eb9f4ee4a18288a4e2d3d19c617106b02122e1908e911b",
+      "size": 566
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore1.png": {
+      "sha256": "cf2b8de5ae8293ae01629f24b4e8e3d222920ba57b51dd640e7ef4d0d31a6457",
+      "size": 579
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore1.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore1_e.png": {
+      "sha256": "d05932c5a1b87906826cd21d8d43a27d7029bde18e57d47d85b17ea8697f4338",
+      "size": 465
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore1_e.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore2.png": {
+      "sha256": "e43fde1e2a70f4f3633c04515a8805f0f78061b074886cd875375bfd0d0c3420",
+      "size": 527
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore2.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore2_e.png": {
+      "sha256": "a46bc8d29e4e8391ae2d0f2cdbf3288c17556b67c0c9710d7baa8bd763788a6b",
+      "size": 407
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore2_e.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore3.png": {
+      "sha256": "0c0004a5bd9dfccfa0c9c98c7b2583d4fefb3f42394793bdcc860a618d8ba503",
+      "size": 534
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore3.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore3_e.png": {
+      "sha256": "745cdd3619e5ad3d04b8ba632df6c4c3c4b513c2b3b8efe587cfbd03ffb7e9dd",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore3_e.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore_e.png": {
+      "sha256": "d0301dd5b28defbebaf165fd47ba5b340606664934f0db342e5166da8c768b3a",
+      "size": 660
+    },
+    "assets/minecraft/textures/block/nether_quartz_ore_e.png.mcmeta": {
+      "sha256": "391b2f572cd2ef0f8a26be677f657420c2a72de3d80aaa23b296b87a6b2933fc",
+      "size": 420
+    },
+    "assets/minecraft/textures/block/orange_water_lily_flower.png": {
+      "sha256": "a9d74d40711953d52f7cd7557c597d5fb3b99ecb617bcc3a5d65d047af0f462e",
+      "size": 252
+    },
+    "assets/minecraft/textures/block/orange_water_lily_stem.png": {
+      "sha256": "dd6c150d678cb62657eddd94a215a2fdbb40e8744bbb6bf520d699ec58b715c5",
+      "size": 277
+    },
+    "assets/minecraft/textures/block/pink_water_lily_flower.png": {
+      "sha256": "1ec9dcaf022c6b1c46e1ab8f15eeb526ab7cee6db2057492c051d42e321ca534",
+      "size": 238
+    },
+    "assets/minecraft/textures/block/pink_water_lily_stem.png": {
+      "sha256": "54f8238d0453fc8f867ff2fd79018f1bb6cca66bd2722ed58f9704e0e069cb0d",
+      "size": 278
+    },
+    "assets/minecraft/textures/block/purple_water_lily_flower.png": {
+      "sha256": "6ca67501d1807eb2a75765dad6d56b68118b419ad6388eeec37dc801d82b48be",
+      "size": 250
+    },
+    "assets/minecraft/textures/block/purple_water_lily_stem.png": {
+      "sha256": "8fc948087b30710b341795f5f8953784562723e5948de79635e4707607b033ec",
+      "size": 279
+    },
+    "assets/minecraft/textures/block/redstone_ore.png": {
+      "sha256": "ec6f7ceb3003091dc3b9de07e6bdd0fd87fc976f68f887f639621d8856ff2a3b",
+      "size": 475
+    },
+    "assets/minecraft/textures/block/redstone_ore.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore1.png": {
+      "sha256": "c6a82091faf213823cb2d48aa7d4cfb71d9baf4ebb2787ff75cef4c0113e7d6f",
+      "size": 461
+    },
+    "assets/minecraft/textures/block/redstone_ore1.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore1_e.png": {
+      "sha256": "0080a0008ca0f0051f3e2e2fe49743888baa0d58ecff00602c54cfb8a0843776",
+      "size": 335
+    },
+    "assets/minecraft/textures/block/redstone_ore1_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore2.png": {
+      "sha256": "9bd7b01344586610292b24c52bf994b162219a1d33794984092711a543e13064",
+      "size": 465
+    },
+    "assets/minecraft/textures/block/redstone_ore2.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore2_e.png": {
+      "sha256": "fbe77edc3a91bd3cf45ffd46d8d2d35b452f530e6fd5d420f1a4b4c91a2f9694",
+      "size": 335
+    },
+    "assets/minecraft/textures/block/redstone_ore2_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore3.png": {
+      "sha256": "bfe635fa4b04ff1be6d67f14c64e533bfba3181f3646e55d3a8ff585aff3d688",
+      "size": 476
+    },
+    "assets/minecraft/textures/block/redstone_ore3.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore3_e.png": {
+      "sha256": "f474137cd27d6af40d4765d459f57950257a73ae827c59c3b38c77a27bedb42f",
+      "size": 340
+    },
+    "assets/minecraft/textures/block/redstone_ore3_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore4.png": {
+      "sha256": "860d298e972cb005087ed55148ac905a7aee89a71a1e591899ce97d7a113fc27",
+      "size": 490
+    },
+    "assets/minecraft/textures/block/redstone_ore4.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore4_e.png": {
+      "sha256": "f94ccd515b0cf7bce7992c6260de504c99fd86f27531b69fb69067435bdb24aa",
+      "size": 368
+    },
+    "assets/minecraft/textures/block/redstone_ore4_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/redstone_ore_e.png": {
+      "sha256": "98d1294bd858cdcf772e69456e225d040422172250c491637a013cb94cf685db",
+      "size": 409
+    },
+    "assets/minecraft/textures/block/redstone_ore_e.png.mcmeta": {
+      "sha256": "85c1a2c4e5938ebd5f17cde6c5a84597d2f1847e8f3c411e935bb4ab005f11de",
+      "size": 314
+    },
+    "assets/minecraft/textures/block/white_water_lily_flower.png": {
+      "sha256": "0dd266873d4ba52441e7c8ab383fabede85614ee248f17f86cde830d9d651e6e",
+      "size": 246
+    },
+    "assets/minecraft/textures/block/white_water_lily_stem.png": {
+      "sha256": "d712f84b77521f8ed8dcda3fb9dd787c3728e507f464a0dc7902f469487cffd5",
+      "size": 276
+    },
+    "assets/minecraft/textures/block/yellow_water_lily_flower.png": {
+      "sha256": "15ae3a6edabbf1357cd0a64fc465bf3e2d60219a40b8e9a963a299c06d6c9cb3",
+      "size": 240
+    },
+    "assets/minecraft/textures/block/yellow_water_lily_stem.png": {
+      "sha256": "ffcd406f9b57c7ab434c188097f151d3803be41ff34997890e4d90b1e35bdd5f",
+      "size": 273
+    },
+    "assets/minecraft/textures/entity/enderdragon/dragon.png": {
+      "sha256": "9fc2ae17cf5dc465a9af80b0ac4d6e5d955427e572da439bc05094f0254906a5",
+      "size": 33665
+    },
+    "assets/minecraft/textures/entity/enderdragon/dragon_exploding.png": {
+      "sha256": "1672b2abbbc5c0df01ada5cba3422e56ccefcf1bc5d6f964a141d5f6170b23e2",
+      "size": 35982
+    },
+    "assets/minecraft/textures/entity/enderdragon/dragon_eyes.png": {
+      "sha256": "707c5a0e902ee660de9a4e604c5b04244c2ba989e166253e622b2b02a3b0ac92",
+      "size": 5883
+    },
+    "assets/minecraft/textures/entity/enderdragon/dragon_fireball.png": {
+      "sha256": "9cb56adced0931fd3eeddf9d359cc036fd494179176644809fb16bd5f76cdaf1",
+      "size": 231
+    },
+    "assets/minecraft/textures/environment/celestial/sun.png": {
+      "sha256": "06cd49d8d53e5855e90d657cb6aa65d1a9d08954374dce0158ef5f846e990c00",
+      "size": 6704079
+    },
+    "assets/minecraft/textures/environment/rain.png": {
+      "sha256": "65563e8fa5b44e07811f913d2d4c65f4af56c9df909d36070f0d3006243bdc8f",
+      "size": 3558
+    },
+    "assets/minecraft/textures/environment/snow.png": {
+      "sha256": "9d4d1c268c4774bf35a0e74b94b88b9989c4623db00affa7c519fc24d3abc8d9",
+      "size": 2880
+    },
+    "assets/notvisuals/models/block/waving_leaves_plain.json": {
+      "sha256": "08d655455373fb5d05898ab240ecacf60d063be727190f12d8f32754de125618",
+      "size": 1354
+    },
+    "assets/notvisuals/models/block/waving_leaves_tinted.json": {
+      "sha256": "439a6441b69ec3ea37b0841a6bdec242c1bc85268592ef87fc956d280fb2a43a",
+      "size": 1510
+    },
+    "assets/notvisuals/post_effect/depth_ink.json": {
+      "sha256": "db5d17bc7e7da6d3175791e83cbb5b6f0bdccb6dc76a6bfe764e9a913a7ee6e3",
+      "size": 1037
+    },
+    "assets/notvisuals/post_effect/depth_lab.json": {
+      "sha256": "19cdc7e3b8454f04416790214c98636842dfc0def10a59910448a2a52ccc6e11",
+      "size": 1037
+    },
+    "assets/notvisuals/post_effect/pixel_vivid.json": {
+      "sha256": "747cb24f400ab89b85fb05fa18e79d83e1daf9a72f00f32c8ce61ce002eb2317",
+      "size": 881
+    },
+    "assets/notvisuals/post_effect/soft_glow.json": {
+      "sha256": "fdf0621cf5fde932aa97bdf4e562fa692fa7caf45a64651fb3b0d332a8a7db60",
+      "size": 5449
+    },
+    "assets/notvisuals/shaders/include/depth_edges.glsl": {
+      "sha256": "af668d0ebcf4b364cc44a966dd48872f9f62579a6d17cdcd9e721a2327a461f2",
+      "size": 1783
+    },
+    "assets/notvisuals/shaders/post/adaptive_pixel.fsh": {
+      "sha256": "39d33948b416e909b2eaf0504226a06b04664e51bcb4c767a6066df9bd4d28aa",
+      "size": 3564
+    },
+    "assets/notvisuals/shaders/post/atmosphere_pass.fsh": {
+      "sha256": "4020936eeebc346696a59615b9878a67f24e6b318b0feac0b6aa7f92959d29b0",
+      "size": 1439
+    },
+    "assets/notvisuals/shaders/post/bloom_composite.fsh": {
+      "sha256": "5f1756a1ff00c24ac14ea22187e378720a8d2e117dc5069a681f6cf9a7531543",
+      "size": 1536
+    },
+    "assets/notvisuals/shaders/post/depth_ink.fsh": {
+      "sha256": "e4d33f1bc7ecd9ca7a35de541245b193252844bfd2b31365367dc189523b99ed",
+      "size": 1172
+    },
+    "assets/notvisuals/shaders/post/depth_lab.fsh": {
+      "sha256": "8619de600c40e09a09fe7f84a80a2e194add52733c6fafe552a8f6ff54089dbf",
+      "size": 609
+    },
+    "assets/notvisuals/shaders/post/exposure_adapt.fsh": {
+      "sha256": "6e5cc0e565f838c71a4a24f45192db833299053250fb48bc303d63cae4d88706",
+      "size": 611
+    },
+    "assets/notvisuals/shaders/post/exposure_measure.fsh": {
+      "sha256": "0a5be647ffd7e95a2c258a75cbcbbe39094da76ec138a8a643cb6a34d85f7b24",
+      "size": 851
+    },
+    "assets/notvisuals/shaders/post/extra_glow_composite.fsh": {
+      "sha256": "42a7be62a5089b8ece9c52c04e0d08ef5eeae4335578f4162b4fb6b3aa08bf09",
+      "size": 1001
+    },
+    "assets/notvisuals/shaders/post/fantasy_pass.fsh": {
+      "sha256": "9ac3057201c0c9be9a4449bd35336f9a396069123af380b211a86f4bf7cf8e9c",
+      "size": 1730
+    },
+    "assets/notvisuals/shaders/post/highlight_extract.fsh": {
+      "sha256": "6aab43031ee0de2a673c3a17609c3dacb383fa9b668974eabd9c1eacaea6d9fe",
+      "size": 4416
+    },
+    "assets/notvisuals/shaders/post/inkline.fsh": {
+      "sha256": "bd5966c91ab1218475729782f02782bda8d897db9611161f81f29bdcb5e0bd76",
+      "size": 1865
+    },
+    "assets/notvisuals/shaders/post/radiance_advanced_resolve.fsh": {
+      "sha256": "1d0800b381093c76f80d78504af636de9fdf619b64c4ce49c78f6b487d3dea13",
+      "size": 2489
+    },
+    "assets/notvisuals/shaders/post/radiance_composite.fsh": {
+      "sha256": "1d2825d25178314da57498dd54b2fb33b54cf8686d4d70c0f04641d59c78dd18",
+      "size": 17057
+    },
+    "assets/notvisuals/shaders/post/radiance_denoise.fsh": {
+      "sha256": "812ef51fb844e4534e541611a84f3fecdb36008cca91d1c674a6528f21df92c6",
+      "size": 3004
+    },
+    "assets/notvisuals/shaders/post/radiance_history_store.fsh": {
+      "sha256": "3d74c930c97f1e3461ba1399c2cb417877d81950ab7386155b924e6be01e894e",
+      "size": 691
+    },
+    "assets/notvisuals/shaders/post/radiance_indirect_atrous_1.fsh": {
+      "sha256": "1d79dbedeab8e9faa455634609d3e9ecf720e71b0c1c9e0ec75b50bee5c624fd",
+      "size": 1120
+    },
+    "assets/notvisuals/shaders/post/radiance_indirect_atrous_3.fsh": {
+      "sha256": "406feffd2b9357940d62d44afe8a544379ff9e4b7479110a31a5308b0403fed4",
+      "size": 1120
+    },
+    "assets/notvisuals/shaders/post/radiance_indirect_trace.fsh": {
+      "sha256": "38a440544845f977499cf0836a52d5d228c68c3872772dbbee3241912da04216",
+      "size": 3283
+    },
+    "assets/notvisuals/shaders/post/radiance_jump.fsh": {
+      "sha256": "780613a864119f8c14c8536be42e1c21a8405d9a924062a7e7e20b0e6b9ab16a",
+      "size": 2341
+    },
+    "assets/notvisuals/shaders/post/radiance_marker_clean.fsh": {
+      "sha256": "94c35a88aac476e796bc4e9b434a2a2c46f21476a8c1c31fb21a8cdd9c2d5fc3",
+      "size": 2645
+    },
+    "assets/notvisuals/shaders/post/radiance_seeds.fsh": {
+      "sha256": "7ca7e57a003ca19c3ac64b547c0858d50e389b204a232f7754ec3fbdf18d8556",
+      "size": 2956
+    },
+    "assets/notvisuals/shaders/post/radiance_temporal.fsh": {
+      "sha256": "01b50b34870bef4a79e12f6514fb15ff96e72dc00db0f862c27bf7b3437bd0fb",
+      "size": 4578
+    },
+    "assets/notvisuals/shaders/post/toon_grade.fsh": {
+      "sha256": "463e3b940742b0c35beb67b4e93af471a0a41a2c4de236ca5fa8c5821ee98677",
+      "size": 1105
+    },
+    "assets/notvisuals/shaders/post/vivid_finish.fsh": {
+      "sha256": "21cedbc745a6f1ac2d7eb73bf3bad8bc33f1f076dee1c18dfc5bdda008bc08f0",
+      "size": 2417
+    },
+    "assets/notvisuals/shaders/post/vivid_grade.fsh": {
+      "sha256": "3315bbbce024e637a866735b5c0fbfc0d9a2483b2d4d15e5612b97efb4466825",
+      "size": 2694
+    },
+    "assets/notvisuals/textures/block/material/limestone_satin.png": {
+      "sha256": "31db32b585848b0c4b2c9edd899f67eef4cc6715a11189a5a026fd1e14115cac",
+      "size": 109
+    },
+    "assets/notvisuals/textures/block/material/sulfur_satin.png": {
+      "sha256": "5f1db4585c8349a28ceb219f9f4b1189cfd25a3a002516349ea7153aef9988f2",
+      "size": 109
+    },
+    "assets/notvisuals/textures/block/radiance/marker_01.png": {
+      "sha256": "e789e59b3ee6a0578756e5114ecd32b8b670d8c24b6801a4aebd360c8ccd5dad",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_02.png": {
+      "sha256": "d2a3eff2d1b17e9f78702919d5ebb76eb3c22dec87d5a7574807249309a6d005",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_03.png": {
+      "sha256": "3f690b02a97a01217dad5c8c5bfa6b27006572925affbf1409084dfc441af7bf",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_04.png": {
+      "sha256": "cf314e53113c7ec980c72a4d540985093ca6d651ff8a15122883e287ab0e7241",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_05.png": {
+      "sha256": "e5ae8cafd3ce1c81dd0791b97248ee3c8285ad25fbe0f81ef959cdf93fa780e6",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_06.png": {
+      "sha256": "ea8ebde7222425f0e2edc545613f849a611867858f41deb6285d0879b1a85695",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_07.png": {
+      "sha256": "eee61a7f0990f1e8e65f252a76e0ac7122b632f160548446059fcea24c94270a",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_08.png": {
+      "sha256": "a333874dd1cbb7774f77fc818db6820b9403cb4ea73ccdb28f3c5f9435632700",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_09.png": {
+      "sha256": "a2d177304589abc5b20613e8b7028e72ca19272f5787a3ac7f67c473db76fb78",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_10.png": {
+      "sha256": "81246b5ff822921eab61e877646bfb0c51cdb7b7482b45ff6ccb75940e6d3940",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_11.png": {
+      "sha256": "c4e554019f33835423ea17a452272b9044fc8adfddf49ab9f5dbc4842628587f",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_12.png": {
+      "sha256": "841d8b6711642fc47a0e3826cbba4e2996d82e9ed9e13713544e517c681e70c1",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_13.png": {
+      "sha256": "acdbb9720e80d2dbd075766c997acd82e251e88c5a5ab24d82e6c04b2b8d72de",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_14.png": {
+      "sha256": "1bdfa22427299c5e72ac9698ac4c17388833c2bae437dfc759448d01de56be57",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_15.png": {
+      "sha256": "81dd431999f9c93d6535aedcbada3fbaab5efdf6da051514f030f0d3004594f2",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_16.png": {
+      "sha256": "020fc023bc85f3b67d137ca2423d9824d2ff7218e8b9801bc080e6b6652843e3",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_17.png": {
+      "sha256": "a70845888b3452dea64a93234c88d0b15d1544ea8e2598415b2e302657ac4505",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_18.png": {
+      "sha256": "ee5e9c09a79a7e142120fe6972f52f61fc84c68787460e956eaa72eac85627dd",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_19.png": {
+      "sha256": "9e3b9d1187ee135102dda8c4fd0589cd3c99cefa8aedc3e0210fc10957e2fed2",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_20.png": {
+      "sha256": "880a1c74de7f157958a5c752fb6af7262cb8e89223bef229e19f329b831e2369",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_21.png": {
+      "sha256": "34bc65db17ed95d26c10a09865cc15d368101bd14ddebda5498c9ac089d9914b",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_22.png": {
+      "sha256": "96812f71e07f1fb9fa2926efa15ffc33fb9cf1ac7f1d2ca1540b48c5217f1b7e",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_23.png": {
+      "sha256": "e17142ff888af992b0cacece0c86259a380e627f226b220b3bd765f0db8c18c9",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_24.png": {
+      "sha256": "12f18db6e343e8b7a49589a72bc5df567719111030eb7d2574f48f42acb14750",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_25.png": {
+      "sha256": "f404d4081e02f37d88d4faf451ed3c337e4e52022ffacb15c2c02dadd807b626",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_26.png": {
+      "sha256": "4b99b5bc58393e5473bdeeddbf70e9baa1f1081cdb3d9520ed688201b120a573",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_27.png": {
+      "sha256": "89b6bf6e646f0e3ad8e1071d1c16e8a6e44f9a1e7d60fc0cd4e9bd18a2b1c52c",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_28.png": {
+      "sha256": "c00ef0b640d4f69df7f38cb8278ed8634ecb85b4e051e49e4149d36a561bd23a",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_29.png": {
+      "sha256": "2d971a284dc74c2974253ae77a9a3c0822c8d8989d37afd58aff0d4100a4ebbb",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_30.png": {
+      "sha256": "906fc70f52e96fedfe04fb7dae2d57ff8815296af199a7de441d0b09aafa3c32",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_31.png": {
+      "sha256": "b0687493d8bb21daccc0740d835c18d69193b63b5ee2e29c97d8ab3fcdfbd10b",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_32.png": {
+      "sha256": "e95462efe569ed7813287687196d79f9ae296e0d80000eda49e7c816173642b3",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_33.png": {
+      "sha256": "800fd712df03025f3d5d21dcd774f8aaa272c682331f6b537c934c6b7d52a100",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_34.png": {
+      "sha256": "d34fb0f31c599126cbe2278bde3583dbf777240b760d34449967bfbe571425e6",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_35.png": {
+      "sha256": "2c8366d892daa9e62d1d197dd035f92b061dd97dd725dfe93aad886b363e9694",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_36.png": {
+      "sha256": "d7bc4189a55f03117a328db9c1a375cec52a015b3227401a9b7d50de2833c4b9",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_37.png": {
+      "sha256": "73410815427ee0a79ae76a212dfe34357265d1511016a51017e5f76dd0b2cf95",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_38.png": {
+      "sha256": "4794b40bb49a007d5811dd16424bb772b9020d0a17bf73a4773147098eaae53a",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_39.png": {
+      "sha256": "9f60bce7ed5dfedfb87b45a50a5cf0f0d6e77b8dac4b8c67233b3159e48a59a0",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_40.png": {
+      "sha256": "7c125d3d426b009581c4602d62638a4486c0ad87c66519a93ac0afc48d396ab5",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_41.png": {
+      "sha256": "dd3dac6368f6ad3d8a6d9497344069f3f75421565ebe2837dc06e93cb4006522",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_42.png": {
+      "sha256": "f1feedb288a8413acb7821b2fd680fa719fd7b3831086170c852c375f0b00251",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_43.png": {
+      "sha256": "cfd4dc9ca60c1845430139707834f7b9bc582f4cf5dbe571aa17f12cda605962",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_44.png": {
+      "sha256": "437661069162debe487469652ebfe8ebc81a793411d22dcc8fe1d9a6c4f8dfae",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_45.png": {
+      "sha256": "a94914f14f8395052f0f19bb150aa648db96fdfd14d0c834584037c1c0b72346",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_46.png": {
+      "sha256": "267a09971c2e413c5807a5eadb45a06fb4c40f4afcd8eee59977660b94986c6f",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_47.png": {
+      "sha256": "a6a455f334d8f61db777a8ff972baa542bf7a269f548c821d966d12596b8e6e5",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_48.png": {
+      "sha256": "b416f4cc616e40858a7b4c291d51ce83ca9b6efeaa5164dcf1191aef11872d86",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_49.png": {
+      "sha256": "ff1b041f6dc9dd1452b538db11b6bea8c09d5038d2df71c098e99928cbfaf974",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_50.png": {
+      "sha256": "31b88052b5969556e7d14ec9a8287cd60e95c89460d6e9bf85ad5a14df4385b4",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_51.png": {
+      "sha256": "5d4045a7818263f0cae8956db1d0d3967327642d05248445cb8b6e88821cdbff",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_52.png": {
+      "sha256": "acf79f40c70cd1eba4291674ba30f0e966440f0a27dfb22224c0839c899af9a3",
+      "size": 86
+    },
+    "assets/notvisuals/textures/block/radiance/marker_53.png": {
+      "sha256": "c8a275dacdcbaf7831280564659269e2452eaa54f0d711d85a7becc2a46868a4",
+      "size": 86
+    },
+    "pack.mcmeta": {
+      "sha256": "7154329a08aacec5a009f024298e8c26bdae838089e9af56a53477f8cced95f4",
+      "size": 236
+    },
+    "pack.png": {
+      "sha256": "cef669b255ffd7db5ad393f9027e661966b04ed0e68ce92c8fe2db18349328b2",
+      "size": 2924
+    }
+  },
+  "source_import_notes": "All files retained byte-for-byte except atlas PNG, which is regenerated from identical 15-part upstream source; installer also adds required licensing notices to final ZIP. The raw user ZIP is not itself pushed to GitHub."
+}

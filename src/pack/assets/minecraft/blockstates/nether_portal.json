@@ -1,0 +1,38 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "axis": "x"
+      },
+      "apply": {
+        "model": "minecraft:block/nether_portal_ns"
+      }
+    },
+    {
+      "when": {
+        "axis": "x"
+      },
+      "apply": {
+        "model": "minecraft:block/radiance/emitter_35_portal",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "axis": "z"
+      },
+      "apply": {
+        "model": "minecraft:block/nether_portal_ew"
+      }
+    },
+    {
+      "when": {
+        "axis": "z"
+      },
+      "apply": {
+        "model": "minecraft:block/radiance/emitter_35_portal",
+        "y": 90
+      }
+    }
+  ]
+}

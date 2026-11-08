@@ -35,16 +35,302 @@
     "nv_fantasy": {},
     "nv_final": {},
     "nv_inked": {},
-    "nv_toon": {}
+    "nv_toon": {},
+    "nv_radiance_seeds": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_128": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_64": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_32": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_16": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_8": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_4": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_2": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_jump_1": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_lit": {},
+    "nv_radiance_clean": {},
+    "nv_radiance_jump_256": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_radiance_filtered": {},
+    "nv_indirect_raw": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_indirect_atrous_1": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_indirect_atrous_3": {
+      "width": 512,
+      "height": 288
+    },
+    "nv_advanced_lit": {},
+    "nv_radiance_stable": {},
+    "nv_radiance_history": {
+      "persistent": true,
+      "clear_color": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "nv_depth_inked": {}
   },
   "passes": [
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_seeds",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "minecraft:main",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_radiance_seeds"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_seeds",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_256",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 256.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_256",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_128",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 128.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_128",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_64",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 64.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_64",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_32",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 32.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_32",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_16",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 16.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_16",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_8",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 8.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_8",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_4",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 4.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_4",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_2",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 2.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_jump",
+      "inputs": [
+        {
+          "sampler_name": "Seeds",
+          "target": "nv_radiance_jump_2",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_jump_1",
+      "uniforms": {
+        "RadianceJumpConfig": [
+          {
+            "name": "JumpSize",
+            "type": "float",
+            "value": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_marker_clean",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "minecraft:main",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_clean"
+    },
     {
       "vertex_shader": "minecraft:core/screenquad",
       "fragment_shader": "notvisuals:post/exposure_measure",
       "inputs": [
         {
           "sampler_name": "In",
-          "target": "minecraft:main",
+          "target": "nv_radiance_clean",
           "bilinear": true
         }
       ],
@@ -99,7 +385,7 @@
       "inputs": [
         {
           "sampler_name": "In",
-          "target": "minecraft:main",
+          "target": "nv_radiance_clean",
           "bilinear": true
         },
         {
@@ -112,11 +398,195 @@
     },
     {
       "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_composite",
+      "inputs": [
+        {
+          "sampler_name": "Scene",
+          "target": "nv_scene",
+          "bilinear": true
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        },
+        {
+          "sampler_name": "NearestSeed",
+          "target": "nv_radiance_jump_1",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_lit"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_temporal",
+      "inputs": [
+        {
+          "sampler_name": "Lit",
+          "target": "nv_radiance_lit",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "Scene",
+          "target": "nv_scene",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        },
+        {
+          "sampler_name": "History",
+          "target": "nv_radiance_history",
+          "bilinear": false
+        }
+      ],
+      "output": "nv_radiance_stable"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_history_store",
+      "inputs": [
+        {
+          "sampler_name": "Stable",
+          "target": "nv_radiance_stable",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "Scene",
+          "target": "nv_scene",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_radiance_history"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_denoise",
+      "inputs": [
+        {
+          "sampler_name": "Lit",
+          "target": "nv_radiance_stable",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "Scene",
+          "target": "nv_scene",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_radiance_filtered"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_indirect_trace",
+      "inputs": [
+        {
+          "sampler_name": "Scene",
+          "target": "nv_scene",
+          "bilinear": true
+        },
+        {
+          "sampler_name": "Lit",
+          "target": "nv_radiance_filtered",
+          "bilinear": true
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_indirect_raw"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_indirect_atrous_1",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "nv_indirect_raw",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_indirect_atrous_1"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_indirect_atrous_3",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "nv_indirect_atrous_1",
+          "bilinear": false
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_indirect_atrous_3"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/radiance_advanced_resolve",
+      "inputs": [
+        {
+          "sampler_name": "Direct",
+          "target": "nv_radiance_filtered",
+          "bilinear": true
+        },
+        {
+          "sampler_name": "Base",
+          "target": "nv_scene",
+          "bilinear": true
+        },
+        {
+          "sampler_name": "Bounce",
+          "target": "nv_indirect_atrous_3",
+          "bilinear": true
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_advanced_lit"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
       "fragment_shader": "notvisuals:post/atmosphere_pass",
       "inputs": [
         {
           "sampler_name": "In",
-          "target": "nv_scene",
+          "target": "nv_advanced_lit",
           "bilinear": true
         }
       ],
@@ -124,11 +594,29 @@
     },
     {
       "vertex_shader": "minecraft:core/screenquad",
-      "fragment_shader": "notvisuals:post/inkline",
+      "fragment_shader": "notvisuals:post/depth_ink",
       "inputs": [
         {
           "sampler_name": "In",
           "target": "nv_atmosphere",
+          "bilinear": true
+        },
+        {
+          "sampler_name": "MainDepth",
+          "target": "minecraft:main",
+          "bilinear": false,
+          "use_depth_buffer": true
+        }
+      ],
+      "output": "nv_depth_inked"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "notvisuals:post/inkline",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "nv_depth_inked",
           "bilinear": true
         }
       ],

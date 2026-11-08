@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/nv_stalactite_material_r19",
+  "textures": {
+    "cross": "minecraft:block/pointed_dripstone_down_tip",
+    "satin": "notvisuals:block/material/limestone_satin"
+  }
+}

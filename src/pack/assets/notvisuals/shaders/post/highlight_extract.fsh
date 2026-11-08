@@ -41,7 +41,18 @@ void main() {
 
     // White regions without local peaks only contribute a faint neutral halo.
     float neutralPeak = isolated * smoothstep(0.71, 0.98, center) * (1.0 - colorful);
-    float weight = coloredSource * 0.88 + neutralPeak * NEUTRAL_GLOW;
+    float magenta = smoothstep(0.035, 0.24, c.r - c.g) * smoothstep(0.045, 0.28, c.b - c.g);
+    float endFlash = isolated * smoothstep(0.35, 0.93, center) * max(magenta, neutralPeak * 0.85);
+    tint = mix(tint, vec3(center * 0.96, center * 0.88, center * 1.20), endFlash * 0.34);
+    // R19: compact emissive ore facets and crystal highlights, guarded by
+    // contrast to distant surroundings. Faint fragments, not whole walls.
+    float blueGem=smoothstep(0.08,0.30,c.b-c.r)*smoothstep(0.015,0.14,c.g-c.r);
+    float greenGem=smoothstep(0.08,0.30,c.g-c.r)*smoothstep(0.065,0.24,c.g-c.b);
+    float redGem=smoothstep(0.10,0.34,c.r-c.g)*smoothstep(0.05,0.19,c.r-c.b);
+    float amethystGem=smoothstep(0.06,0.22,c.b-c.g)*smoothstep(0.035,0.18,c.r-c.g);
+    float gemChromatic=max(max(blueGem,greenGem),max(redGem,amethystGem));
+    float gemPeak=isolated*smoothstep(0.34,0.75,center)*gemChromatic;
+    float weight = coloredSource * 0.88 + neutralPeak * NEUTRAL_GLOW + endFlash * 0.26 + gemPeak*0.20;
     float areaGuard = 1.0 - smoothstep(0.79, 0.99, neighborhood) * 0.80;
     weight *= areaGuard;
     // Larger luminous surfaces need context beyond the original two-pixel ring.

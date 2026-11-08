@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/nv_template_coal_r19",
+  "textures": {
+    "all": "minecraft:block/deepslate_coal_ore3",
+    "nv_marker": "notvisuals:block/radiance/marker_51"
+  }
+}

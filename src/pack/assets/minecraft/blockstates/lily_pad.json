@@ -1,0 +1,31 @@
+﻿{
+        "variants": {
+            "": [
+                { "model": "block/lily_pad", "weight": 85 },
+                { "model": "block/lily_pad", "y": 90, "weight": 85 },
+                { "model": "block/lily_pad", "y": 180, "weight": 85 },
+                { "model": "block/lily_pad", "y": 270, "weight": 85 },
+                { "model": "block/white_water_lily", "weight": 9 },
+                { "model": "block/white_water_lily", "y": 90, "weight": 9 },
+                { "model": "block/white_water_lily", "y": 180, "weight": 9 },
+                { "model": "block/white_water_lily", "y": 270, "weight": 9 },
+                { "model": "block/purple_water_lily", "weight": 2 },
+                { "model": "block/purple_water_lily", "y": 90, "weight": 2 },
+                { "model": "block/purple_water_lily", "y": 180, "weight": 2 },
+                { "model": "block/purple_water_lily", "y": 270, "weight": 2 },
+                { "model": "block/pink_water_lily", "weight": 6 },
+                { "model": "block/pink_water_lily", "y": 90, "weight": 6 },
+                { "model": "block/pink_water_lily", "y": 180, "weight": 6 },
+                { "model": "block/pink_water_lily", "y": 270, "weight": 6 },
+                { "model": "block/yellow_water_lily", "weight": 5 },
+                { "model": "block/yellow_water_lily", "y": 90, "weight": 4 },
+                { "model": "block/yellow_water_lily", "y": 180, "weight": 4 },
+                { "model": "block/yellow_water_lily", "y": 270, "weight": 4 },
+                { "model": "block/orange_water_lily", "weight": 3 },
+                { "model": "block/orange_water_lily", "y": 90, "weight": 3 },
+                { "model": "block/orange_water_lily", "y": 180, "weight": 3 },
+                { "model": "block/orange_water_lily", "y": 270, "weight": 3 }
+            ]
+        }
+    }
+    

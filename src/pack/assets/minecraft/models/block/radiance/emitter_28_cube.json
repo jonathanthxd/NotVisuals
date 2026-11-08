@@ -1,0 +1,148 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "minecraft:block/glowstone",
+    "radiance_marker": "notvisuals:block/radiance/marker_28"
+  },
+  "elements": [
+    {
+      "from": [
+        6.8,
+        6.8,
+        -0.04
+      ],
+      "to": [
+        9.2,
+        9.2,
+        -0.02
+      ],
+      "faces": {
+        "north": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.8,
+        6.8,
+        16.02
+      ],
+      "to": [
+        9.2,
+        9.2,
+        16.04
+      ],
+      "faces": {
+        "south": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        16.02,
+        6.8,
+        6.8
+      ],
+      "to": [
+        16.04,
+        9.2,
+        9.2
+      ],
+      "faces": {
+        "east": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        -0.04,
+        6.8,
+        6.8
+      ],
+      "to": [
+        -0.02,
+        9.2,
+        9.2
+      ],
+      "faces": {
+        "west": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.8,
+        16.02,
+        6.8
+      ],
+      "to": [
+        9.2,
+        16.04,
+        9.2
+      ],
+      "faces": {
+        "up": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.8,
+        -0.04,
+        6.8
+      ],
+      "to": [
+        9.2,
+        -0.02,
+        9.2
+      ],
+      "faces": {
+        "down": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

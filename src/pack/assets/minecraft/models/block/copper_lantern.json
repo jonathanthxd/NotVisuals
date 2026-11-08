@@ -1,0 +1,375 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "minecraft:block/copper_lantern",
+    "lantern": "minecraft:block/copper_lantern",
+    "radiance_marker": "notvisuals:block/radiance/marker_13"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        11,
+        7,
+        11
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            9,
+            6,
+            15
+          ],
+          "texture": "#lantern",
+          "cullface": "down"
+        },
+        "up": {
+          "uv": [
+            0,
+            9,
+            6,
+            15
+          ],
+          "texture": "#lantern"
+        },
+        "north": {
+          "uv": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "texture": "#lantern"
+        },
+        "south": {
+          "uv": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "texture": "#lantern"
+        },
+        "west": {
+          "uv": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "texture": "#lantern"
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "texture": "#lantern"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        7,
+        6
+      ],
+      "to": [
+        10,
+        9,
+        10
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            1,
+            10,
+            5,
+            14
+          ],
+          "texture": "#lantern"
+        },
+        "up": {
+          "uv": [
+            1,
+            10,
+            5,
+            14
+          ],
+          "texture": "#lantern"
+        },
+        "north": {
+          "uv": [
+            1,
+            0,
+            5,
+            2
+          ],
+          "texture": "#lantern"
+        },
+        "south": {
+          "uv": [
+            1,
+            0,
+            5,
+            2
+          ],
+          "texture": "#lantern"
+        },
+        "west": {
+          "uv": [
+            1,
+            0,
+            5,
+            2
+          ],
+          "texture": "#lantern"
+        },
+        "east": {
+          "uv": [
+            1,
+            0,
+            5,
+            2
+          ],
+          "texture": "#lantern"
+        }
+      }
+    },
+    {
+      "from": [
+        6.5,
+        9,
+        8
+      ],
+      "to": [
+        9.5,
+        11,
+        8
+      ],
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "y",
+        "angle": 45
+      },
+      "shade_direction_override": "up",
+      "faces": {
+        "north": {
+          "uv": [
+            14,
+            1,
+            11,
+            3
+          ],
+          "texture": "#lantern"
+        },
+        "south": {
+          "uv": [
+            11,
+            1,
+            14,
+            3
+          ],
+          "texture": "#lantern"
+        }
+      }
+    },
+    {
+      "from": [
+        8,
+        9,
+        6.5
+      ],
+      "to": [
+        8,
+        11,
+        9.5
+      ],
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "y",
+        "angle": 45
+      },
+      "shade_direction_override": "up",
+      "faces": {
+        "west": {
+          "uv": [
+            14,
+            10,
+            11,
+            12
+          ],
+          "texture": "#lantern"
+        },
+        "east": {
+          "uv": [
+            11,
+            10,
+            14,
+            12
+          ],
+          "texture": "#lantern"
+        }
+      }
+    },
+    {
+      "from": [
+        7.66,
+        -0.015,
+        7.66
+      ],
+      "to": [
+        8.34,
+        0,
+        8.34
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "down": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.66,
+        7,
+        7.66
+      ],
+      "to": [
+        8.34,
+        7.015,
+        8.34
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "up": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.66,
+        3.16,
+        4.985
+      ],
+      "to": [
+        8.34,
+        3.84,
+        5
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "north": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.66,
+        3.16,
+        11
+      ],
+      "to": [
+        8.34,
+        3.84,
+        11.015
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "south": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        4.985,
+        3.16,
+        7.66
+      ],
+      "to": [
+        5,
+        3.84,
+        8.34
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "west": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        11,
+        3.16,
+        7.66
+      ],
+      "to": [
+        11.015,
+        3.84,
+        8.34
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "east": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

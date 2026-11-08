@@ -1,0 +1,14 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minecraft:block/ender_chest"
+      }
+    },
+    {
+      "apply": {
+        "model": "minecraft:block/radiance/emitter_39_cube"
+      }
+    }
+  ]
+}

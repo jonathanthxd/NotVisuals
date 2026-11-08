@@ -1,0 +1,6 @@
+{
+  "parent": "notvisuals:block/waving_leaves_plain",
+  "textures": {
+    "all": "minecraft:block/red_poplar_leaves"
+  }
+}

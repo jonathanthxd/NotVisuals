@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "minecraft:block/glowstone",
+    "radiance_marker": "notvisuals:block/radiance/marker_31"
+  },
+  "elements": [
+    {
+      "from": [
+        6.6,
+        5.9,
+        6.6
+      ],
+      "to": [
+        9.4,
+        5.92,
+        9.4
+      ],
+      "faces": {
+        "up": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

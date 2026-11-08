@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "berries": "false"
+      },
+      "apply": {
+        "model": "minecraft:block/cave_vines"
+      }
+    },
+    {
+      "when": {
+        "berries": "true"
+      },
+      "apply": {
+        "model": "minecraft:block/cave_vines_lit"
+      }
+    },
+    {
+      "when": {
+        "berries": "true"
+      },
+      "apply": {
+        "model": "minecraft:block/radiance/emitter_25_vine"
+      }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "#torch",
+    "torch": "minecraft:block/torch",
+    "radiance_marker": "notvisuals:block/radiance/marker_09"
+  },
+  "elements": [
+    {
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        9,
+        10,
+        9
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "down": {
+          "uv": [
+            7,
+            13,
+            9,
+            15
+          ],
+          "texture": "#torch",
+          "cullface": "down"
+        },
+        "up": {
+          "uv": [
+            7,
+            6,
+            9,
+            8
+          ],
+          "texture": "#torch"
+        },
+        "north": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        },
+        "south": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        },
+        "east": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        },
+        "west": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        }
+      }
+    },
+    {
+      "from": [
+        7.12,
+        10.015,
+        7.12
+      ],
+      "to": [
+        8.88,
+        10.035,
+        8.88
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "up": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.12,
+        7.95,
+        6.94
+      ],
+      "to": [
+        8.88,
+        9.8,
+        6.96
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "north": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.12,
+        7.95,
+        9.04
+      ],
+      "to": [
+        8.88,
+        9.8,
+        9.06
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "south": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.94,
+        7.95,
+        7.12
+      ],
+      "to": [
+        6.96,
+        9.8,
+        8.88
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "west": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        9.04,
+        7.95,
+        7.12
+      ],
+      "to": [
+        9.06,
+        9.8,
+        8.88
+      ],
+      "shade_direction_override": "up",
+      "faces": {
+        "east": {
+          "texture": "#radiance_marker",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

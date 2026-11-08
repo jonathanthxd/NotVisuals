@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/nv_stalactite_material_r19",
+  "textures": {
+    "cross": "minecraft:block/sulfur_spike_down_tip_merge",
+    "satin": "notvisuals:block/material/sulfur_satin"
+  }
+}

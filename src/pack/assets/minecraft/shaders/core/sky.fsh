@@ -19,9 +19,9 @@ void main() {
         return;
     }
 
-    // Candidate 2 Skyflow preserved for non-special sky draws.
+    // Preserve the Candidate 2 Skyflow treatment for non-custom-sky draws.
     float horizon = total_fog_value(sphericalVertexDistance, cylindricalVertexDistance,
-                                  0.0, FogSkyEnd, FogSkyEnd, FogSkyEnd);
+                                    0.0, FogSkyEnd, FogSkyEnd, FogSkyEnd);
     float curve = mix(horizon, smoothstep(0.0, 1.0, horizon), 0.35);
     vec3 sky = ColorModulator.rgb;
     float warm = smoothstep(0.015, 0.20, sky.r - sky.b);
@@ -32,7 +32,6 @@ void main() {
     vec3 horizonColor = FogColor.rgb * mix(vec3(1.0), vec3(1.015, 0.99, 0.985), warm * clear);
     vec3 result = mix(zenith, horizonColor, curve * FogColor.a);
     vec3 baseline = mix(sky, FogColor.rgb, horizon * FogColor.a);
-    // Never create an HDR highlight or a large luminance gain in the sky.
     result = clamp(result, max(vec3(0.0), baseline - 0.045), baseline + 0.015);
     fragColor = vec4(result, ColorModulator.a);
 }
