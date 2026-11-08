@@ -17,6 +17,8 @@ jobs:
           test ! -e pack.mcmeta
           test ! -e assets
           test -f src/pack/pack.mcmeta
+      - name: Syntax-check R19 import and archive parity tooling
+        run: python3 -m py_compile scripts/import_r19_zip.py scripts/validate_r19.py scripts/test_r19.py
       - name: Validate v8 candidate graphics (legacy source only)
         if: ${{ hashFiles('docs/R19_SOURCE_MANIFEST.json') == '' }}
         run: python3 scripts/validate_pack.py
