@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a deterministic, installable ZIP from the repository-root pack."""
+"""Create a deterministic, installable ZIP from the src/pack source tree."""
 from __future__ import annotations
 
 import argparse
@@ -9,26 +9,27 @@ from sky_atlas import ensure_atlas
 from license_audit import check as check_licenses
 
 ROOT = Path(__file__).resolve().parents[1]
+PACK_ROOT = ROOT / "src" / "pack"
 DEFAULT_OUTPUT = ROOT / "dist" / "NotVisuals_26.3_v8_candidate_3_AuroraSky.zip"
 
 
 def pack_files() -> list[Path]:
-    required = [ROOT / "pack.mcmeta", ROOT / "pack.png"]
+    required = [PACK_ROOT / "pack.mcmeta", PACK_ROOT / "pack.png"]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
     if missing:
         raise SystemExit(f"Missing required pack file(s): {', '.join(missing)}")
     notices = [ROOT / name for name in (
         "LICENSE", "LICENSE-CODE", "LICENSE-ASSETS.md",
-        "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md",
+        "LICENSING.md", "THIRD_PARTY_LICENSES.md", "TRADEMARKS.md", "CREDITS.md",
         "docs/RIGHTS_STATUS.json",
     )]
     missing_notices = [p.name for p in notices if not p.is_file()]
     if missing_notices:
         raise SystemExit("Missing license notices: " + ", ".join(missing_notices))
-    files = required + notices + [p for p in (ROOT / "assets").rglob("*") if p.is_file()]
-    if not (ROOT / "assets").is_dir() or len(files) == len(required):
+    files = required + notices + [p for p in (PACK_ROOT / "assets").rglob("*") if p.is_file()]
+    if not (PACK_ROOT / "assets").is_dir() or len(files) == len(required):
         raise SystemExit("Missing assets/ content")
-    return sorted(files, key=lambda p: p.relative_to(ROOT).as_posix())
+    return sorted(files, key=lambda p: (p.relative_to(PACK_ROOT) if p.is_relative_to(PACK_ROOT) else p.relative_to(ROOT)).as_posix())
 
 
 def build(output: Path, *, release: bool = False) -> None:
@@ -38,7 +39,7 @@ def build(output: Path, *, release: bool = False) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     with ZipFile(output, "w") as archive:
         for path in files:
-            rel = path.relative_to(ROOT).as_posix()
+            rel = (path.relative_to(PACK_ROOT) if path.is_relative_to(PACK_ROOT) else path.relative_to(ROOT)).as_posix()
             meta = ZipInfo(rel, (1980, 1, 1, 0, 0, 0))
             meta.compress_type = ZIP_DEFLATED
             meta.external_attr = 0o644 << 16

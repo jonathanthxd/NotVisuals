@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "source" / "aurora_sky" / "sun_atlas"
-TARGET = ROOT / "assets/minecraft/textures/environment/celestial/sun.png"
+TARGET = ROOT / "src/pack/assets/minecraft/textures/environment/celestial/sun.png"
 SHA256 = "06cd49d8d53e5855e90d657cb6aa65d1a9d08954374dce0158ef5f846e990c00"
 PNG_SIZE = (3080, 4064)
 
@@ -35,7 +35,7 @@ def atlas_bytes(root: Path = ROOT) -> bytes:
     return data
 
 def ensure_atlas(root: Path = ROOT) -> Path:
-    target = root / "assets/minecraft/textures/environment/celestial/sun.png"
+    target = root / "src/pack/assets/minecraft/textures/environment/celestial/sun.png"
     if target.exists():
         if hashlib.sha256(target.read_bytes()).hexdigest() != SHA256:
             raise ValueError("Aurora Sky sun.png differs from the approved sky sheet")

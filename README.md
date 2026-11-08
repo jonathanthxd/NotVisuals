@@ -21,6 +21,14 @@ Resource pack gráfico para **Minecraft Java Edition 26.3** que utiliza `minecra
 
 **Sin verificar en Minecraft como pack unificado:** los nuevos core overrides, la estética de cielo/nubes, la respuesta por bloque emisor y el flicker de mano. Se eliminó la selección de blancos como nubes del postprocess automático. No hay sombreado geométrico de terreno, SSAO ni identificación fiable de materiales; Chromaglow sigue siendo una aproximación RGB. Consulta el [informe de candidata 2](docs/V8_IMPLEMENTATION_REPORT.md) y la [investigación de referencias](docs/V8_REFERENCE_RESEARCH.md).
 
+## Descargas oficiales — Modrinth
+
+**Descarga el resource pack instalable en [Modrinth](https://modrinth.com/resourcepack/notvisuals).** El repositorio de GitHub está destinado a leer, auditar, modificar y compilar el código fuente. `Code → Download ZIP` no produce un ZIP reconocible por Minecraft.
+
+La diferencia es de presentación y distribución oficial, **no una prohibición de reconstruir o redistribuir** lo permitido por GPLv3, CC BY-NC-SA 4.0 y las licencias de terceros.
+
+Más detalles: [Estructura del código y publicación](docs/SOURCE_AND_RELEASE.md).
+
 ## Instalación y pruebas
 
 Desde esta rama:
@@ -67,7 +75,7 @@ El usuario ha informado que el pack se ve bien en las pruebas habituales, con **
 - [Roadmap](docs/ROADMAP.md)
 - [Aurora Sky — Candidate 3](docs/V8_AURORA_SKY.md)
 
-La raíz del repositorio es directamente la raíz del resource pack. `pack.mcmeta` y `pack.png` deben quedar en la raíz del ZIP. No se incluyen tests, documentación de desarrollo ni Git en la distribución; sí los avisos de licencia y atribución.
+El repositorio contiene el código fuente bajo `src/pack/`. La raíz del ZIP de GitHub no contiene `pack.mcmeta`: **no es instalable directamente** en Minecraft. Solo `scripts/build_pack.py` crea el ZIP instalable colocando `pack.mcmeta`, `pack.png` y `assets/` en su raíz. No se incluyen tests, documentación de desarrollo ni Git en la distribución; sí los avisos de licencia y atribución.
 
 **Orden de prioridades:** máxima calidad visual → optimización sin pérdida visual → compatibilidad entre versiones.
 

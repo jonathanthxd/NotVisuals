@@ -10,6 +10,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+PACK_ROOT = ROOT / "src" / "pack"
 INCLUDE = re.compile(r'^\s*#include\s+<([a-z0-9_.-]+):([a-z0-9_./-]+)>\s*$', re.MULTILINE)
 
 
@@ -22,7 +23,7 @@ def expand(source: str, vanilla: Path | None = None, *, root: Path = ROOT,
         key = namespace + ":" + name
         if key in stack:
             raise ValueError(f"cyclic include: {key}")
-        local = root / "assets" / namespace / "shaders/include" / name
+        local = root / "src" / "pack" / "assets" / namespace / "shaders/include" / name
         if local.is_file():
             path = local
         elif namespace == "minecraft" and vanilla is not None:

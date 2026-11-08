@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+PACK_ROOT = ROOT / "src" / "pack"
 RESOURCE_FORMAT = [97, 1]
 BUILTIN_SHADERS = {"minecraft:post/blit", "minecraft:post/box_blur"}
 CORE_OVERRIDES = {"sky.fsh", "clouds.fsh", "position_tex.fsh"}
@@ -25,7 +26,7 @@ def shader_path(root: Path, identifier: str, ext: str) -> Path:
     return root / "assets" / namespace / "shaders" / (name + "." + ext)
 
 
-def verify(root: Path = ROOT, *, quiet: bool = False) -> tuple[int, int]:
+def verify(root: Path = PACK_ROOT, *, quiet: bool = False) -> tuple[int, int]:
     root = Path(root)
     meta = json.loads((root / "pack.mcmeta").read_text(encoding="utf-8"))
     pack = meta["pack"]

@@ -8,14 +8,14 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from shader_sources import ROOT, expand
+from shader_sources import ROOT, PACK_ROOT, expand
 
 
 def check(compiler: str, vanilla: Path) -> int:
     jobs = []
-    for path in sorted((ROOT / 'assets').glob('*/shaders/**/*.fsh')):
+    for path in sorted((PACK_ROOT / 'assets').glob('*/shaders/**/*.fsh')):
         jobs.append((str(path.relative_to(ROOT)), expand(path.read_text(), vanilla)))
-    cloud = expand((ROOT / 'assets/minecraft/shaders/core/clouds.fsh').read_text(), vanilla)
+    cloud = expand((PACK_ROOT / 'assets/minecraft/shaders/core/clouds.fsh').read_text(), vanilla)
     for count in [4, 8, 16]:
         common = (f'#define OIT\n#define OIT_COEFF_COUNT {count}\n'
                   f'#define OIT_WAVELET_RANK {int(math.log2(count))-1}\n'

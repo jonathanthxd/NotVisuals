@@ -12,13 +12,17 @@ from zipfile import ZipFile
 from build_pack import build
 from license_audit import check as check_licenses
 from sky_atlas import SHA256
-from validate_pack import ROOT, verify
+from validate_pack import ROOT, PACK_ROOT, verify
 
 
 class PackTests(unittest.TestCase):
-    def test_release_is_blocked_for_unverified_aurora_sky(self):
-        with self.assertRaisesRegex(SystemExit, 'aurora_sky'):
-            check_licenses(release=True)
+    def test_release_rights_preflight(self):
+        self.assertEqual(check_licenses(release=True), [])
+
+    def test_repository_is_not_directly_playable(self):
+        self.assertFalse((ROOT / 'pack.mcmeta').exists())
+        self.assertFalse((ROOT / 'assets').exists())
+        self.assertTrue((PACK_ROOT / 'pack.mcmeta').exists())
 
     def test_current_graph(self):
         effects, passes = verify(quiet=True)
@@ -26,16 +30,16 @@ class PackTests(unittest.TestCase):
         self.assertGreaterEqual(passes, 25)
 
     def test_clouds_are_not_classified_by_white_world_pixels(self):
-        graph = json.loads((ROOT / 'assets/minecraft/post_effect/end_of_frame.json').read_text())
+        graph = json.loads((PACK_ROOT / 'assets/minecraft/post_effect/end_of_frame.json').read_text())
         self.assertFalse(any('cloud' in name for name in graph['targets']))
         self.assertFalse(any(s['fragment_shader'].endswith('/cloud_extract') for s in graph['passes']))
-        self.assertTrue((ROOT / 'assets/minecraft/shaders/core/clouds.fsh').is_file())
+        self.assertTrue((PACK_ROOT / 'assets/minecraft/shaders/core/clouds.fsh').is_file())
 
     def test_depth_remains_optional_and_point_sampled(self):
-        auto = json.loads((ROOT / 'assets/minecraft/post_effect/end_of_frame.json').read_text())
+        auto = json.loads((PACK_ROOT / 'assets/minecraft/post_effect/end_of_frame.json').read_text())
         self.assertFalse(any(i.get('use_depth_buffer') for s in auto['passes'] for i in s['inputs']))
         for name in ['depth_lab', 'depth_ink']:
-            effect = json.loads((ROOT / f'assets/notvisuals/post_effect/{name}.json').read_text())
+            effect = json.loads((PACK_ROOT / f'assets/notvisuals/post_effect/{name}.json').read_text())
             depth = [i for s in effect['passes'] for i in s['inputs'] if i.get('use_depth_buffer')]
             self.assertEqual(len(depth), 1)
             self.assertEqual(depth[0]['target'], 'minecraft:main')
@@ -44,7 +48,7 @@ class PackTests(unittest.TestCase):
     def test_reject_filtered_depth_unbound_sampler_and_missing_include(self):
         with tempfile.TemporaryDirectory() as temp:
             source = Path(temp)
-            shutil.copytree(ROOT / 'assets', source / 'assets')
+            shutil.copytree(PACK_ROOT / 'assets', source / 'assets')
             for name in ['pack.mcmeta', 'pack.png']:
                 shutil.copy2(ROOT / name, source / name)
             path = source / 'assets/notvisuals/post_effect/depth_lab.json'
@@ -67,9 +71,9 @@ class PackTests(unittest.TestCase):
     def test_reject_unknown_input_and_missing_shader(self):
         with tempfile.TemporaryDirectory() as temp:
             source = Path(temp)
-            shutil.copytree(ROOT / "assets", source / "assets")
-            shutil.copy2(ROOT / "pack.mcmeta", source / "pack.mcmeta")
-            shutil.copy2(ROOT / "pack.png", source / "pack.png")
+            shutil.copytree(PACK_ROOT / "assets", source / "assets")
+            shutil.copy2(PACK_ROOT / "pack.mcmeta", source / "pack.mcmeta")
+            shutil.copy2(PACK_ROOT / "pack.png", source / "pack.png")
             auto = source / "assets/minecraft/post_effect/end_of_frame.json"
             graph = json.loads(auto.read_text(encoding="utf-8"))
             graph["passes"][0]["inputs"][0]["target"] = "does_not_exist"

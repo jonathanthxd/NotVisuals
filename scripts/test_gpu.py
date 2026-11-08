@@ -8,7 +8,7 @@ import struct
 import unittest
 from pathlib import Path
 
-from shader_sources import ROOT, expand
+from shader_sources import ROOT, PACK_ROOT, expand
 
 try:
     import moderngl
@@ -105,7 +105,7 @@ class ShaderBufferTests(unittest.TestCase):
                 resource.release()
 
     def post(self, name, image, depth=None):
-        program = self.program(ROOT / f'assets/notvisuals/shaders/post/{name}.fsh')
+        program = self.program(PACK_ROOT / f'assets/notvisuals/shaders/post/{name}.fsh')
         textures = {'InSampler': image}
         if depth is not None:
             textures['MainDepthSampler'] = depth
@@ -115,7 +115,7 @@ class ShaderBufferTests(unittest.TestCase):
             program.release()
 
     def test_all_post_shaders_compile(self):
-        for shader in sorted((ROOT / 'assets/notvisuals/shaders/post').glob('*.fsh')):
+        for shader in sorted((PACK_ROOT / 'assets/notvisuals/shaders/post').glob('*.fsh')):
             with self.subTest(shader=shader.name):
                 self.program(shader).release()
 
@@ -217,7 +217,7 @@ class ShaderBufferTests(unittest.TestCase):
         image[15:23, 40:48, :3] = (0.3, 0.8, 1.0)
         depth = np.full((64, 64), 0.4, dtype='f4')
         depth[:, 32:] = 0.7
-        for path in sorted((ROOT / 'assets').glob('*/post_effect/*.json')):
+        for path in sorted((PACK_ROOT / 'assets').glob('*/post_effect/*.json')):
             with self.subTest(effect=path.name):
                 graph = json.loads(path.read_text())
                 buffers = {'minecraft:main': image.copy()}
@@ -228,7 +228,7 @@ class ShaderBufferTests(unittest.TestCase):
                     if namespace == 'minecraft':
                         shader = self.vanilla / 'shaders' / (name + '.fsh')
                     else:
-                        shader = ROOT / 'assets' / namespace / 'shaders' / (name + '.fsh')
+                        shader = PACK_ROOT / 'assets' / namespace / 'shaders' / (name + '.fsh')
                     program = self.program(shader)
                     try:
                         inputs = {i['sampler_name']+'Sampler': depth if i.get('use_depth_buffer') else buffers[i['target']]
@@ -260,7 +260,7 @@ class ShaderBufferTests(unittest.TestCase):
 
     def test_cloud_oit_variants_compile(self):
         self.core_available()
-        cloud = ROOT / 'assets/minecraft/shaders/core/clouds.fsh'
+        cloud = PACK_ROOT / 'assets/minecraft/shaders/core/clouds.fsh'
         for count in [4, 8, 16]:
             common = f'#define OIT\n#define OIT_COEFF_COUNT {count}\n#define OIT_WAVELET_RANK {int(math.log2(count))-1}\n#define OIT_COEFF_ATTACHMENT_COUNT {count//4}\n'
             for variant in ['#define OIT_ALPHA_ONLY\n#define OIT_DEPTH_BOUNDS',
@@ -273,7 +273,7 @@ class ShaderBufferTests(unittest.TestCase):
 
     def test_cloud_shading_keeps_vanilla_alpha(self):
         self.core_available()
-        program = self.program(ROOT / 'assets/minecraft/shaders/core/clouds.fsh', vertex=CLOUD_VERTEX)
+        program = self.program(PACK_ROOT / 'assets/minecraft/shaders/core/clouds.fsh', vertex=CLOUD_VERTEX)
         vanilla = self.program(self.vanilla / 'shaders/core/clouds.fsh', vertex=CLOUD_VERTEX)
         try:
             for light in [(0.9, 0.9, 0.95), (0.65, 0.4, 0.3), (0.05, 0.06, 0.09)]:
@@ -303,7 +303,7 @@ class ShaderBufferTests(unittest.TestCase):
         for phase in ['#define OIT_ALPHA_ONLY\n#define OIT_DEPTH_BOUNDS',
                       '#define OIT_ALPHA_ONLY\n#define OIT_TRANSMITTANCE', '#define OIT_ACCUMULATE']:
             defines = '#define OIT\n#define OIT_COEFF_COUNT 4\n#define OIT_WAVELET_RANK 1\n#define OIT_COEFF_ATTACHMENT_COUNT 1\n' + phase
-            program = self.program(ROOT / 'assets/minecraft/shaders/core/clouds.fsh', vertex=CLOUD_VERTEX, defines=defines)
+            program = self.program(PACK_ROOT / 'assets/minecraft/shaders/core/clouds.fsh', vertex=CLOUD_VERTEX, defines=defines)
             vanilla = self.program(self.vanilla / 'shaders/core/clouds.fsh', vertex=CLOUD_VERTEX, defines=defines)
             try:
                 for distance in [0.0, 350.0, 999.0]:
@@ -321,7 +321,7 @@ class ShaderBufferTests(unittest.TestCase):
 
     def test_sky_day_dusk_night_weather_bounded_vs_vanilla(self):
         self.core_available()
-        program = self.program(ROOT / 'assets/minecraft/shaders/core/sky.fsh', vertex=SKY_VERTEX)
+        program = self.program(PACK_ROOT / 'assets/minecraft/shaders/core/sky.fsh', vertex=SKY_VERTEX)
         vanilla = self.program(self.vanilla / 'shaders/core/sky.fsh', vertex=SKY_VERTEX)
         identity = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
         try:

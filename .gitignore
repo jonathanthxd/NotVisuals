@@ -12,4 +12,4 @@ __pycache__/
 Thumbs.db
 
 # Reconstructed, byte-identical Aurora sky sheet (versioned via source parts)
-assets/minecraft/textures/environment/celestial/sun.png
+src/pack/assets/minecraft/textures/environment/celestial/sun.png

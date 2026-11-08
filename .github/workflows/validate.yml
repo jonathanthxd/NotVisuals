@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+      - name: Confirm source archive is not a playable resource pack
+        run: |
+          test ! -e pack.mcmeta
+          test ! -e assets
+          test -f src/pack/pack.mcmeta
       - name: Validate pack graphs and shader references
         run: python3 scripts/validate_pack.py
       - name: Run validator and ZIP regression tests
